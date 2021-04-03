@@ -12,8 +12,9 @@ ______________/\\\\\________/\\\\\\________________________________
         _\///_____\///_______\///__\/////////____\//////////__\//////////__
 ```
 
-**.files** is a collection of my dotfiles, published to GitHub strictly for
-version control and backup purposes.
+**.files** is a collection of my dotfiles, exported settings and other
+configuration files, alongwith documentation on how to use them, published to
+GitHub strictly for version control and backup purposes.
 
 Real talk though, if you see something you like, feel free to use it in your
 own dotfiles. If you find a better way to accomplish something, open an issue.
@@ -30,3 +31,5 @@ own dotfiles. If you find a better way to accomplish something, open an issue.
 0. Install [Spaceship prompt](https://github.com/denysdovhan/spaceship-prompt).
 0. Install Vim (and preferably [MacVim](https://macvim-dev.github.io/macvim/)).
 0. Perform [Vim setup](./vim/README.md).
+0. Install [JetBrains toolbox](https://www.jetbrains.com/toolbox-app/).
+0. Perform [IDE setup](./jetbrains/README.md).
