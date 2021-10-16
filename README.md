@@ -21,15 +21,19 @@ own dotfiles. If you find a better way to accomplish something, open an issue.
 
 ## Steps
 
-0. Clone the repository to the home directory `~`.
+00. Clone the repository to the home directory `~`.
     ```sh
     cd ~
     gh repo clone dhruvkb/dotfiles
     ```
-0. **zsh setup**
-    0. Install [Oh My Zsh](https://ohmyz.sh).
-    0. Install [Starship](https://starship.rs).
-    0. Perform [Zsh setup](./zsh/README.md).
-0. **vim**
-    0. Install Vim (and preferably [MacVim](https://macvim-dev.github.io/macvim/)).
-    0. Perform [Vim setup](./vim/README.md).
+
+00. **zsh setup**
+
+    01. Install [Oh My Zsh](https://ohmyz.sh).
+    01. Install [Starship](https://starship.rs).
+    01. Perform [Zsh setup](./zsh/README.md).
+
+00. **vim**
+
+    01. Install Vim (and preferably [MacVim](https://macvim-dev.github.io/macvim/)).
+    01. Perform [Vim setup](./vim/README.md).
