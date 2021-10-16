@@ -1,7 +1,8 @@
 # Automattic proxy
 alias autoproxy="ssh -N -D 8080 dhruvkb@proxy.automattic.com"
-alias checksock="http --proxy=https:socks5://127.0.0.1:8080 https://en.wordpress.com/whatismyip\?basic"
-alias checkipv4="http https://api.ipify.org"
+
+# Yojak proxy
+alias yoproxy="ssh -N -D 1337 ubuntu@yoshared"
 
 # ZSH aliases
 alias zshconfig="vim ~/.zshrc"
@@ -22,6 +23,10 @@ alias dvol="docker volume"
 alias deit="docker exec -ti"
 
 # Docker-Compose aliases
-alias dc="docker-compose"
-alias dce="docker-compose exec"
-alias dcdu="docker-compose down && docker-compose up -d"
+alias dc="docker compose"
+alias dcup="docker compose up"
+alias dcdn="docker compose down"
+alias dce="docker compose exec"
+alias dcdu="dcdn && dcup -d"
+alias dcdpu="dcdn && dvol prune -f && dcup -d"
+alias dcdev="dc -f docker-compose.yml -f docker-compose.dev.yml"
