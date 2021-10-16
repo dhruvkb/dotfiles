@@ -26,10 +26,10 @@ own dotfiles. If you find a better way to accomplish something, open an issue.
     cd ~
     gh repo clone dhruvkb/dotfiles
     ```
-0. Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh).
-0. Perform [Zsh setup](./zsh/README.md).
-0. Install [Spaceship prompt](https://github.com/denysdovhan/spaceship-prompt).
-0. Install Vim (and preferably [MacVim](https://macvim-dev.github.io/macvim/)).
-0. Perform [Vim setup](./vim/README.md).
-0. Install [JetBrains toolbox](https://www.jetbrains.com/toolbox-app/).
-0. Perform [IDE setup](./jetbrains/README.md).
+0. **zsh setup**
+    0. Install [Oh My Zsh](https://ohmyz.sh).
+    0. Install [Starship](https://starship.rs).
+    0. Perform [Zsh setup](./zsh/README.md).
+0. **vim**
+    0. Install Vim (and preferably [MacVim](https://macvim-dev.github.io/macvim/)).
+    0. Perform [Vim setup](./vim/README.md).
