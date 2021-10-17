@@ -39,3 +39,6 @@ style = "bold red"
 [[battery.display]]
 threshold = 20
 style = "yellow"
+
+[nodejs]
+symbol = "⬢ "
