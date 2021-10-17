@@ -33,4 +33,9 @@ $shell\
 $character"""
 
 [[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
 threshold = 20
+style = "yellow"
