@@ -3,6 +3,7 @@ alias autoproxy="ssh -N -D 8080 dhruvkb@proxy.automattic.com"
 
 # Yojak proxy
 alias yoproxy="ssh -N -D 1337 ubuntu@yoshared"
+sshu() { ssh ubuntu@$1 }
 
 # ZSH aliases
 alias zshconfig="vim ~/.zshrc"
