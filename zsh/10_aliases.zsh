@@ -31,3 +31,10 @@ alias dce="dc exec"
 alias dcdu="dcdn && dcup -d"
 alias dcdpu="dcdn -v && dcup -d"
 alias dcdev="dc -f docker-compose.yml -f docker-compose.dev.yml"
+
+# Terraform aliases
+alias tf="terraform"
+alias tfr="tf refresh"
+alias tfp="tf plan"
+alias tfa="tf apply"
+alias tfi="tf import"
