@@ -24,9 +24,9 @@ alias deit="docker exec -ti"
 
 # Docker-Compose aliases
 alias dc="docker compose"
-alias dcup="docker compose up"
-alias dcdn="docker compose down"
-alias dce="docker compose exec"
+alias dcup="dc up"
+alias dcdn="dc down"
+alias dce="dc exec"
 alias dcdu="dcdn && dcup -d"
-alias dcdpu="dcdn && dvol prune -f && dcup -d"
+alias dcdpu="dcdn -v && dcup -d"
 alias dcdev="dc -f docker-compose.yml -f docker-compose.dev.yml"
