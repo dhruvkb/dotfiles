@@ -1,8 +1,11 @@
-# Automattic proxy
-alias autoproxy="ssh -N -D 8080 dhruvkb@proxy.automattic.com"
+# Proxies
+alias autoproxy="ssh -N -D 8080 dhruvkb@proxy.automattic.com" # A8C
+alias yoproxy="ssh -N -D 1337 ubuntu@yoshared" # Yojak
 
-# Yojak proxy
-alias yoproxy="ssh -N -D 1337 ubuntu@yoshared"
+# LS
+alias ls="ls -a"
+
+# AWS
 sshu() { ssh ubuntu@$1 }
 
 # ZSH aliases
