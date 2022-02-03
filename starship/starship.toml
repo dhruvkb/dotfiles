@@ -46,3 +46,6 @@ style = "yellow"
 
 [nodejs]
 symbol = "⬢ "
+
+[python]
+pyenv_version_name = true
