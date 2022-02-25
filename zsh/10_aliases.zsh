@@ -5,6 +5,8 @@ alias yoproxy="ssh -N -D 1337 ubuntu@yoshared" # Yojak
 # LS
 # See `exa` @ https://the.exa.website
 alias ls="exa"
+alias tree="ls --tree"
+alias cat="bat"
 
 # AWS
 sshu() { ssh ubuntu@$1 }
