@@ -13,13 +13,10 @@ $git_status\
 $docker_context\
 $package\
 $golang\
-$java\
-$kotlin\
 $nodejs\
 $python\
 $ruby\
 $rust\
-$swift\
 $memory_usage\
 $env_var\
 $custom\
@@ -44,8 +41,24 @@ style = "bold red"
 threshold = 20
 style = "yellow"
 
+[docker_context]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
 [nodejs]
-symbol = "⬢ "
+symbol = " "
+
+[package]
+symbol = " "
 
 [python]
 pyenv_version_name = true
+symbol = " "
+
+[ruby]
+symbol = " "
