@@ -3,6 +3,7 @@ syntax enable
 set number
 
 colorscheme solarized
+let g:solarized_termtrans = 1
 set background=dark
 set guifont=JetBrains\ Mono:h14
 
