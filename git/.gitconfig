@@ -1,0 +1,25 @@
+[user]
+  name = Dhruv Bhanushali
+  email = dhruv_b@live.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII57SP4Vf5B6n6SThAEWVWHedM9T/Cj3P3nEPawE4Vlv
+
+[commit]
+  gpgsign = true
+
+[tag]
+  gpgsign = true
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[init]
+  defaultbranch = main
+
+[rebase]
+  autosquash = true
+
+[alias]
+  yeet = reset --hard HEAD
