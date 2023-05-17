@@ -5,7 +5,7 @@ set number
 colorscheme solarized
 let g:solarized_termtrans = 1
 set background=dark
-set guifont=JetBrains\ Mono:h14
+set guifont=JetBrainsMono\ Nerd\ Font:h14
 
 set whichwrap+=<,>,[,]
 set colorcolumn=80

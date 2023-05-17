@@ -1,18 +1,9 @@
-# Steps
+# Vim
 
-## Download Solarized color scheme
+Configure Vim by linking the included `.vimrc` file to `$HOME`.
 
-```sh
-mkdir -p ~/.vim/colors
-curl https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim -o ~/.vim/colors/solarized.vim
-```
+Run the `setup_vim.py` script to do this. It is idempotent so it can be run
+multiple times, if needed.
 
-## Placing RC file in `~`
-
-Symlink the `.vimrc` file to the home directory `~`, and Vim will pick it up on
-its own.
-
-```sh
-cd ~
-ln -s ~/dotfiles/vim/.vimrc .vimrc
-```
+The script also downloads the Solarized color scheme, which is referenced in
+`.vimrc`, to `$HOME/.vim/colors/`.
