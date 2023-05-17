@@ -1,3 +1,6 @@
+# Get editor completions based on the config schema
+"$schema" = "https://starship.rs/config-schema.json"
+
 # Removing modules from here disables them
 format = """
 $username\
@@ -12,21 +15,57 @@ $docker_context\
 $package\
 $nodejs\
 $python\
-$ruby\
 $rust\
-$memory_usage\
 $cmd_duration\
-$line_break\
 $jobs\
 $battery\
-$time\
-$status\
-$shell\
+$line_break\
 $character"""
 
+[directory]
+read_only = " " # nf-fa-lock
+
+[git_branch]
+symbol = " " # nf-oct-git_branch
+# No space after this one.
+format = '\[[$symbol$branch]($style)\]'
+
+[git_commit]
+tag_symbol = " " # nf-fa-tag
+
+[docker_context]
+symbol = "  " # nf-oct-container
+format = '\[[$symbol$context]($style)\] '
+
+[package]
+symbol = " " # nf-oct-package
+format = '\[[$symbol$version]($style)\] '
+
+[nodejs]
+symbol = "󰎙 " # nf-md-nodejs
+format = '\[[$symbol($version)]($style)\] '
+
+[python]
+pyenv_version_name = true
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\] '
+symbol = " " # nf-seti-python
+
+[rust]
+symbol = " " # nf-seti-rust
+format = '\[[$symbol($version)]($style)\] '
+
+[cmd_duration]
+format = '\[[󰔛 $duration]($style)\] ' # nf-md-timer_outline
+
 [battery]
-charging_symbol = "⚡️ "
-discharging_symbol = "💀 "
+format = '\[[$symbol$percentage]($style)\] '
+
+# Remapping symbols to updated Material Design Icons from Nerd Fonts.
+full_symbol = "󰁹 " # nf-md-battery
+charging_symbol = "󰢟 " # nf-md-battery_charging_outline
+discharging_symbol = "󱃍 " # nf-md-battery_alert_variant_outline
+unknown_symbol = "󱉞 " # nf-md-battery_off_outline
+empty_symbol = "󰂎 " # nf-md-battery_outline
 
 [[battery.display]]
 threshold = 10
@@ -35,25 +74,3 @@ style = "bold red"
 [[battery.display]]
 threshold = 20
 style = "yellow"
-
-[docker_context]
-symbol = " "
-
-[git_branch]
-symbol = " "
-
-[golang]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[package]
-symbol = " "
-
-[python]
-pyenv_version_name = true
-symbol = " "
-
-[ruby]
-symbol = " "
