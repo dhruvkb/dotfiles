@@ -1,12 +1,12 @@
 # Proxies
 alias autoproxy="ssh -N -D 8080 dhruvkb@proxy.automattic.com" # A8C
-alias yoproxy="ssh -N -D 1337 ubuntu@yoshared" # Yojak
 
-# LS
-# See `exa` @ https://the.exa.website
+# CLI tools
+alias cat="bat"
+alias cwd="pwd"
+alias j="just"
 alias ls="exa"
 alias tree="ls --tree"
-alias cat="bat"
 
 # AWS
 sshu() { ssh ubuntu@$1 }
