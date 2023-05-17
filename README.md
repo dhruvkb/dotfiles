@@ -13,7 +13,7 @@ ______________/\\\\\________/\\\\\\________________________________
 ```
 
 **.files** is a collection of my dotfiles, exported settings and other
-configuration files, alongwith documentation on how to use them, published to
+configuration files, along with documentation on how to use them, published to
 GitHub strictly for version control and backup purposes.
 
 Real talk though, if you see something you like, feel free to use it in your
