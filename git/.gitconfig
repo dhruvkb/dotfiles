@@ -25,3 +25,4 @@
 
 [alias]
   yeet = reset --hard HEAD
+  root = rev-parse --show-toplevel
