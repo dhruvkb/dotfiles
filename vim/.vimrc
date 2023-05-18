@@ -1,3 +1,5 @@
+" CAUTION: Symlinked file
+
 syntax enable
 
 set number
