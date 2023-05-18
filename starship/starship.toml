@@ -46,7 +46,6 @@ symbol = "󰎙 " # nf-md-nodejs
 format = '\[[$symbol($version)]($style)\] '
 
 [python]
-pyenv_version_name = true
 format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\] '
 symbol = " " # nf-seti-python
 
