@@ -2,6 +2,7 @@
 
 # Install Brew formulae
 brew install \
+  bat \
   colima \
   docker \
   docker-compose \
