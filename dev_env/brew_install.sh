@@ -23,6 +23,7 @@ ln -sfn \
 # Install Brew casks
 brew install --cask \
   1password \
+  1password-cli \
   alt-tab \
   arc \
   fig \
