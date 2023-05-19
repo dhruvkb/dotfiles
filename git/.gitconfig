@@ -8,6 +8,9 @@
 [commit]
   gpgsign = true
 
+[pull]
+	rebase = false
+
 [tag]
   gpgsign = true
 
