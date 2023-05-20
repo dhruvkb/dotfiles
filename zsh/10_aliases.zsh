@@ -7,9 +7,7 @@ alias cwd="pwd"
 alias j="just"
 alias ls="exa"
 alias tree="ls --tree"
-
-# AWS
-sshu() { ssh ubuntu@$1 }
+alias rr='cd $(git root)'
 
 # ZSH aliases
 alias zshconfig="vim ~/.zshrc"
@@ -17,10 +15,14 @@ alias omzconfig="vim ~/.oh-my-zsh"
 alias sspconfig="vim ~/.spaceshiprc"
 alias zshreload="source ~/.zshrc"
 
-# Pipenv aliases
-alias pipi="pipenv install"
-alias pipu="pipenv uninstall"
-alias pips="pipenv shell"
+# Brew aliases
+alias badd="brew install"
+alias bdoc="brew doctor"
+alias barm="brew autoremove"
+alias bcln="brew cleanup"
+alias bwhy="brew uses --installed"
+alias bdep="brew deps --installed --tree"
+alias blvs="brew leaves --installed-on-request"
 
 # Docker aliases
 alias dock="docker"
