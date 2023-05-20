@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "dotfiles"
+version = "0.0.0"
+description = "A collection of my dotfiles"
+authors = ["Dhruv Bhanushali <dhruv_b@live.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
