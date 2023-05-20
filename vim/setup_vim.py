@@ -1,5 +1,7 @@
+#!/usr/bin/env python3
 from pathlib import Path
 from urllib import request
+
 
 def provision_solarized():
     """
@@ -7,13 +9,14 @@ def provision_solarized():
     directory to be picked up by Vim.
     """
 
-    colors = Path.home() / '.vim' / 'colors'
+    colors = Path.home() / ".vim" / "colors"
     colors.mkdir(parents=True, exist_ok=True)
 
     request.urlretrieve(
-        'https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim',
-        colors.absolute() / 'solarized.vim'
+        "https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim",
+        colors.absolute() / "solarized.vim",
     )
+
 
 def link_vimrc():
     """
@@ -21,12 +24,12 @@ def link_vimrc():
     where it will be picked up and used by Vim.
     """
 
-    vimrc = Path.home() / '.vimrc'
-    local_vimrc = Path(__file__).parent / '.vimrc'
+    vimrc = Path.home() / ".vimrc"
+    local_vimrc = Path(__file__).parent / ".vimrc"
 
     vimrc.unlink(missing_ok=True)
     vimrc.symlink_to(local_vimrc)
 
-if __name__ == '__main__':
-    provision_solarized()
-    link_vimrc()
+
+provision_solarized()
+link_vimrc()

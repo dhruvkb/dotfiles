@@ -1,4 +1,6 @@
+#!/usr/bin/env python3
 from pathlib import Path
+
 
 def include_config():
     """
@@ -7,8 +9,8 @@ def include_config():
     """
 
     local_config = Path(__file__).parent / "config"
-    if f"Include {local_config}" not in config_lines:
-        config_lines.append(f"Include {local_config}")
+    if (cfg_line := f"Include {local_config}") not in config_lines:
+        config_lines.append(cfg_line)
 
 
 config = Path.home() / ".ssh/config"
@@ -16,5 +18,5 @@ config_lines = config.read_text().splitlines()
 
 include_config()
 
-config_lines.append('')
+config_lines.append("")
 config.write_text("\n".join(config_lines))
