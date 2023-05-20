@@ -1,19 +1,14 @@
-# Steps
+# Z Shell
 
-## Changes to `.zshrc`
+Configure Zsh by making this directory the `$ZSH_CUSTOM` directory. This will
+cause all scripts defined here to be automatically sourced, in order, when the
+terminal is initialised.
 
-Uncomment the line that sets `:omz:update` to `auto`.
+Run `just zsh` to do this. It is idempotent so it can be run multiple times, if
+needed.
 
-```sh
-zstyle ':omz:update' mode auto
-```
+The script also
 
-## Customization
-
-All `.zsh` files in the `$ZSH_CUSTOM` directory are automatically sourced when the terminal is initialized.
-
-```sh
-cd $ZSH_CUSTOM
-rm example.sh
-ln -s ~/dotfiles/zsh/*.zsh . # add all custom ZSH scripts to autoload
-```
+- disables the theme so that Starship can take over
+- enables auto updates for Oh My Zsh
+- configures my preferred set of plugins
