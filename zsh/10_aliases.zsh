@@ -1,3 +1,8 @@
+# Aliases
+# =======
+
+# Aliases with vars are single-quoted to prevent expansion at definition time.
+
 # Proxies
 alias autoproxy="ssh -N -D 8080 dhruvkb@proxy.automattic.com" # A8C
 
@@ -10,9 +15,9 @@ alias tree="ls --tree"
 alias rr='cd $(git root)'
 
 # ZSH aliases
-alias zshconfig="vim ~/.zshrc"
-alias omzconfig="vim ~/.oh-my-zsh"
-alias sspconfig="vim ~/.spaceshiprc"
+alias zshconfig='${EDITOR} ~/.zshrc'
+alias omzconfig='${EDITOR} ~/.oh-my-zsh'
+alias sspconfig='${EDITOR} ~/.spaceshiprc'
 alias zshreload="source ~/.zshrc"
 
 # Brew aliases
