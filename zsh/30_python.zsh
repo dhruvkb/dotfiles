@@ -1,7 +1,14 @@
 # Python configuration
 # ====================
 
-# Load pipx binaries on the path, includes utils like HTTPie, Poetry and Pipenv.
+pathadd() {
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="${PATH:+"$PATH:"}$1"
+  fi
+}
+
 export PIPX_HOME="/opt/pipx"
 export PIPX_BIN_DIR="$PIPX_HOME/bin"
-export PATH="$PATH:$PIPX_BIN_DIR"
+
+# Load pipx binaries on the path, includes utils like HTTPie, Poetry and Pipenv.
+pathadd "$PIPX_BIN_DIR"
