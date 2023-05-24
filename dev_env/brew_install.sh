@@ -4,6 +4,7 @@
 brew install \
   bat \
   colima \
+  coreutils \
   docker \
   docker-compose \
   exa \
@@ -11,6 +12,7 @@ brew install \
   just \
   jq \
   pipx \
+  postgresql@13 \
   python@3.11 \
   starship
 
