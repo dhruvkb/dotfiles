@@ -1,5 +1,8 @@
 # CAUTION: Symlinked file
 
+[core]
+	excludesfile = /Users/dhruvkb/dotfiles/.gitignore
+
 [user]
   name = Dhruv Bhanushali
   email = dhruv_b@live.com
