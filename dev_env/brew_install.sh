@@ -9,12 +9,15 @@ brew install \
   docker-compose \
   exa \
   gh \
+  git-crypt \
   just \
   jq \
+  mkcert \
   pipx \
   postgresql@13 \
   python@3.11 \
-  starship
+  starship \
+  terraform
 
 # Install Docker Compose CLI plugin
 mkdir -p ~/.docker/cli-plugins
