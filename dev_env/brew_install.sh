@@ -17,7 +17,8 @@ brew install \
   postgresql@13 \
   python@3.11 \
   starship \
-  terraform
+  terraform \
+  xh
 
 # Install Docker Compose CLI plugin
 mkdir -p ~/.docker/cli-plugins

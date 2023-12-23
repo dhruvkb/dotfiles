@@ -7,5 +7,4 @@ fi
 
 # Install pipx packages
 pipx install poetry \
-&& pipx install pipenv \
-&& pipx install httpie
+&& pipx install pipenv
