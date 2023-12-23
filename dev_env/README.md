@@ -22,6 +22,5 @@ and pipx, all major development software is covered.
 
 The following apps are installed from the macOS App Store:
 
-- One Thing
 - Slack
 - WhatsApp Desktop
