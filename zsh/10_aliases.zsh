@@ -44,6 +44,16 @@ alias dcex="dc exec"
 alias dcdu="dcdn && dcup -d"  # du as in "down up"
 alias dcnu="dcdn -v && dcup -d"  # nu as in "new"
 
+# Finds which software or application is using the given port number.
+#
+# Usage:
+#   whoisusing <port>
+# where
+#   <port> is the port number
+whoisusing() {
+  lsof -i ":$1"
+}
+
 # Reads the file `.bookmarks` and provides a short way to jump to the bookmarked
 # directory.
 #
