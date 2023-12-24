@@ -50,3 +50,9 @@ zsh:
 # Setup `pls`
 pls:
 	python3 pls/setup_pls.py
+
+###########
+# Aliases #
+###########
+
+alias l := lint
