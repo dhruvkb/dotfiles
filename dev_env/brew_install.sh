@@ -3,10 +3,7 @@
 # Install Brew formulae
 brew install \
   bat \
-  colima \
   coreutils \
-  docker \
-  docker-compose \
   exa \
   gh \
   git-crypt \
@@ -37,6 +34,7 @@ brew install --cask \
   jetbrains-toolbox \
   logi-options-plus \
   macvim \
+  orbstack \
   raycast \
   transmission \
   visual-studio-code \
