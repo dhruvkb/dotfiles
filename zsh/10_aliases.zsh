@@ -43,3 +43,32 @@ alias dcdn="dc down"
 alias dcex="dc exec"
 alias dcdu="dcdn && dcup -d"  # du as in "down up"
 alias dcnu="dcdn -v && dcup -d"  # nu as in "new"
+
+# Reads the file `.bookmarks` and provides a short way to jump to the bookmarked
+# directory.
+#
+# Usage:
+#   goto <name>
+# where
+#   <name> is the name of the bookmark
+function goto() {
+  if [[ $# -eq 0 ]]; then
+    echo "Usage: goto <name>"
+    return
+  fi
+
+  local name=$1
+  local dirmap_file="$HOME/dotfiles/zsh/.bookmarks"
+
+  if [[ ! -f $dirmap_file ]]; then
+    echo "The dirmap file does not exist."
+    return
+  fi
+
+  local dir=$(grep "^$name=" "$dirmap_file" | cut -d'=' -f2-)
+  if [[ -n $dir ]]; then
+    cd $dir
+  else
+    echo "No directory mapping found for $name."
+  fi
+}
