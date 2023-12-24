@@ -2,6 +2,7 @@
 
 # Install Brew formulae
 brew install \
+  awscli \
   bat \
   coreutils \
   exa \
@@ -27,18 +28,25 @@ ln -sfn \
 brew install --cask \
   1password \
   1password-cli \
-  alt-tab \
   arc \
+  cloudflare-warp \
+  coteditor \
   fig \
+  firefox \
   iterm2 \
   jetbrains-toolbox \
+  latest \
   logi-options-plus \
   macvim \
+  obsidian \
   orbstack \
   raycast \
+  signal \
+  slack \
   transmission \
   visual-studio-code \
-  vlc
+  vlc \
+  whatsapp
 
 # Tap into the fonts cask and install JetBrains Mono
 brew tap homebrew/cask-fonts

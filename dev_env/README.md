@@ -18,9 +18,8 @@ and pipx, all major development software is covered.
 > **Note** The pipx script may need `sudo` permissions if the `/opt/pipx/`
 > directory does not exist and needs to be created.
 
-## App Store
+## External
 
-The following apps are installed from the macOS App Store:
+The following apps are installed from outside the macOS App Store:
 
-- Slack
-- WhatsApp Desktop
+- [Desk Controller](https://github.com/DWilliames/idasen-controller-mac)
