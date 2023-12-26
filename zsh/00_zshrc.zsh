@@ -5,5 +5,7 @@ export LANG="en_US.UTF-8"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim -f'
+  # If a Vim GUI is installed, change this.
+  # For example, use 'mvim -f' for MacVim.
+  export EDITOR='vim'
 fi

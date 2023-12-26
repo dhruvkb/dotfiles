@@ -11,6 +11,7 @@ brew install \
   just \
   jq \
   mkcert \
+  neovim \
   pipx \
   postgresql@13 \
   python@3.11 \
@@ -37,7 +38,6 @@ brew install --cask \
   jetbrains-toolbox \
   latest \
   logi-options-plus \
-  macvim \
   obsidian \
   orbstack \
   raycast \
