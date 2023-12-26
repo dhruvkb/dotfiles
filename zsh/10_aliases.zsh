@@ -10,7 +10,6 @@ alias autoproxy="ssh -N -D 8080 dhruvkb@proxy.automattic.com" # A8C
 alias cat="bat"
 alias cwd="pwd"
 alias j="just"
-alias pls="$HOME/Developer/personal/mega/pls/target/release/pls"
 alias ls="pls --grid=true"
 alias lsal="pls --det=std"
 alias tree="eza --tree"

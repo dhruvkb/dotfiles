@@ -51,3 +51,7 @@ brew install --cask \
 # Tap into the fonts cask and install JetBrains Mono
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono-nerd-font
+
+# Tap into the `pls` tap and install `pls`
+brew tap pls-rs/pls
+brew install pls-rs/pls/pls
