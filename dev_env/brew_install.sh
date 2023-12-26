@@ -32,7 +32,6 @@ brew install --cask \
   arc \
   cloudflare-warp \
   coteditor \
-  fig \
   firefox \
   iterm2 \
   jetbrains-toolbox \
