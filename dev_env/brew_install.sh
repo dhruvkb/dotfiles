@@ -5,7 +5,7 @@ brew install \
   awscli \
   bat \
   coreutils \
-  exa \
+  eza \
   gh \
   git-crypt \
   just \

@@ -13,7 +13,7 @@ alias j="just"
 alias pls="$HOME/Developer/personal/mega/pls/target/release/pls"
 alias ls="pls --grid=true"
 alias lsal="pls --det=std"
-alias tree="ls --tree"
+alias tree="eza --tree"
 alias rr='cd $(git root)'
 
 # ZSH aliases
