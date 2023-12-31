@@ -2,4 +2,4 @@
 # =======================
 
 # Include 1Password plugins configuration.
-source "${HOME}/.config/op/plugins.sh"
+source "$HOME/.config/op/plugins.sh"

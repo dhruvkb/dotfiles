@@ -16,9 +16,9 @@ alias tree="eza --tree"
 alias rr='cd $(git root)'
 
 # ZSH aliases
-alias zshconfig='${EDITOR} ~/.zshrc'
-alias omzconfig='${EDITOR} ~/.oh-my-zsh'
-alias sspconfig='${EDITOR} ~/.spaceshiprc'
+alias zshconfig='$EDITOR ~/.zshrc'
+alias omzconfig='$EDITOR ~/.oh-my-zsh'
+alias sspconfig='$EDITOR ~/.spaceshiprc'
 alias zshreload="source ~/.zshrc"
 
 # Brew aliases
