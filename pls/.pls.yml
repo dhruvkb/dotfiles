@@ -1,11 +1,28 @@
-node_specs:
-  - extension: pem
-    icon: key
-  - extension: pdf
-    icon: pdf
-nerd_icons:
-  key: "\uf084"
-  pdf: "\uf411"
-emoji_icons:
-  key: "🔑"
-  pdf: "📄"
+icons:
+  editorconfig: "" # nf-seti-editorconfig
+  prettier: "󰏣" # nf-md-parking
+
+specs:
+  - pattern: ^\.editorconfig$
+    icon: editorconfig
+    importance: -1
+  - pattern: ^\.git$
+    importance: -2
+  - pattern: ^\.idea$
+    importance: -2
+  - pattern: ^prettier\.config\.js$
+    importance: -1
+    icon: prettier
+  - pattern: ^\.prettierignore$
+    importance: -1
+    icon: prettier
+  - pattern: .gitattributes
+    icon: git
+entry_const:
+  typ:
+    symlink:
+      style: magenta
+    char_device:
+      suffix: "<dimmed>󰗧</>"
+    block_device:
+      suffix: "<dimmed></>"

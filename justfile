@@ -47,10 +47,6 @@ ssh:
 zsh:
 	python3 zsh/setup_zsh.py
 
-# Setup `pls`
-pls:
-	python3 pls/setup_pls.py
-
 ###########
 # Aliases #
 ###########
