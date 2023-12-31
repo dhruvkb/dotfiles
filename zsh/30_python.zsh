@@ -1,12 +1,6 @@
 # Python configuration
 # ====================
 
-pathadd() {
-  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-    PATH="${PATH:+"$PATH:"}$1"
-  fi
-}
-
 export PIPX_HOME="/opt/pipx"
 export PIPX_BIN_DIR="$PIPX_HOME/bin"
 
