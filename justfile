@@ -31,6 +31,10 @@ dev:
 	./dev_env/brew_install.sh
 	./dev_env/pipx_install.sh
 
+# Setup iTerm2
+iterm:
+    ./iterm/setup_iterm.sh
+
 # Setup Vim
 vim:
 	python3 vim/setup_vim.py
