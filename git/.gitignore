@@ -1,3 +1,6 @@
 # IDE junk
 .idea/
 .vscode/
+
+# `pls` config
+.pls.yml
