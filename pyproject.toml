@@ -1,16 +1,20 @@
-[tool.poetry]
+[project]
 name = "dotfiles"
 version = "0.0.0"
 description = "A collection of my dotfiles"
-authors = ["Dhruv Bhanushali <dhruv_b@live.com>"]
+authors = [
+    {name = "Dhruv Bhanushali", email = "dhruv_b@live.com"},
+]
 readme = "README.md"
+license = {text = "GPL-3.0-or-later"}
 
-[tool.poetry.dependencies]
-python = "^3.11"
+requires-python = "<4.0,>=3.12"
+dependencies = []
 
-[tool.poetry.group.dev.dependencies]
-pre-commit = "^3.3.2"
+[tool.pdm.dev-dependencies]
+dev = [
+    "pre-commit>=3.3.2,<4",
+]
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.pdm]
+distribution = false

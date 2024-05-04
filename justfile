@@ -6,18 +6,18 @@
 # Dev #
 ########
 
-# Install all Python dependencies using Poetry
+# Install all Python dependencies using PDM
 install:
-	poetry install
+	pdm install
 
 # Install Git hooks for pre-commit
 precommit: install
-	poetry run \
+	pdm run \
 		pre-commit install
 
 # Run pre-commit to lint and reformat files
 lint hook="" *files="":
-	poetry run \
+	pdm run \
 		pre-commit run \
 			{{ hook }} \
 			{{ if files == "" { "--all-files" } else { "--files" } }} {{ files }}
@@ -35,21 +35,25 @@ dev:
 iterm:
     ./iterm/setup_iterm.sh
 
+# Run Python scripts inside PDM context
+py *args:
+	pdm run python {{ args }}
+
 # Setup Vim
 vim:
-	python3 vim/setup_vim.py
+	just py vim/setup_vim.py
 
 # Setup Git
 git:
-	python3 git/setup_git.py
+	just py git/setup_git.py
 
 # Setup SSH
 ssh:
-	python3 ssh/setup_ssh.py
+	just py ssh/setup_ssh.py
 
 # Setup Zsh
 zsh:
-	python3 zsh/setup_zsh.py
+	just py zsh/setup_zsh.py
 
 ###########
 # Aliases #

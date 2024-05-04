@@ -4,3 +4,9 @@
 
 # System files
 .DS_Store
+
+# PDM
+.pdm-python
+
+# Virtual environment
+.venv/
