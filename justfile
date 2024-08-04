@@ -2,9 +2,9 @@
 @_default:
     just --list --unsorted
 
-########
+#######
 # Dev #
-########
+#######
 
 # Install all Python dependencies using PDM
 install:
