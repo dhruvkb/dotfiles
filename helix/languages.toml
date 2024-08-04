@@ -1,0 +1,9 @@
+[[language]]
+name = "markdown"
+file-types = ["md", "mdx"]
+rulers = [80, 120]
+
+[[python]]
+name = "python"
+file-types = ["py"]
+rulers = [80, 120]
