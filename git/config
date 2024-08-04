@@ -1,7 +1,7 @@
 # CAUTION: Symlinked file
 
 [core]
-	excludesfile = /Users/dhruvkb/dotfiles/git/.gitignore
+	excludesfile = ~/dotfiles/git/ignore
 
 [user]
   name = Dhruv Bhanushali
