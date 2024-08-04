@@ -1,7 +1,7 @@
 icons:
   editorconfig: "" # nf-seti-editorconfig
   prettier: "󰏣" # nf-md-parking
-
+  vscode: "󰨞" # nf-md-microsoft_visual_studio_codes
 specs:
   - pattern: ^\.editorconfig$
     icon: editorconfig
@@ -18,6 +18,9 @@ specs:
     icon: prettier
   - pattern: .gitattributes
     icon: git
+  - pattern: \.code-workspace$
+    icon: vscode
+    importance: -1
 entry_const:
   typ:
     symlink:
