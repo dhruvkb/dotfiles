@@ -1,4 +1,5 @@
-# CAUTION: `Include`-d file
+Include ~/.ssh/configs/*
+Include ~/.orbstack/ssh/config
 
 Host *
   # Use 1Password SSH Agent
