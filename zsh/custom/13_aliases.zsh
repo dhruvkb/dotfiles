@@ -1,10 +1,11 @@
 # Aliases
 # =======
 
-# Aliases with vars are single-quoted to prevent expansion at definition time.
+# Some aliases may be redundant with Oh My Zsh plugins. Aliases with
+# variables are single-quoted to prevent expansion at definition time.
 
 # Proxies
-alias autoproxy="ssh -N -D 8080 dhruvkb@proxy.automattic.com" # A8C
+alias autoproxy="ssh -v a8c-proxy"
 
 # CLI tools
 alias cat="bat"
@@ -13,13 +14,13 @@ alias j="just"
 alias ls="pls --grid=true"
 alias lsal="pls --det=std"
 alias tree="eza --tree"
+alias vim="hx"
 alias rr='cd $(git root)'
+alias path='echo -e ${PATH//:/\\n}'
 
-# ZSH aliases
-alias zshconfig='$EDITOR ~/.zshrc'
-alias omzconfig='$EDITOR ~/.oh-my-zsh'
-alias sspconfig='$EDITOR ~/.spaceshiprc'
-alias zshreload="source ~/.zshrc"
+# Zsh aliases
+alias zshconfig='$EDITOR $ZDOTDIR/.zshrc'
+alias zshreload='source $ZDOTDIR/.zshrc'
 
 # Brew aliases
 alias badd="brew install"
