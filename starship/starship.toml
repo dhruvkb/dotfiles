@@ -1,6 +1,9 @@
 # Get editor completions based on the config schema
 "$schema" = "https://starship.rs/config-schema.json"
 
+# Increase timeout because `nodejs` can sometimes take longer.
+command_timeout = 1000
+
 # Removing modules from here disables them
 format = """
 $username\
