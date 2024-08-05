@@ -28,11 +28,12 @@ read_only = " " # nf-fa-lock
 
 [git_branch]
 symbol = " " # nf-oct-git_branch
-# No space after this one.
-format = '\[[$symbol$branch]($style)\]'
+format = '\[[$symbol$branch]($style)\] '
 
 [git_commit]
 tag_symbol = " " # nf-fa-tag
+only_detached = false
+format = '\[[ $hash]($style)\] '
 
 [docker_context]
 symbol = "  " # nf-oct-container
