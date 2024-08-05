@@ -1,12 +1,12 @@
 # IDE files
-.vscode
-.idea
+.vscode/
+.idea/
 
 # System files
 .DS_Store
 
-# PDM
-.pdm-python
+# pre-commit
+pre-commit.pyz
 
 # Virtual environment
 .venv/
