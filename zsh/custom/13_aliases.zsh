@@ -18,6 +18,10 @@ alias vim="hx"
 alias rr='cd $(git root)'
 alias path='echo -e ${PATH//:/\\n}'
 
+# OS X user defaults system aliases
+alias dr="defaults read"
+alias dw="defaults write"
+
 # Zsh aliases
 alias zshconfig='$EDITOR $ZDOTDIR/.zshrc'
 alias zshreload='source $ZDOTDIR/.zshrc'
