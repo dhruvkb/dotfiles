@@ -10,3 +10,6 @@ pre-commit.pyz
 
 # Virtual environment
 .venv/
+
+# Ignore SSH sub-configs
+ssh/configs/*-config
