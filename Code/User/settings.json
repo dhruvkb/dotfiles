@@ -161,6 +161,7 @@
 	// Git
 	"git.confirmSync": false,
 	"git.openRepositoryInParentFolders": "always",
+	"scm.showHistoryGraph": false,
 
 	// ESlint
 	"eslint.format.enable": true,
