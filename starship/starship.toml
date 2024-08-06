@@ -23,6 +23,14 @@ $battery\
 $line_break\
 $character"""
 
+[username]
+format = '[ $user]($style) @ ' # nf-fa-circle_user
+
+[hostname]
+ssh_symbol = " " # nf-fa-laptop
+style = "bold green"
+format = '[$ssh_symbol$hostname]($style) · '
+
 [directory]
 read_only = " " # nf-fa-lock
 
