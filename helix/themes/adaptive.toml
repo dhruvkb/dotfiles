@@ -1,0 +1,3 @@
+# The following line automatically switches based on the OS theme.
+# Do not modify it by hand.
+inherits = "github_dark"
