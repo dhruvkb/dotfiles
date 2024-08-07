@@ -96,6 +96,16 @@ o() {
 	fi
 }
 
+# Run a Raycast script by its name.
+#
+# Usage:
+#   ray <name>
+# where
+#   <name> is the name of the Raycast script
+ray() {
+	~/dotfiles/raycast/scripts/$1.sh &>/dev/null
+}
+
 # Serve the given directory, or the current directory, using Python HTTP
 # server.
 #
