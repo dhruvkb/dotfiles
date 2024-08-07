@@ -11,12 +11,14 @@ alias autoproxy="ssh -v a8c-proxy"
 alias cat="bat"
 alias cwd="pwd"
 alias j="just"
-alias ls="pls --grid=true"
-alias lsal="pls --det=std"
 alias tree="eza --tree"
 alias vim='$EDITOR'
 alias rr='cd $(git root)'
 alias path='echo -e ${PATH//:/\\n}'
+
+# ls aliases
+alias ls="pls -g true"
+alias {l,la,ll,lsa,lsal}="ls -d std"
 
 # OS X user defaults system aliases
 alias dr="defaults read"
