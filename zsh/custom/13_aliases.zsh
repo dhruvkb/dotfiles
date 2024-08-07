@@ -14,7 +14,7 @@ alias j="just"
 alias ls="pls --grid=true"
 alias lsal="pls --det=std"
 alias tree="eza --tree"
-alias vim="hx"
+alias vim='$EDITOR'
 alias rr='cd $(git root)'
 alias path='echo -e ${PATH//:/\\n}'
 
