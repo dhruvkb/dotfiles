@@ -12,9 +12,13 @@ alias cat="bat"
 alias cwd="pwd"
 alias j="just"
 alias tree="eza --tree"
-alias vim='$EDITOR'
 alias rr='cd $(git root)'
 alias path='echo -e ${PATH//:/\\n}'
+
+# Editors
+alias hx='$EDITOR'
+alias vim='$EDITOR'
+alias vi='$EDITOR'
 
 # ls aliases
 alias ls="pls -g true"
