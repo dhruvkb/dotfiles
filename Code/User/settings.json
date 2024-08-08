@@ -16,7 +16,7 @@
 	"workbench.editor.empty.hint": "hidden",
 	"workbench.tree.renderIndentGuides": "always",
 
-	// "workbench.colorTheme": "Catppuccin Mocha",
+	"window.autoDetectColorScheme": true,
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.productIconTheme": "fluent-icons",
 
