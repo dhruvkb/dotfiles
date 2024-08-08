@@ -5,4 +5,10 @@
 export LANG="en_US.UTF-8"
 
 # Set preferred editor for local and remote sessions.
-export EDITOR="hx"
+if command -v hx 2>/dev/null; then
+  export EDITOR="hx"
+elif command -v vim 2>/dev/null; then
+  export EDITOR="vim"
+else
+  export EDITOR="vi"
+fi
