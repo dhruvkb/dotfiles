@@ -170,7 +170,5 @@
 	"diffEditor.ignoreTrimWhitespace": false,
 	"github.copilot.editor.enableAutoCompletions": true,
 	"githubPullRequests.fileListLayout": "tree",
-	"githubPullRequests.pullBranch": "never",
-	"gitlens.codeLens.enabled": false,
-	"gitlens.currentLine.enabled": false
+	"githubPullRequests.pullBranch": "never"
 }
