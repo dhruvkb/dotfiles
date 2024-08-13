@@ -1,0 +1,7 @@
+set directory=$XDG_CACHE_HOME/vim,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set runtimepath=$HOME/dotfiles/vim,$HOME/dotfiles/vim/after,$VIM,$VIMRUNTIME
+let $MYVIMRC="$HOME/dotfiles/vim/vimrc"
+
+set number
