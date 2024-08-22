@@ -16,3 +16,6 @@ __pycache__/
 
 # Ignore SSH sub-configs
 ssh/configs/*-config
+
+# Ignore Catppuccin themes
+iTerm2/colors/catppuccin_*.itermcolors
