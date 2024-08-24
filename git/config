@@ -1,21 +1,17 @@
 # CAUTION: Symlinked file
 
-[core]
-	excludesfile = ~/dotfiles/git/ignore
 
-[user]
-  name = Dhruv Bhanushali
-  email = dhruv_b@live.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII57SP4Vf5B6n6SThAEWVWHedM9T/Cj3P3nEPawE4Vlv
+[alias]
+  yeet = reset --hard HEAD
+  root = rev-parse --show-toplevel
 
 [commit]
   gpgsign = true
 
-[pull]
-	rebase = false
+[core]
+  excludesfile = ~/dotfiles/git/ignore
+  pager = delta
 
-[tag]
-  gpgsign = true
 
 [gpg]
   format = ssh
@@ -26,12 +22,21 @@
 [init]
   defaultbranch = main
 
-[rebase]
-  autosquash = true
 
-[alias]
-  yeet = reset --hard HEAD
-  root = rev-parse --show-toplevel
 
 [pager]
   branch = cat
+
+[pull]
+  rebase = false
+
+[rebase]
+  autosquash = true
+
+[tag]
+  gpgsign = true
+
+[user]
+  name = Dhruv Bhanushali
+  email = dhruv_b@live.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII57SP4Vf5B6n6SThAEWVWHedM9T/Cj3P3nEPawE4Vlv
