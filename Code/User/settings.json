@@ -16,17 +16,14 @@
 	"workbench.editor.empty.hint": "hidden",
 	"workbench.tree.renderIndentGuides": "always",
 
-	"window.autoDetectColorScheme": true,
-	"workbench.preferredLightColorTheme": "Catppuccin Latte",
-	"workbench.preferredDarkColorTheme": "Catppuccin Mocha",
-	"workbench.iconTheme": "material-icon-theme",
-	"workbench.productIconTheme": "fluent-icons",
-
 	// Theme
 	// =====
 
-	"material-icon-theme.hidesExplorerArrows": false,
-	"material-icon-theme.activeIconPack": "vue",
+	"window.autoDetectColorScheme": true,
+	"workbench.preferredLightColorTheme": "Catppuccin Latte",
+	"workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+	"workbench.iconTheme": "catppuccin-mocha",
+	"workbench.productIconTheme": "fluent-icons",
 
 	// Editor
 	// ======
