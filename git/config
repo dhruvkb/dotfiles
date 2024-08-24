@@ -12,6 +12,11 @@
   excludesfile = ~/dotfiles/git/ignore
   pager = delta
 
+[delta]
+  navigate = true
+
+[diff]
+  colorMoved = default
 
 [gpg]
   format = ssh
@@ -22,7 +27,11 @@
 [init]
   defaultbranch = main
 
+[interactive]
+  diffFilter = delta --color-only
 
+[merge]
+  conflictstyle = diff3
 
 [pager]
   branch = cat
