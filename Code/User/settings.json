@@ -35,6 +35,8 @@
 
 	// Decoration
 	"editor.rulers": [72, 80, 88, 120],
+
+	// Whitespace
 	"editor.tabSize": 2,
 	"editor.insertSpaces": false,
 	"editor.renderWhitespace": "boundary",
@@ -91,6 +93,9 @@
 	// Font
 	"terminal.integrated.fontSize": 14,
 	"terminal.integrated.lineHeight": 1.5,
+
+	// Whitespace
+	"terminal.integrated.tabStopWidth": 2,
 
 	// Text
 	"terminal.integrated.drawBoldTextInBrightColors": false,
