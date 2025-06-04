@@ -1,0 +1,26 @@
+theme = light:catppuccin-latte,dark:catppuccin-mocha
+
+font-family = "Monaspace Neon Frozen"
+font-family = "Symbols Nerd Font"
+font-size = 14
+
+adjust-cell-width = -5%
+adjust-cell-height = 20%
+
+window-padding-x = 10
+window-padding-y = 10
+
+# Opt + Arrow keys should move the cursor one word at a time.
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+
+# Types the command to open the Ghostty config from the standard XDG
+# location in my preferred CLI editor and hits Enter.
+keybind = super+comma=text:$EDITOR $XDG_CONFIG_HOME/ghostty/config\r
+
+# Super + Ctrl is the toggle for launching apps on my machine.
+# For example Super + Ctrl + T launches a regular Ghostty window.
+keybind = global:super+ctrl+grave_accent=toggle_quick_terminal
+
+shell-integration-features = sudo
+shell-integration-features = no-cursor
