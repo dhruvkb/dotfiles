@@ -51,7 +51,7 @@ CASKS=(
 	arc
 	automattic-texts
 	bluetility
-	cloudflare-warp
+	cloudflare-warp # needs password entry
 	coteditor
 	cursor
 	firefox
@@ -60,23 +60,23 @@ CASKS=(
 	github
 	keyboardcleantool
 	latest
-	logi-options+
+	logi-options+ # needs restart
 	msty
 	netnewswire
-	obsidian
+	obsidian # needs additional steps at launch
 	openmtp
 	orbstack
 	orion
 	raycast
 	slack
 	transmission
-	tunnelblick
+	tunnelblick # needs to be moved to `/Applications`
 	visual-studio-code
 	vlc
 	whatsapp
 	yaak
 	zed
-	zoom
+	zoom # needs password entry
 )
 
 /opt/homebrew/bin/brew install --cask ${CASKS[@]}
