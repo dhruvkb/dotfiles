@@ -49,3 +49,8 @@
   name = Dhruv Bhanushali
   email = dhruv_b@live.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII57SP4Vf5B6n6SThAEWVWHedM9T/Cj3P3nEPawE4Vlv
+
+# All repos are placed in ~/Developer under folders whose names
+# correspond to the GitHub username of their owners.
+[includeIf "gitdir:~/Developer/Finrep-ai/"]
+   path = ~/dotfiles/git/finrep.gitconfig

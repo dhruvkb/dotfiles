@@ -1,0 +1,6 @@
+[core]
+  sshCommand = ssh -v -i ~/.ssh/id_ed25519_finrep.pub
+
+[user]
+  email = dhruv_b@finrep.ai
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINcrX2nqJzo9d7++W+O0T9/ZIVSaNp0GaBzVZ4R76qz6
