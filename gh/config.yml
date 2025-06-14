@@ -1,0 +1,8 @@
+version: "1"
+# This file only sets options where they differ from the default.
+# See https://cli.github.com/manual/gh_config for all available options.
+
+# What protocol to use when performing git operations. Supported values: ssh, https
+git_protocol: ssh
+# Whether to display labels using their RGB hex color codes in terminals that support truecolor
+color_labels: enabled
