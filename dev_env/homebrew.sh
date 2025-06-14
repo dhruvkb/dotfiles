@@ -57,6 +57,7 @@ CASKS=(
 	firefox
 	font-monaspace
 	font-symbols-only-nerd-font
+	ghostty
 	github
 	keyboardcleantool
 	latest
