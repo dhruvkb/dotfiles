@@ -1,15 +1,14 @@
 # Python configuration
 # ====================
 
-# pipx
-# ====
+# uv
+# ==
 
-# Make pipx folder structure similar to that of Homebrew.
-export PIPX_HOME="/opt/pipx"
-export PIPX_BIN_DIR="$PIPX_HOME/bin"
+# Make uv folder structure similar to that of Homebrew.
+export UV_TOOL_BIN_DIR="/opt/uv/bin"
 
-# Load pipx binaries on the path.
-pathadd "$PIPX_BIN_DIR"
+# Load uv binaries on the path.
+pathadd "$UV_TOOL_BIN_DIR"
 
 # IPython
 # =======
