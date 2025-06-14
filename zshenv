@@ -9,3 +9,7 @@ export MACOS_CONFIG_HOME="$HOME/Library/Application Support"
 
 # All other configuration goes in `ZDOTDIR`.
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+# Make Zsh write history to XDG-compatible path.
+# This, for some reason, did not work from `dotfiles/zsh/custom/09_histories.zsh`.
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
