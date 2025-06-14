@@ -7,7 +7,9 @@
 # - Install, and if necessary, update the listed casks.
 
 # Update Homebrew if it is already installed, install if it isn't.
-if $(command -v brew &>/dev/null); then
+# Since we cannot rely on `brew` to be on the path, we check if the
+# Homebrew executable at `/opt/homebrew/bin/brew` exists.
+if [ -f /opt/homebrew/bin/brew ]; then
 	echo "Homebrew is already installed."
 	brew update
 else
@@ -40,7 +42,7 @@ FORMULAE=(
 	zx
 )
 
-brew install ${FORMULAE[@]}
+/opt/homebrew/bin/brew install ${FORMULAE[@]}
 
 # Install Brew casks
 CASKS=(
@@ -77,4 +79,4 @@ CASKS=(
 	zoom
 )
 
-brew install --cask ${CASKS[@]}
+/opt/homebrew/bin/brew install --cask ${CASKS[@]}
