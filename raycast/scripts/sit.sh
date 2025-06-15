@@ -27,7 +27,7 @@ DESK_UUID="2463056C-4B86-D6F6-E42D-2CA4A18A21C4"
 /opt/uv/bin/linak-controller \
   --mac-address "$DESK_UUID" \
   --move-to 620 \
-  >>"$XDG_STATE_HOME/raycast/stand.log" \
+  >>"$XDG_STATE_HOME/raycast/sit.log" \
   2>&1 \
   &
 
