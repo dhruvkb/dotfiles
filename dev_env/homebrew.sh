@@ -50,6 +50,7 @@ CASKS=(
 	1password-cli
 	arc
 	automattic-texts
+	beeper
 	bluetility
 	cloudflare-warp # needs password entry
 	coteditor
