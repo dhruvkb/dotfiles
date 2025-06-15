@@ -1,5 +1,5 @@
 [core]
-  sshCommand = ssh -v -i ~/.ssh/id_ed25519_finrep.pub
+  sshCommand = ssh -i ~/.ssh/id_ed25519_finrep.pub
 
 [user]
   email = dhruv_b@finrep.ai
