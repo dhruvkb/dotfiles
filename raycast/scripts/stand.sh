@@ -18,9 +18,14 @@ mkdir -p "$XDG_STATE_HOME/raycast"
 # Write timestamp to log file.
 echo "$(date) stand.sh" >> "$XDG_STATE_HOME/raycast/stand.log"
 
+# Get the UUID of the desk.
+# This may change when changing devices.
+# /opt/uv/bin/linak-controller --scan | grep "Desk 5097" | awk -F':' '{print $1}'
+DESK_UUID="2463056C-4B86-D6F6-E42D-2CA4A18A21C4"
+
 # Run the linak-controller command in background with output redirected to log file.
 /opt/uv/bin/linak-controller \
-  --mac-address 84F900A3-AB7F-C330-501D-575AB6D66797 \
+  --mac-address "$DESK_UUID" \
   --move-to 1020 \
   >>"$XDG_STATE_HOME/raycast/stand.log" \
   2>&1 \
