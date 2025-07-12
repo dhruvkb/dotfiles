@@ -4,9 +4,6 @@
 # Some aliases may be redundant with Oh My Zsh plugins. Aliases with
 # variables are single-quoted to prevent expansion at definition time.
 
-# Proxies
-alias autoproxy="ssh -v a8c-proxy"
-
 # CLI tools
 alias cat="bat"
 alias cwd="pwd"
