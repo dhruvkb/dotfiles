@@ -7,14 +7,28 @@
 -- - If some text is selected, it will be wrapped in the opening and
 --   closing characters. The selection will expand to include the
 --   opening and closing characters.
+-- - If Opt ⌥ is pressed while typing an opening character, only the
+--   closing character is added. The cursor moves to after the closing
+--   character. This is useful with LLM autocomplete.
 
-local CHARACTER_PAIRS = {
-	["("] = ")",
-	["{"] = "}",
-	["["] = "]",
-	["<"] = ">",
-	['"'] = '"',
-	["`"] = "`",
+-- Mapping of key codes and modifiers to character pairs
+local KEYCODE_PAIRS = {
+	[25] = { -- 9 key
+		shift = { opening = "(", closing = ")" },
+	},
+	[33] = { -- [ key
+		none = { opening = "[", closing = "]" },
+		shift = { opening = "{", closing = "}" },
+	},
+	[43] = { -- , key
+		shift = { opening = "<", closing = ">" },
+	},
+	[39] = { -- ; key
+		shift = { opening = '"', closing = '"' },
+	},
+	[50] = { -- ` key
+		none = { opening = "`", closing = "`" },
+	},
 }
 local TIMEOUT = 0.1 -- seconds
 local ICON_SIZE = { h = 18, w = 18 }
@@ -139,15 +153,39 @@ end
 -- press. If it is not, it lets the event pass through.
 function handleKeyDown(event)
 	local flags = event:getFlags()
-	local char = event:getCharacters()
+	local keyCode = event:getKeyCode()
 
-	local hasMods = flags.alt or flags.ctrl or flags.fn or flags.cmd
-	if hasMods or not CHARACTER_PAIRS[char] then
+	-- We handle Shift ⇧ and Opt ⌥ mods. If there is any other mod, we let the
+	-- event pass through.
+	local hasMods = flags.ctrl or flags.fn or flags.cmd
+	if hasMods then
 		return false -- Let the event pass through.
 	end
 
-	local wrapFunction = wrapSelection(char, CHARACTER_PAIRS[char], function () end)
-	getSelection(wrapFunction)
+	-- Look up the key code in our mapping
+	local keyMapping = KEYCODE_PAIRS[keyCode]
+	if not keyMapping then
+		return false -- Key code is not handled by this script.
+	end
+
+	local pair = nil
+	if flags.shift and keyMapping.shift then
+		pair = keyMapping.shift
+	elseif not flags.shift and keyMapping.none then
+		pair = keyMapping.none
+	end
+	if not pair then
+		-- There is no mapping for this keycode - modifier combination.
+		return false -- Let the event pass through.
+	end
+
+	if flags.alt then
+		safelyType("", "", pair.closing)
+	else
+		local wrapFunction = wrapSelection(pair.opening, pair.closing, function () end)
+		getSelection(wrapFunction)
+	end
+
 	return true -- Consume the event.
 end
 
