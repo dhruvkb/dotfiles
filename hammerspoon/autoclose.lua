@@ -179,12 +179,8 @@ function handleKeyDown(event)
 		return false -- Let the event pass through.
 	end
 
-	if flags.alt then
-		safelyType("", "", pair.closing)
-	else
-		local wrapFunction = wrapSelection(pair.opening, pair.closing, function () end)
-		getSelection(wrapFunction)
-	end
+	local wrapFunction = wrapSelection(pair.opening, pair.closing, function () end)
+	getSelection(wrapFunction)
 
 	return true -- Consume the event.
 end
