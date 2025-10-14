@@ -5,6 +5,9 @@ rulers = [80, 120]
 cursorline = true
 color-modes = true
 
+[editor.auto-save]
+focus-lost = true
+
 [editor.file-picker]
 hidden = false
 
@@ -17,5 +20,9 @@ select = "underline"
 render = true
 
 [keys.normal]
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
+G = "goto_file_end"
 C-s = ":w"
+"C-d" = ":wq"
 "C-," = ":open ~/dotfiles/helix/config.toml"
