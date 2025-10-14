@@ -60,6 +60,7 @@ CASKS=(
 	font-symbols-only-nerd-font
 	ghostty
 	github
+	hammerspoon
 	keyboardcleantool
 	latest
 	logi-options+ # needs restart
