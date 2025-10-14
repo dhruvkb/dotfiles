@@ -34,6 +34,6 @@ fi
 sed -i '' \
 	-e 's|^ZSH_THEME=.*$|ZSH_THEME=""|' \
 	-e "s|^# zstyle ':omz:update' mode auto|zstyle ':omz:update' mode auto|" \
-	-e 's|^plugins=.*$|plugins=(brew git nvm terraform)|' \
+	-e 's|^plugins=.*$|plugins=(brew git nvm)|' \
 	-e 's|^.*ZSH_CUSTOM=.*$|ZSH_CUSTOM="$HOME/dotfiles/zsh/custom"|' \
 	"$ZDOTDIR/.zshrc"
