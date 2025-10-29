@@ -16,6 +16,7 @@ package.path = package.path .. ";" .. os.getenv("HOME") .. "/dotfiles/hammerspoo
 
 local modules = {}
 local moduleNames = {
+	"reminders_man",
 	"key_pairing",
 }
 
