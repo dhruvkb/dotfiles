@@ -45,6 +45,10 @@ function reloadConfig()
 		if module.stop then
 			module.stop()
 		end
+
+		if module.del then
+			module.del()
+		end
 	end
 
 	hs.reload()

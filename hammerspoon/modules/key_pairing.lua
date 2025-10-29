@@ -202,14 +202,18 @@ function M.init()
 
 	M.config.eventTap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, M.handleKeyDown)
 
-	M.config.keyBinding = hs.hotkey.new({"cmd", "ctrl", "shift"}, "9", M.toggle) -- equal to "Cmd ⌘" + "Ctrl ⌃" + "("
+	M.config.keyBinding = hs.hotkey.bind({"cmd", "ctrl", "shift"}, "9", M.toggle) -- Cmd ⌘ + Ctrl ⌃ + Shift ⇧ + 9
 	M.config.menubarItem = hs.menubar.new()
 	M.config.menubarItem:setClickCallback(M.toggle)
 end
 
+function M.del()
+	M.config.keyBinding:disable()
+	M.config.menubarItem:delete()
+end
+
 function M.start()
 	M.config.isEnabled = true
-	M.config.keyBinding:enable()
 	M.config.eventTap:start()
 	M.updateIcon()
 
@@ -218,7 +222,6 @@ end
 
 function M.stop()
 	M.config.isEnabled = false
-	M.config.keyBinding:disable()
 	M.config.eventTap:stop()
 	M.updateIcon()
 
