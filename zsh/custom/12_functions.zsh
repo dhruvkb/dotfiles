@@ -27,36 +27,40 @@ function xdg() {
 	esac
 }
 
-# Reads the file `.bookmarks` and provides a short way to refer to the
-# bookmarked directory. An optional command can be specified to run
-# instead of `cd` (e.g. to open the directory in an IDE or in Finder).
+# Reads the file `.bookmarks` and provides a short way to `cd` to a
+# bookmarked directory.
 #
 # Usage:
-#   goto <name> [<cmd> = cd]
+#   goto        - print help
+#   goto --edit - open bookmarks file in $EDITOR
+#   goto <name> - cd to the bookmarked directory
 # where
-#   <name> is the name of the bookmark
-#   <cmd> is the name of the command to run (default: cd)
+#   <name> is the name of a bookmark from the bookmarks file
 function goto() {
+	local bookmarks_file="$HOME/dotfiles/zsh/.bookmarks"
+
 	if [[ $# -eq 0 ]]; then
-		echo "Usage: goto <name> [<cmd> = cd]"
+		echo "Usage: goto <name>"
+		echo "       goto --edit"
 		return
+	fi
+
+	if [[ $1 == "--edit" ]]; then
+		$EDITOR "$bookmarks_file"
+		return
+	fi
+
+	if [[ ! -f $bookmarks_file ]]; then
+		echo "root=/" > "$bookmarks_file"
+		echo "Created new bookmarks file at $bookmarks_file."
 	fi
 
 	local name=$1
-	local cmd=${2:-cd}
-
-	local bookmarks_file="$HOME/dotfiles/zsh/.bookmarks"
-	if [[ ! -f $bookmarks_file ]]; then
-		echo "The dirmap file does not exist."
-		return
-	fi
-
 	local dir=$(grep "^$name=" "$bookmarks_file" | cut -d'=' -f2-)
 	if [[ -n $dir ]]; then
-		echo "$cmd \"$dir\"" # Print the command to be executed.
-		$cmd "$dir"
+		cd "$dir"
 	else
-		echo "No directory mapping found for $name."
+		echo "No bookmark found for $name."
 	fi
 }
 
@@ -150,7 +154,13 @@ ghauth() {
 
 	local username=$1
 
-	if ! env GH_PAGER="" op plugin run -- gh api "users/$username" --silent 2>/dev/null; then
+	env GH_PAGER="" \
+		op plugin run -- gh api \
+			"users/$username" \
+			--silent \
+			2>/dev/null
+	local script_exit_code=$?
+	if [[ $script_exit_code -ne 0 ]]; then
 		echo "Error: GitHub user '$username' not found"
 		return 1
 	fi
