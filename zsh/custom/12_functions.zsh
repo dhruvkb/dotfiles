@@ -134,3 +134,41 @@ mkcd() {
 
 	mkdir -p $@ && cd $_
 }
+
+# Get the user's name and email from their latest Git commit, formatted
+# as `Full Name <email@domain.tld>`.
+#
+# Usage
+#   ghauth <username> - get the name and email of the GitHub user
+# where
+#   <username> is the GitHub handle of the author
+ghauth() {
+	if [[ $# -eq 0 ]]; then
+		echo "Usage: ghauth <username>"
+		return
+	fi
+
+	local username=$1
+
+	if ! env GH_PAGER="" op plugin run -- gh api "users/$username" --silent 2>/dev/null; then
+		echo "Error: GitHub user '$username' not found"
+		return 1
+	fi
+
+	env GH_PAGER="" \
+		op plugin run -- gh search commits \
+			--author "$username" \
+			--sort author-date \
+			--limit 1 \
+			--json commit \
+			--jq '.[0].commit.author | "\(.name) <\(.email)>"'
+}
+
+# Print a new UUID4 string. This should print both the hyphenated and
+# non-hyphenated versions of the UUID, for use in different contexts.
+#
+# Usage
+#   uuid4 - print two forms of a new UUID4 string
+uuid4() {
+	python3 -c 'import uuid; u = uuid.uuid4(); print(u); print(u.hex)'
+}
