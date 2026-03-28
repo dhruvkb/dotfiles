@@ -7,3 +7,6 @@
 
 # `pls` config
 .pls.yml
+
+# AI
+.claude/
