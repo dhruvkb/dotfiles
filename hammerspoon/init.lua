@@ -6,6 +6,10 @@ This is the main entrypoint for Hammerspoon. It loads modules and sets
 up the configuration reload mechanism.
 ]]--
 
+-- Enable inter-process communication to allow other processes to message Hammerspoon.
+-- This is also required for the `hs` CLI tool to work.
+require("hs.ipc")
+
 package.path = package.path .. ";" .. os.getenv("HOME") .. "/dotfiles/hammerspoon/?.lua"
 
 --  __  __           _       _
