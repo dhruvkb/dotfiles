@@ -1,0 +1,18 @@
+#!/bin/sh
+# Edit the staged version of a file without touching the working tree.
+file=$1
+tmp=$(mktemp)
+bak=$tmp.bak
+
+if git ls-files --error-unmatch "$file" >/dev/null 2>&1; then
+	git show ":$file" > "$tmp"
+else
+	echo 'New file. Starting with blank staged version.' >&2
+	git update-index --add --cacheinfo 100644 "$(git hash-object -w "$tmp")" "$file"
+fi
+
+cp "$tmp" "$bak"
+"${EDITOR:-vi}" "$tmp"
+git update-index --cacheinfo 100644 "$(git hash-object -w "$tmp")" "$file"
+echo "Backup of previous staged version at: $bak"
+rm "$tmp"
