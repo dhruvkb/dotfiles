@@ -1,0 +1,5 @@
+#!/bin/sh
+echo 'yeet: discards all uncommitted changes (both working tree and staged).'
+printf 'Press Enter to continue, Ctrl+C to abort: '
+read _ </dev/tty || exit 1
+git reset --hard HEAD
