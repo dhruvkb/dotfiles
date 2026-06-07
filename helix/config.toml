@@ -1,3 +1,6 @@
+# CAUTION: Symlinked file!
+# ORIGINAL: `dotfiles/helix/config.toml`
+
 theme = "catppuccin_mocha"
 
 [editor]

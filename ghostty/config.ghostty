@@ -1,3 +1,6 @@
+# CAUTION: Symlinked file!
+# ORIGINAL: `dotfiles/ghostty/config.ghostty`
+
 theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 
 font-family = "Monaspace Neon"

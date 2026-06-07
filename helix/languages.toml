@@ -1,3 +1,6 @@
+# CAUTION: Symlinked file!
+# ORIGINAL: `dotfiles/helix/languages.toml`
+
 [[language]]
 name = "markdown"
 file-types = ["md", "mdx"]
