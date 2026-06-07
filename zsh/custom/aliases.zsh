@@ -51,3 +51,6 @@ alias dcdn="dc down"
 alias dcex="dc exec"
 alias dcdu="dcdn && dcup -d"  # du as in "down up"
 alias dcnu="dcdn -v && dcup -d"  # nu as in "new"
+
+# OpenCode
+alias oc="opencode"
