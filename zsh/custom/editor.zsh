@@ -10,6 +10,7 @@ else
   export EDITOR="vi"
 fi
 
+# Aliases
 alias hx='$EDITOR'
 alias vim='$EDITOR'
 alias vi='$EDITOR'
