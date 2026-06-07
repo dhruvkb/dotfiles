@@ -10,13 +10,16 @@ adjust-cell-height = 20%
 window-padding-x = 10
 window-padding-y = 10
 
-# Types the command to open the Ghostty config from the standard XDG
-# location in my preferred CLI editor and hits Enter.
-keybind = super+comma=text:$EDITOR $XDG_CONFIG_HOME/ghostty/config\r
+# Open the Ghostty config using the default editor. If there is a typed command
+# on the shell, it will be there once the editor is closed.
+keybind = super+,=text:\x1bqghostty +edit-config\x0d
 
-# Super + Ctrl is the toggle for launching apps on my machine.
-# For example Super + Ctrl + T launches a regular Ghostty window.
+# Super (Cmd ⌘) + Ctrl ⌃ is the modifier for launching apps, extensively used by
+# Raycast. For example ⌘ ⌃ G launches Ghostty.
 keybind = global:super+ctrl+grave_accent=toggle_quick_terminal
+
+# Types newline instead of sending Enter ⏎.
+keybind = shift+enter=text:\n
 
 shell-integration-features = sudo
 shell-integration-features = no-cursor
