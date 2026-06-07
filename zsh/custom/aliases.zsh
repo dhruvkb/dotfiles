@@ -4,6 +4,14 @@
 # Some aliases may be redundant with Oh My Zsh plugins. Aliases with
 # variables are single-quoted to prevent expansion at definition time.
 
+# Directories
+alias -g ...="../.."
+alias -g ....="../../.."
+alias -g .....="../../../.."
+alias -g ......="../../../../.."
+alias -- -="cd -"
+alias d="dirs -v"
+
 # CLI tools
 alias cat="bat"
 alias cwd="pwd"
