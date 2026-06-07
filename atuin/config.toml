@@ -1,2 +1,6 @@
+# Pressing Up ↑ shows only commands from current session.
+# Pressing Ctrl ⌃ + R shows all past commands.
+filter_mode_shell_up_key_binding = "session"
+
 [logs]
 dir="~/.local/state/atuin/logs"
