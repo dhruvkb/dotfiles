@@ -2,7 +2,7 @@
 # XDG specification.
 
 # Make Zsh write history to XDG-compatible path.
-export HISTFILE="$XDG_STATE_HOME/zsh/history"
+export HISTFILE="$XDG_STATE_HOME/zsh_history"
 
 # Make less write history to XDG-compatible path.
 export LESSHISTFILE="$XDG_STATE_HOME/lesshst"
@@ -13,9 +13,18 @@ export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_repl_history"
 # Make PSQL write history to XDG-compatible path.
 export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
 
+# Make SQLite write history to XDG-compatible path.
+export SQLITE_HISTORY="$XDG_STATE_HOME/sqlite_history"
+
+# Make MySQL write history to XDG-compatible path.
+export MYSQL_HISTFILE="$XDG_STATE_HOME/mysql_history"
+
 # Make Python write history to XDG-compatible path.
 # This is only supported on Python 3.13 and above.
 export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
 
 # Make Redis write history to XDG-compatible path.
-export REDISCLI_HISTFILE="$XDG_STATE_HOME/redis/rediscli_history"
+export REDISCLI_HISTFILE="$XDG_STATE_HOME/rediscli_history"
+
+# Make zx write history to XDG-compatible path.
+export ZX_REPL_HISTORY="$XDG_STATE_HOME/zx_repl_history"
