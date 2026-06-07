@@ -4,6 +4,17 @@
 # This script contains a collection of functions that perform common
 # tasks, which cannot be accomplished using aliases.
 
+# Reload the shell session.
+#
+# This is useful for applying changes to the shell configuration without having
+# to close and reopen the terminal (or open a fresh one).
+#
+# Usage:
+#   reload
+reload() {
+  exec zsh
+}
+
 # Go to the directories from the XDG Base Directory specification.
 #
 # Usage
@@ -98,16 +109,6 @@ o() {
 	else
 		open "$@"
 	fi
-}
-
-# Run a Raycast script by its name.
-#
-# Usage:
-#   ray <name>
-# where
-#   <name> is the name of the Raycast script
-ray() {
-	~/dotfiles/raycast/scripts/$1.sh &>/dev/null
 }
 
 # Serve the given directory, or the current directory, using Python HTTP
