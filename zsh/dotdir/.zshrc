@@ -3,12 +3,12 @@
 # Add the given directory to $PATH, if it is not already present.
 #
 # Usage:
-#   pathadd <directory>
+#   pathadd <dir>
 # where
-#   <directory> is the directory to add to $PATH
+#   <dir> is the dir to add to $PATH
 pathadd() {
 	if [[ $# -eq 0 ]]; then
-		echo "Usage: pathadd <directory>"
+		echo "Usage: pathadd <dir>"
 		return
 	fi
 
@@ -17,6 +17,23 @@ pathadd() {
 	if [ -d "$dir" ] && [[ ":$PATH:" != *":$dir:"* ]]; then
 		PATH="${PATH:+"$PATH:"}$dir"
 	fi
+}
+
+# Check if the given command exists on the system.
+#
+# Usage:
+#   has <cmd>
+# where
+#   <cmd> is the command to check for
+has() {
+	if [[ $# -eq 0 ]]; then
+		echo "Usage: has <cmd>"
+		return
+	fi
+
+	local cmd=$1
+
+	command -v "$cmd" &>/dev/null
 }
 
 pathadd "$XDG_BIN_HOME"

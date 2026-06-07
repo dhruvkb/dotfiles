@@ -4,5 +4,9 @@
 # Configure Atuin to store the config file in the dotfiles repository.
 export ATUIN_CONFIG_DIR="$HOME/dotfiles/atuin"
 
-# Enable Autuin's Zsh integration.
-eval "$(atuin init zsh)"
+# Enable Atuin's Zsh integration.
+if has atuin; then
+	eval "$(atuin init zsh)"
+else
+	echo "Atuin not found."
+fi

@@ -9,4 +9,8 @@ export STARSHIP_CONFIG="$HOME/dotfiles/starship/starship.toml"
 export STARSHIP_LOG="error"
 
 # Load Starship prompt.
-eval "$(starship init zsh)"
+if has starship; then
+	eval "$(starship init zsh)"
+else
+	echo "Starship not found."
+fi
