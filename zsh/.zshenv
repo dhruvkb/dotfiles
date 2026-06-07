@@ -1,3 +1,6 @@
+# CAUTION: Symlinked file!
+# ORIGINAL: `dotfiles/zsh/.zshenv`
+
 # XDG specification variables are used everywhere so they need to be set first.
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
