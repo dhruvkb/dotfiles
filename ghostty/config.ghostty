@@ -10,10 +10,6 @@ adjust-cell-height = 20%
 window-padding-x = 10
 window-padding-y = 10
 
-# Opt + Arrow keys should move the cursor one word at a time.
-keybind = alt+left=esc:b
-keybind = alt+right=esc:f
-
 # Types the command to open the Ghostty config from the standard XDG
 # location in my preferred CLI editor and hits Enter.
 keybind = super+comma=text:$EDITOR $XDG_CONFIG_HOME/ghostty/config\r
