@@ -52,5 +52,8 @@ alias dcex="dc exec"
 alias dcdu="dcdn && dcup -d"  # du as in "down up"
 alias dcnu="dcdn -v && dcup -d"  # nu as in "new"
 
+# Claude Code
+alias cc="claude"
+
 # OpenCode
 alias oc="opencode"
