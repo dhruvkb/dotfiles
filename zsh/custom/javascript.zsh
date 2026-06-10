@@ -1,6 +1,12 @@
 # JavaScript configuration
 # ========================
 
+# fnm
+# ===
+
+# Configure the shell to use fnm.
+has fnm && eval "$(fnm env --use-on-cd --shell zsh)"
+
 # npm
 # ===
 
