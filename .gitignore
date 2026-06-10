@@ -15,3 +15,6 @@ iTerm2/colors/catppuccin_*.itermcolors
 
 # Machine-local Raycast script data
 raycast/data/
+
+# Machine-local Zsh functions data
+zsh/data/
