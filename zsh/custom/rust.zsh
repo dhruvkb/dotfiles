@@ -7,6 +7,9 @@
 # Configure rustup to use XDG data directory.
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
+# Add rustup proxies to the path.
+pathadd "$(brew --prefix rustup)/bin"
+
 # Cargo
 # =====
 
