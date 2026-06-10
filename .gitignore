@@ -13,5 +13,5 @@ ssh/configs/*-config
 # Ignore Catppuccin themes
 iTerm2/colors/catppuccin_*.itermcolors
 
-# Machine-local Raycast script config
-raycast/scripts/*.local.sh
+# Machine-local Raycast script data
+raycast/data/

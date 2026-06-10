@@ -13,9 +13,9 @@
 XDG_STATE_HOME="$HOME/.local/state"
 
 # Source the machine-local desk UUID.
-UUID_FILE="$(dirname "$0")/desk.local.sh"
+UUID_FILE="$HOME/dotfiles/raycast/data/desk.sh"
 if [[ ! -f "$UUID_FILE" ]]; then
-  echo "Define desk UUID in desk.local.sh"
+  echo "Define desk UUID in desk.sh"
   exit 1
 fi
 source "$UUID_FILE"
