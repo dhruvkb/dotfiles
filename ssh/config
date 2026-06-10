@@ -1,5 +1,11 @@
-Include ~/.ssh/configs/*
+# Custom SSH configs for specific hosts.
+Include ~/dotfiles/ssh/configs/*
+
+# Added by OrbStack: 'orb' SSH host for Linux machines.
 Include ~/.orbstack/ssh/config
+
+# Created by 1Password from bookmarks: Host > IdentitiesOnly,IdentityFile rules.
+Include ~/.ssh/1Password/config
 
 Host *
   # Use 1Password SSH Agent
