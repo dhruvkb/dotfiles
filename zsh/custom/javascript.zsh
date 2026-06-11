@@ -20,4 +20,4 @@ export NPM_CONFIG_USERCONFIG="$HOME/dotfiles/npm/npmrc"
 export PNPM_HOME="/Users/dhruvkb/.local/share/pnpm"
 
 # Add pnpm binaries to the path.
-pathadd $PNPM_HOME
+pathadd "$PNPM_HOME"
