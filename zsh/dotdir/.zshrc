@@ -3,19 +3,30 @@
 # Add the given directory to $PATH, if it is not already present.
 #
 # Usage:
-#   pathadd <dir>
+#   pathadd [-p] <dir>
 # where
+#   -p    prepend to $PATH instead of appending
 #   <dir> is the dir to add to $PATH
 pathadd() {
+	local prepend=0
+	if [[ $1 == "-p" ]]; then
+		prepend=1
+		shift
+	fi
+
 	if [[ $# -eq 0 ]]; then
-		echo "Usage: pathadd <dir>"
+		echo "Usage: pathadd [-p] <dir>"
 		return
 	fi
 
 	local dir=$1
 
 	if [ -d "$dir" ] && [[ ":$PATH:" != *":$dir:"* ]]; then
-		PATH="${PATH:+"$PATH:"}$dir"
+		if [[ $prepend -eq 1 ]]; then
+			PATH="$dir${PATH:+":$PATH"}"
+		else
+			PATH="${PATH:+"$PATH:"}$dir"
+		fi
 	fi
 }
 
