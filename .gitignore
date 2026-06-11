@@ -18,3 +18,6 @@ raycast/data/
 
 # Machine-local Zsh functions data
 zsh/data/
+
+# Machine-local AWS cache data
+aws/data/
