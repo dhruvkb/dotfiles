@@ -10,6 +10,8 @@
 # @raycast.packageName Idåsen
 
 # Environment variables are not populated in Raycast scripts.
+XDG_DATA_HOME="$HOME/.local/share"
+UV_TOOL_BIN_DIR="$XDG_DATA_HOME/uv/tools_bin/"
 XDG_STATE_HOME="$HOME/.local/state"
 
 # Source the machine-local desk UUID.
@@ -27,7 +29,7 @@ mkdir -p "$XDG_STATE_HOME/raycast"
 echo "$(date) sit.sh" >> "$XDG_STATE_HOME/raycast/sit.log"
 
 # Run the linak-controller command in background with output redirected to log file.
-/opt/uv/bin/linak-controller \
+"$UV_TOOL_BIN_DIR/linak-controller" \
   --mac-address "$DESK_UUID" \
   --move-to 620 \
   >>"$XDG_STATE_HOME/raycast/sit.log" \
