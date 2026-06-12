@@ -22,7 +22,6 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock show-recents -bool false
 # Scroll on an app icon to exposé it.
 defaults write com.apple.dock "scroll-to-open" -bool "true"
-yellow 'LATER, ADD OR REMOVE DOCK ITEMS MANUALLY.\n'
 green 'done.\n'
 
 printf 'Configuring TextEdit...'
@@ -64,3 +63,4 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 green 'done.\n'
 
 yellow 'LOG OUT AND LOG BACK IN!\n'
+yellow 'ADD OR REMOVE DOCK ITEMS MANUALLY.\n'
