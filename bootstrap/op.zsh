@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# This script sets up SSH with 1Password `~/.ssh/keys`.
+# This script sets up SSH with 1Password and also initialises plugins.
 
 source "${0:A:h}/_common.zsh"
 
@@ -37,5 +37,15 @@ mkdir -p "$HOME/.config/1Password/ssh"
 for vault in $vaults_with_keys; do
 	printf '[[ssh-keys]]\nvault = "%s"\n\n' "$(op vault get "$vault" --format json | jq -r '.name')"
 done > "$HOME/.config/1Password/ssh/agent.toml"
-
 green 'done.\n'
+
+PLUGINS=(
+	gh
+)
+
+printf '┌─ Configuring 1Password CLI plugins...\n'
+for plugin in ${PLUGINS[@]}; do
+	# `op plugin init` is interactive so we cannot indent it.
+	op plugin init $plugin
+done
+green '└─ done.\n'
