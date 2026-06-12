@@ -16,11 +16,7 @@ pathadd "$(brew --prefix rustup)/bin"
 # Configure Cargo to use XDG data directory.
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
-# Add Cargo binaries to the path.
-if [[ ":$PATH:" != *":$CARGO_HOME/bin:"* ]]; then
-	if [ -e "$CARGO_HOME/env" ]; then
-		source "$CARGO_HOME/env"
-	else
-		echo "Cargo env file not found."
-	fi
-fi
+# Note: even if its not on the path, Cargo will look inside `$CARGO_HOME/bin`
+# for subcommands i.e. bins starting with "cargo-". If there are binaries except
+# these subcommands, uncomment the line below.
+# pathadd "$CARGO_HOME/bin"
