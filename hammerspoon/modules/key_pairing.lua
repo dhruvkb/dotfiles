@@ -6,6 +6,8 @@ This module automatically closes brackets and quotes. When text is
 selected, it wraps the selection with the paired characters.
 ]]
 
+local common = require("lib.common")
+
 local M = {} -- module table
 
 --   ____             __ _
@@ -35,9 +37,8 @@ M.config = {
 		},
 	},
 	timeout = 0.1, -- seconds
-	iconSize = { h = 18, w = 18 }, -- pixels
 
-  isEnabled = nil,
+	isEnabled = nil,
 
 	-- The following variables are initialised in function `init`.
 	eventTap = nil,
@@ -55,13 +56,6 @@ M.config = {
 -- | |_| | |_| | \__ \
 --  \___/ \__|_|_|___/
 
--- Get the icon from disk using the name and set its dimensions.
-function M.getIcon(name)
-	local iconPath = "~/dotfiles/hammerspoon/" .. name .. ".png"
-	return hs.image.imageFromPath(iconPath):setSize(M.config.iconSize)
-end
-
--- Set the menubar icon based on whether autoclose is enabled or not.
 function M.updateIcon()
 	if M.config.isEnabled then
 		M.config.menubarItem:setIcon(M.config.onIcon)
@@ -197,8 +191,8 @@ end
 --                       |___/|_|
 
 function M.init()
-	M.config.onIcon = M.getIcon("autoclose_on")
-	M.config.offIcon = M.getIcon("autoclose_off")
+	M.config.onIcon = common.getIcon("autoclose_on")
+	M.config.offIcon = common.getIcon("autoclose_off")
 
 	M.config.eventTap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, M.handleKeyDown)
 
