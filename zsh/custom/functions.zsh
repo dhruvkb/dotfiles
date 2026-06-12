@@ -183,3 +183,17 @@ ghauth() {
 uuid4() {
 	python3 -c 'import uuid; u = uuid.uuid4(); print(u); print(u.hex)'
 }
+
+# Update all software and packages installed on the system.
+#
+# This includes:
+# - Homebrew formulae and casks
+# - uv tools
+# - Cargo packages
+#
+# This does not update Python, Node.js or Rust.
+updates() {
+	brew update && brew upgrade && brew cleanup && brew autoremove
+	uv tool upgrade --all
+	cargo install-update -a
+}
