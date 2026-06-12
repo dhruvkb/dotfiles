@@ -1,0 +1,42 @@
+#!/usr/bin/env zsh
+
+# This script installs and configures QMK.
+
+source "${0:A:h}/_common.zsh"
+
+# Since we cannot rely on `qmk` to be on the path, we directly check if the
+# binary exists at `/opt/uv/bin/qmk`.
+if [ -x /opt/uv/bin/qmk ]; then
+	green "QMK is already installed.\n"
+else
+	yellow "QMK is not installed.\n"
+
+	printf '┌─ Installing QMK...\n'
+	# This follows `curl ... | sh`.
+	# `SKIP_UV=1` reuses the Homebrew-installed `uv` instead of letting
+	# Astral's installer drop a second copy in `~/.local/bin`.
+	curl -fsSL https://install.qmk.fm | SKIP_UV=1 sh
+	green '└─ done.\n'
+fi
+
+# Set up QMK using personal fork, unless it is already set up. We consider it
+# set up when the home directory exists and `qmk_home` points to it in config.
+if [ -d "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" ] &&
+	/opt/uv/bin/qmk config user.qmk_home | grep -q "=/Users/dhruvkb/Developer/dhruvkb/qmk_firmware "; then
+	green "QMK is already set up.\n"
+else
+	printf '┌─ Setting up QMK...\n'
+	# This will also set the `qmk_home` config flag to the right directory.
+	indent /opt/uv/bin/qmk setup dhruvkb/qmk_firmware \
+		--home "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" \
+		--branch supreme_keymap \
+		--yes
+	green '└─ done.\n'
+fi
+
+printf '┌─ Configuring keyboard and keymap...\n'
+# Set the keyboard and keymap to use.
+indent /opt/uv/bin/qmk config \
+	user.keyboard=zsa/moonlander/reva \
+	user.keymap=supreme
+green '└─ done.\n'
