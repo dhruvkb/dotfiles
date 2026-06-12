@@ -6,6 +6,8 @@ This module ensures that the Reminders app stays open and visible in a
 specific portion of the screen.
 ]]
 
+local common = require("lib.common")
+
 local M = {} -- module table
 
 --   ____             __ _
@@ -117,17 +119,12 @@ end
 
 function M.init()
 	M.config.wf = hs.window.filter.new(false):setAppFilter("Reminders", {})
-	M.config.wf:subscribe(
-		{
-			hs.window.filter.windowMinimized,
-			hs.window.filter.windowHidden,
-			hs.window.filter.windowDestroyed,
-			hs.window.filter.windowMoved,
-		},
-		function()
-			hs.timer.doAfter(0.05 --[[ seconds ]], M.ensureReminders)
-		end
-	)
+	common.subscribeDebounced(M.config.wf, {
+		hs.window.filter.windowMinimized,
+		hs.window.filter.windowHidden,
+		hs.window.filter.windowDestroyed,
+		hs.window.filter.windowMoved,
+	}, M.ensureReminders)
 end
 
 function M.start()
