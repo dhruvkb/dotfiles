@@ -137,7 +137,7 @@ mkcd() {
 		return
 	fi
 
-	mkdir -p $@ && cd $_
+	mkdir -p "$@" && cd "$_"
 }
 
 # Get the user's name and email from their latest Git commit, formatted

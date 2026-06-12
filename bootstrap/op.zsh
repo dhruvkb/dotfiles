@@ -17,7 +17,7 @@ for vault in ${(f)vaults}; do
 		# Name the file after a slug of "<vault> <title>".
 		vault_name=$(printf '%s' "$ssh_key_data" | jq -r '.vault.name')
 		title=$(printf '%s' "$ssh_key_data" | jq -r '.title')
-    indent printf "Extracting $vault_name/$title..."
+    indent printf 'Extracting %s/%s...' "$vault_name" "$title"
 
 		slug=$(slugify "$(printf '%s' "$ssh_key_data" | jq -r '"\(.vault.name) \(.title)"')")
 		dest="$HOME/dotfiles/ssh/data/keys/$slug.pub"
