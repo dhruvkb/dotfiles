@@ -22,6 +22,7 @@ local modules = {}
 local moduleNames = {
 	"reminders_man",
 	"key_pairing",
+	"theme_watcher",
 }
 
 for _, moduleName in ipairs(moduleNames) do
