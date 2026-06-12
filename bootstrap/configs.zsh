@@ -55,6 +55,16 @@ ln -s "$HOME/dotfiles/Code/User/settings.json" "$MACOS_CONFIG_HOME/Code/User/set
 ln -s "$HOME/dotfiles/Code/User/keybindings.json" "$MACOS_CONFIG_HOME/Code/User/keybindings.json"
 green 'done.\n'
 
+printf 'Linking Zed config...'
+# Ensure the directory exists.
+mkdir -p "$XDG_CONFIG_HOME/zed"
+# Remove existing config files, if they exist.
+rm -f "$XDG_CONFIG_HOME/zed/settings.json" "$XDG_CONFIG_HOME/zed/keymap.json"
+# Create symlinks to the Zed config files in this repo.
+ln -s "$HOME/dotfiles/zed/settings.json" "$XDG_CONFIG_HOME/zed/settings.json"
+ln -s "$HOME/dotfiles/zed/keymap.json" "$XDG_CONFIG_HOME/zed/keymap.json"
+green 'done.\n'
+
 printf 'Linking Hammerspoon config...'
 defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/dotfiles/hammerspoon/init.lua"
 green 'done.\n'
