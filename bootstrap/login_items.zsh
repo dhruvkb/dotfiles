@@ -6,11 +6,13 @@ source "${0:A:h}/_common.zsh"
 
 printf 'Configuring login items...'
 login_items=(
-  '/Applications/Cloudflare WARP.app'
-  '/Applications/BetterMouse.app'
-  '/Applications/Raycast Beta.app'
   '/Applications/AutoProxxy.app'
   '/Applications/Beeper Desktop.app'
+  '/Applications/BetterMouse.app'
+  '/Applications/Cloudflare WARP.app'
+	'/Applications/OrbStack.app'
+  '/Applications/Raycast Beta.app'
+	'/System/Applications/Reminders.app'
 )
 for app in $login_items; do
   name="${${app:t}:r}"
