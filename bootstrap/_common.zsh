@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # Shared helpers for the bootstrap scripts. Source this with:
 #   source "${0:A:h}/_common.zsh"
 
