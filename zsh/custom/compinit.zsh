@@ -1,6 +1,12 @@
 # Compinit
 # ========
 
+# Pick up completion functions shipped by Homebrew formulae. `fpath` must be set
+# before `compinit` is loaded.
+if has brew; then
+  fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+fi
+
 autoload -Uz compinit
 
 _zcompdump="$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
