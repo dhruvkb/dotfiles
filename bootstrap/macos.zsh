@@ -13,6 +13,8 @@ defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
 defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
 # Show the path bar.
 defaults write com.apple.finder "ShowPathbar" -bool "true"
+# Sort folders before files.
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
 # Don't litter network volumes with .DS_Store files.
 defaults write com.apple.desktopservices "DSDontWriteNetworkStores" -bool "true"
 # Don't litter USB volumes with .DS_Store files.
