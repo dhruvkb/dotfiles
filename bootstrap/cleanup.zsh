@@ -4,7 +4,7 @@
 
 source "${0:A:h}/_common.zsh"
 
-printf 'Clearing up junk files...'
+print -rn -- 'Clearing up junk files...'
 # Remove the junk files created before the symlink existed.
 rm -rf "$HOME/.zsh_history" "$HOME/.zsh_sessions" "$HOME/.lesshst"
 green 'done.\n'

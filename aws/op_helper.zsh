@@ -12,7 +12,7 @@ vault=${1:-}
 secret_name=${2:-}
 
 if [[ -z $vault || -z $secret_name ]]; then
-	echo "Usage: ${0:t} <vault> <secret_name>" >&2
+	print -r -- "Usage: ${0:t} <vault> <secret_name>" >&2
 	exit 1
 fi
 
@@ -22,7 +22,7 @@ fi
 secret_id=$(op item list --vault "$vault" --format json |
 	jq -r --arg name "$secret_name" '.[] | select(.title | contains($name)) | .id' |
 	head -1)
-echo "Secret ID: $secret_id" >&2
+print -r -- "Secret ID: $secret_id" >&2
 
 cat <<EOF | op inject
 {

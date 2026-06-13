@@ -15,7 +15,7 @@ UV_PACKAGES=(
 	ipython
 )
 
-printf '┌─ Installing uv packages...\n'
+print -r -- '┌─ Installing uv packages...'
 for package in ${UV_PACKAGES[@]}; do
 	# Install uv packages individually.
 	indent uv tool install $package
@@ -23,7 +23,7 @@ done
 green '└─ done.\n'
 
 # Upgrade all uv packages to their latest versions.
-printf '┌─ Upgrading uv packages...\n'
+print -r -- '┌─ Upgrading uv packages...'
 indent uv tool upgrade --all
 green '└─ done.\n'
 
@@ -35,7 +35,7 @@ CARGO_LOCKED_PACKAGES=(
 	cargo-nextest
 )
 
-printf '┌─ Installing cargo packages...\n'
+print -r -- '┌─ Installing cargo packages...'
 for package in ${CARGO_PACKAGES[@]}; do
 	# Install Cargo packages individually.
 	indent cargo install $package
@@ -47,6 +47,6 @@ done
 green '└─ done.\n'
 
 # Update all Cargo packages to their latest versions.
-printf '┌─ Upgrading cargo packages...\n'
+print -r -- '┌─ Upgrading cargo packages...'
 indent cargo install-update -a
 green '└─ done.\n'

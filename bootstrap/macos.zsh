@@ -4,7 +4,7 @@
 
 source "${0:A:h}/_common.zsh"
 
-printf 'Configuring Finder...'
+print -rn -- 'Configuring Finder...'
 # Set default location for new Finder windows
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
 # Show all filename extensions.
@@ -21,7 +21,7 @@ defaults write com.apple.desktopservices "DSDontWriteNetworkStores" -bool "true"
 defaults write com.apple.desktopservices "DSDontWriteUSBStores" -bool "true"
 green 'done.\n'
 
-printf 'Configuring Dock...'
+print -rn -- 'Configuring Dock...'
 # Hide the Dock automatically.
 defaults write com.apple.dock autohide -bool true
 # Do not show recent applications in the Dock.
@@ -30,19 +30,19 @@ defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock "scroll-to-open" -bool "true"
 green 'done.\n'
 
-printf 'Configuring TextEdit...'
+print -rn -- 'Configuring TextEdit...'
 # We want TextEdit to prefer plain text.
 defaults write com.apple.TextEdit RichText -int 0
 green 'done.\n'
 
-printf 'Configuring window management...'
+print -rn -- 'Configuring window management...'
 # Remove margins from tiled windows.
 defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
 # Do not hide windows when clicking the desktop.
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 green 'done.\n'
 
-printf 'Configuring keyboard...'
+print -rn -- 'Configuring keyboard...'
 # Correct spelling automatically
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Capitalise words automatically
@@ -57,7 +57,7 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 green 'done.\n'
 
-printf 'Configuring screenshots...'
+print -rn -- 'Configuring screenshots...'
 # Save screenshots to ~/Screenshots instead of the Desktop.
 mkdir -p "$HOME/Screenshots"
 defaults write com.apple.screencapture location -string "$HOME/Screenshots"
@@ -65,14 +65,14 @@ defaults write com.apple.screencapture location -string "$HOME/Screenshots"
 defaults write com.apple.screencapture type -string "png"
 green 'done.\n'
 
-printf '┌─ Configuring display sleep...\n'
+print -r -- '┌─ Configuring display sleep...'
 # Turn the display off after 5 minutes of inactivity on battery.
 sudo pmset -b displaysleep 5
 # Turn the display off after 15 minutes of inactivity on power adapter.
 sudo pmset -c displaysleep 15
 green '└─ done.\n'
 
-printf 'Configuring screensaver...'
+print -rn -- 'Configuring screensaver...'
 # Start the screensaver after 10 minutes of inactivity.
 defaults -currentHost write com.apple.screensaver idleTime -int 600
 # Require the password after sleep or screensaver begins.
@@ -81,7 +81,7 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 5
 green 'done.\n'
 
-printf 'Configuring trackpad...'
+print -rn -- 'Configuring trackpad...'
 # Enable for the built-in trackpad.
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 # Enable for magic trackpad.

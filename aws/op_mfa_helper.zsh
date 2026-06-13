@@ -14,11 +14,11 @@ secret_name=${2:-}
 profile=${3:-default}
 
 if [[ -z $vault || -z $secret_name ]]; then
-	echo "Usage: ${0:t} <vault> <secret_name> [profile]" >&2
+	print -r -- "Usage: ${0:t} <vault> <secret_name> [profile]" >&2
 	exit 1
 fi
 
-hash=$(printf '%s' "${vault}${secret_name}" | shasum -a 256 | cut -c1-8)
+hash=$(print -rn -- "${vault}${secret_name}" | shasum -a 256 | cut -c1-8)
 cache_file="${0:A:h}/data/${hash}.json"
 
 # Compare the expiration timestamp inside `jq` with normalization.
@@ -37,13 +37,13 @@ fi
 secret_id=$(op item list --vault "$vault" --format json |
 	jq -r --arg name "$secret_name" '.[] | select(.title | contains($name)) | .id' |
 	head -1)
-echo "Secret ID: $secret_id" >&2
+print -r -- "Secret ID: $secret_id" >&2
 
 device=$(op item get --fields label='otp ARN' "$secret_id")
-echo "Device ARN: $device" >&2
+print -r -- "Device ARN: $device" >&2
 
 otp=$(op item get --otp "$secret_id")
-echo "TOTP: $otp" >&2
+print -r -- "TOTP: $otp" >&2
 
 # 12 hours is the maximum time STS allows for IAM users with an MFA device.
 output=$(aws --profile "$profile" sts get-session-token \
@@ -57,8 +57,8 @@ output=$(aws --profile "$profile" sts get-session-token \
     SessionToken: .Credentials.SessionToken,
     Expiration: .Credentials.Expiration
   }')
-echo "$output"
+print -r -- "$output"
 
 # Cache the credentials for the future.
 mkdir -p "${cache_file:h}"
-echo "$output" >"$cache_file"
+print -r -- "$output" >"$cache_file"

@@ -10,17 +10,17 @@ source "${0:A:h}/_common.zsh"
 if [ -x /opt/homebrew/bin/brew ]; then
 	green "Homebrew is already installed.\n"
 
-	printf '┌─ Updating Homebrew...\n'
+	print -r -- '┌─ Updating Homebrew...'
 	indent /opt/homebrew/bin/brew update
 	green '└─ done.\n'
 else
-	printf '┌─ Installing Homebrew...\n'
+	print -r -- '┌─ Installing Homebrew...'
 	# This does not follow `curl | bash` because it needs `sudo` access.
 	bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	green '└─ done.\n'
 fi
 
-printf '┌─ Installing Homebrew formulae...\n'
+print -r -- '┌─ Installing Homebrew formulae...'
 # Install Brew formulae
 FORMULAE=(
 	anomalyco/tap/opencode
@@ -50,7 +50,7 @@ FORMULAE=(
 indent /opt/homebrew/bin/brew install ${FORMULAE[@]}
 green '└─ done.\n'
 
-printf '┌─ Installing Homebrew casks...\n'
+print -r -- '┌─ Installing Homebrew casks...'
 # Install Brew casks
 CASKS=(
 	1password

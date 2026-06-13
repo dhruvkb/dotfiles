@@ -15,7 +15,7 @@ pathadd() {
 	fi
 
 	if [[ $# -eq 0 ]]; then
-		echo "Usage: pathadd [-p] <dir>"
+		print -r -- "Usage: pathadd [-p] <dir>"
 		return
 	fi
 
@@ -38,7 +38,7 @@ pathadd() {
 #   <cmd> is the command to check for
 has() {
 	if [[ $# -eq 0 ]]; then
-		echo "Usage: has <cmd>"
+		print -r -- "Usage: has <cmd>"
 		return
 	fi
 

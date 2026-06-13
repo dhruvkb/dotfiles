@@ -12,5 +12,5 @@ export STARSHIP_LOG="error"
 if has starship; then
 	eval "$(starship init zsh)"
 else
-	echo "Starship not found."
+	print -r -- "Starship not found."
 fi

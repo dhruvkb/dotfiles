@@ -8,5 +8,5 @@ export ATUIN_CONFIG_DIR="$HOME/dotfiles/atuin"
 if has atuin; then
 	eval "$(atuin init zsh)"
 else
-	echo "Atuin not found."
+	print -r -- "Atuin not found."
 fi

@@ -4,7 +4,7 @@
 
 source "${0:A:h}/_common.zsh"
 
-printf 'Configuring login items...'
+print -rn -- 'Configuring login items...'
 login_items=(
 	'/Applications/AutoProxxy.app'
 	'/Applications/Beeper Desktop.app'

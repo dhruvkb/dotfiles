@@ -11,7 +11,7 @@ if [ -x /opt/uv/bin/qmk ]; then
 else
 	yellow "QMK is not installed.\n"
 
-	printf '┌─ Installing QMK...\n'
+	print -r -- '┌─ Installing QMK...'
 	# This follows `curl ... | sh`.
 	# `SKIP_UV=1` reuses the Homebrew-installed `uv` instead of letting
 	# Astral's installer drop a second copy in `~/.local/bin`.
@@ -28,7 +28,7 @@ else
 	# Ensure the parent directory exists before running `qmk setup`.
 	mkdir -p "/Users/dhruvkb/Developer/dhruvkb"
 
-	printf '┌─ Setting up QMK...\n'
+	print -r -- '┌─ Setting up QMK...'
 	# This will also set the `qmk_home` config flag to the right directory.
 	indent /opt/uv/bin/qmk setup dhruvkb/qmk_firmware \
 		--home "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" \
@@ -37,7 +37,7 @@ else
 	green '└─ done.\n'
 fi
 
-printf '┌─ Configuring keyboard and keymap...\n'
+print -r -- '┌─ Configuring keyboard and keymap...'
 # Set the keyboard and keymap to use.
 indent /opt/uv/bin/qmk config \
 	user.keyboard=zsa/moonlander/reva \

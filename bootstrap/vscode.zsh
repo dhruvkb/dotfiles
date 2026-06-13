@@ -26,7 +26,7 @@ EXTENSIONS=(
 	ms-azuretools.vscode-containers
 )
 
-printf '┌─ Installing extensions...\n'
+print -r -- '┌─ Installing extensions...'
 for extension in ${EXTENSIONS[@]}; do
 	indent code --install-extension $extension --force
 done

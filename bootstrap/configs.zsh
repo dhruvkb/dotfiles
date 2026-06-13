@@ -8,7 +8,7 @@
 
 source "${0:A:h}/_common.zsh"
 
-printf 'Linking SSH config...'
+print -rn -- 'Linking SSH config...'
 # Ensure the .ssh directory exists.
 mkdir -p "$HOME/.ssh"
 # Remove existing config file, if it exists.
@@ -17,7 +17,7 @@ rm -f "$HOME/.ssh/config"
 ln -s "$HOME/dotfiles/ssh/config" "$HOME/.ssh/config"
 green 'done.\n'
 
-printf 'Linking uv config...'
+print -rn -- 'Linking uv config...'
 # Ensure the directory exists.
 mkdir -p "$XDG_CONFIG_HOME/uv"
 # Remove existing config file, if it exists.
@@ -26,7 +26,7 @@ rm -f "$XDG_CONFIG_HOME/uv/uv.toml"
 ln -s "$HOME/dotfiles/uv/uv.toml" "$XDG_CONFIG_HOME/uv/uv.toml"
 green 'done.\n'
 
-printf 'Linking Helix config...'
+print -rn -- 'Linking Helix config...'
 # Ensure the directory exists.
 mkdir -p "$XDG_CONFIG_HOME/helix"
 # Remove existing config files, if they exist.
@@ -36,7 +36,7 @@ ln -s "$HOME/dotfiles/helix/config.toml" "$XDG_CONFIG_HOME/helix/config.toml"
 ln -s "$HOME/dotfiles/helix/languages.toml" "$XDG_CONFIG_HOME/helix/languages.toml"
 green 'done.\n'
 
-printf 'Linking Ghostty config...'
+print -rn -- 'Linking Ghostty config...'
 # Ensure the directory exists.
 mkdir -p "$XDG_CONFIG_HOME/ghostty"
 # Remove existing config file, if it exists.
@@ -45,7 +45,7 @@ rm -f "$XDG_CONFIG_HOME/ghostty/config.ghostty"
 ln -s "$HOME/dotfiles/ghostty/config.ghostty" "$XDG_CONFIG_HOME/ghostty/config.ghostty"
 green 'done.\n'
 
-printf 'Linking VS Code config...'
+print -rn -- 'Linking VS Code config...'
 # Ensure the directory exists.
 mkdir -p "$MACOS_CONFIG_HOME/Code/User"
 # Remove existing config files, if they exist.
@@ -55,7 +55,7 @@ ln -s "$HOME/dotfiles/Code/User/settings.json" "$MACOS_CONFIG_HOME/Code/User/set
 ln -s "$HOME/dotfiles/Code/User/keybindings.json" "$MACOS_CONFIG_HOME/Code/User/keybindings.json"
 green 'done.\n'
 
-printf 'Linking Zed config...'
+print -rn -- 'Linking Zed config...'
 # Ensure the directory exists.
 mkdir -p "$XDG_CONFIG_HOME/zed"
 # Remove existing config files, if they exist.
@@ -65,6 +65,6 @@ ln -s "$HOME/dotfiles/zed/settings.json" "$XDG_CONFIG_HOME/zed/settings.json"
 ln -s "$HOME/dotfiles/zed/keymap.json" "$XDG_CONFIG_HOME/zed/keymap.json"
 green 'done.\n'
 
-printf 'Linking Hammerspoon config...'
+print -rn -- 'Linking Hammerspoon config...'
 defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/dotfiles/hammerspoon/init.lua"
 green 'done.\n'

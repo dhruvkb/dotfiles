@@ -4,11 +4,11 @@
 
 source "${0:A:h}/_common.zsh"
 
-printf "Populating desk UUID..."
+print -rn -- "Populating desk UUID..."
 # Populate the desk UUID
 mkdir -p ~/dotfiles/raycast/data/
 desk_uuid=$($UV_TOOL_BIN_DIR/linak-controller --scan |
 	grep "Desk " |
 	awk -F':' '{print $1}')
-echo "DESK_UUID='$desk_uuid'" >~/dotfiles/raycast/data/desk.sh
+print -r -- "DESK_UUID='$desk_uuid'" >~/dotfiles/raycast/data/desk.sh
 green "done.\n"
