@@ -18,10 +18,9 @@ fi
 
 # `--format json` + `jq` is preferable to parsing a human-readable table.
 # `--arg name "$secret_name"` passes the value as data instead of interpolating.
-# `head -1` picks the first of potentially multiple results.
+# `first(...)` picks the first of potentially multiple results.
 secret_id=$(op item list --vault "$vault" --format json |
-	jq -r --arg name "$secret_name" '.[] | select(.title | contains($name)) | .id' |
-	head -1)
+	jq -r --arg name "$secret_name" 'first(.[] | select(.title | contains($name)) | .id) // empty')
 print -r -- "Secret ID: $secret_id" >&2
 
 cat <<EOF | op inject

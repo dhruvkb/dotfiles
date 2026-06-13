@@ -18,8 +18,8 @@ if [[ -z $vault || -z $secret_name ]]; then
 	exit 1
 fi
 
-hash=$(print -rn -- "${vault}${secret_name}" | shasum -a 256 | cut -c1-8)
-cache_file="${0:A:h}/data/${hash}.json"
+digest=$(print -rn -- "${vault}${secret_name}" | shasum -a 256)
+cache_file="${0:A:h}/data/${digest:0:8}.json"
 
 # Compare the expiration timestamp inside `jq` with normalization.
 # - macOS `date` cannot parse ISO 8601 with a `Z` suffix without a brittle format string.
@@ -33,10 +33,9 @@ fi
 
 # `--format json` + `jq` is preferable to parsing a human-readable table.
 # `--arg name "$secret_name"` passes the value as data instead of interpolating.
-# `head -1` picks the first of potentially multiple results.
+# `first(...)` picks the first of potentially multiple results.
 secret_id=$(op item list --vault "$vault" --format json |
-	jq -r --arg name "$secret_name" '.[] | select(.title | contains($name)) | .id' |
-	head -1)
+	jq -r --arg name "$secret_name" 'first(.[] | select(.title | contains($name)) | .id) // empty')
 print -r -- "Secret ID: $secret_id" >&2
 
 device=$(op item get --fields label='otp ARN' "$secret_id")
