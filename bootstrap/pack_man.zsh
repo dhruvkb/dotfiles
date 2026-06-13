@@ -16,9 +16,9 @@ UV_PACKAGES=(
 )
 
 print -r -- '┌─ Installing uv packages...'
-for package in ${UV_PACKAGES[@]}; do
+for package in "${UV_PACKAGES[@]}"; do
 	# Install uv packages individually.
-	indent uv tool install $package
+	indent uv tool install "$package"
 done
 green '└─ done.\n'
 
@@ -36,13 +36,13 @@ CARGO_LOCKED_PACKAGES=(
 )
 
 print -r -- '┌─ Installing cargo packages...'
-for package in ${CARGO_PACKAGES[@]}; do
+for package in "${CARGO_PACKAGES[@]}"; do
 	# Install Cargo packages individually.
-	indent cargo install $package
+	indent cargo install "$package"
 done
-for package in ${CARGO_LOCKED_PACKAGES[@]}; do
+for package in "${CARGO_LOCKED_PACKAGES[@]}"; do
 	# Install Cargo packages that require the `--locked` flag individually.
-	indent cargo install --locked $package
+	indent cargo install --locked "$package"
 done
 green '└─ done.\n'
 

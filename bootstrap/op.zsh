@@ -44,8 +44,8 @@ PLUGINS=(
 )
 
 print -r -- '┌─ Configuring 1Password CLI plugins...'
-for plugin in ${PLUGINS[@]}; do
+for plugin in "${PLUGINS[@]}"; do
 	# `op plugin init` is interactive so we cannot indent it.
-	op plugin init $plugin
+	op plugin init "$plugin"
 done
 green '└─ done.\n'

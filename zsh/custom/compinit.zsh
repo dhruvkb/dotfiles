@@ -4,7 +4,7 @@
 # Pick up completion functions shipped by Homebrew formulae. `fpath` must be set
 # before `compinit` is loaded.
 if has brew; then
-	fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+	fpath=("$(brew --prefix)/share/zsh/site-functions" "${fpath[@]}")
 fi
 
 autoload -Uz compinit

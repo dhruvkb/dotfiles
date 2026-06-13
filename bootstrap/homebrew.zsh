@@ -47,7 +47,7 @@ FORMULAE=(
 	yt-dlp
 	zx
 )
-indent /opt/homebrew/bin/brew install ${FORMULAE[@]}
+indent /opt/homebrew/bin/brew install "${FORMULAE[@]}"
 green '└─ done.\n'
 
 print -r -- '┌─ Installing Homebrew casks...'
@@ -81,5 +81,5 @@ CASKS=(
 	yaak
 	zed
 )
-indent /opt/homebrew/bin/brew install --cask ${CASKS[@]}
+indent /opt/homebrew/bin/brew install --cask "${CASKS[@]}"
 green '└─ done.\n'

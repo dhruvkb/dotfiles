@@ -27,8 +27,8 @@ EXTENSIONS=(
 )
 
 print -r -- '┌─ Installing extensions...'
-for extension in ${EXTENSIONS[@]}; do
-	indent code --install-extension $extension --force
+for extension in "${EXTENSIONS[@]}"; do
+	indent code --install-extension "$extension" --force
 done
 green '└─ done.\n'
 
