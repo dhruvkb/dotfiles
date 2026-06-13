@@ -31,11 +31,18 @@ CARGO_PACKAGES=(
 	cargo-release
 	cargo-update
 )
+CARGO_LOCKED_PACKAGES=(
+	cargo-nextest
+)
 
 printf '┌─ Installing cargo packages...\n'
 for package in ${CARGO_PACKAGES[@]}; do
 	# Install Cargo packages individually.
 	indent cargo install $package
+done
+for package in ${CARGO_LOCKED_PACKAGES[@]}; do
+	# Install Cargo packages that require the `--locked` flag individually.
+	indent cargo install --locked $package
 done
 green '└─ done.\n'
 
