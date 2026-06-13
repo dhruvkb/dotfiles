@@ -21,10 +21,10 @@ reload() {
 #   xdg <name>
 # where
 #   <name> is the name of the XDG directory
-function xdg() {
+xdg() {
 	if [[ $# -eq 0 ]]; then
-		echo "Usage: xdg <name>"
-		return
+		echo "Usage: xdg <name>" >&2
+		return 1
 	fi
 
 	local name=$1
@@ -34,7 +34,7 @@ function xdg() {
 		config) cd $XDG_CONFIG_HOME ;;
 		state) cd $XDG_STATE_HOME ;;
 		cache) cd $XDG_CACHE_HOME ;;
-		*) echo "Unknown XDG directory: $name" ;;
+		*) echo "Unknown XDG directory: $name" >&2; return 1 ;;
 	esac
 }
 
@@ -47,13 +47,13 @@ function xdg() {
 #   goto <name> - cd to the bookmarked directory
 # where
 #   <name> is the name of a bookmark from the bookmarks file
-function goto() {
+goto() {
 	local bookmarks_file="$HOME/dotfiles/zsh/data/bookmarks"
 
 	if [[ $# -eq 0 ]]; then
-		echo "Usage: goto <name>"
-		echo "       goto --edit"
-		return
+		echo "Usage: goto <name>" >&2
+		echo "       goto --edit" >&2
+		return 1
 	fi
 
 	if [[ $1 == "--edit" ]]; then
@@ -71,7 +71,8 @@ function goto() {
 	if [[ -n $dir ]]; then
 		cd "$dir"
 	else
-		echo "No bookmark found for $name."
+		echo "No bookmark found for $name." >&2
+		return 1
 	fi
 }
 
@@ -83,8 +84,8 @@ function goto() {
 #   <port> is the port number
 whoisusing() {
 	if [[ $# -eq 0 ]]; then
-		echo "Usage: whoisusing <port>"
-		return
+		echo "Usage: whoisusing <port>" >&2
+		return 1
 	fi
 
 	local port=$1
@@ -93,7 +94,8 @@ whoisusing() {
 	if [[ -n $pid ]]; then
 		ps -p $pid -o command=
 	else
-		echo "No process is using port $port."
+		echo "No process is using port $port." >&2
+		return 1
 	fi
 }
 
@@ -133,8 +135,8 @@ http() {
 #   <dir> is the directory path to create and change to
 mkcd() {
 	if [[ $# -eq 0 ]]; then
-		echo "Usage: mkcd <dir>"
-		return
+		echo "Usage: mkcd <dir>" >&2
+		return 1
 	fi
 
 	mkdir -p "$@" && cd "$_"
@@ -149,8 +151,8 @@ mkcd() {
 #   <username> is the GitHub handle of the author
 ghauth() {
 	if [[ $# -eq 0 ]]; then
-		echo "Usage: ghauth <username>"
-		return
+		echo "Usage: ghauth <username>" >&2
+		return 1
 	fi
 
 	local username=$1
@@ -162,7 +164,7 @@ ghauth() {
 			2>/dev/null
 	local script_exit_code=$?
 	if [[ $script_exit_code -ne 0 ]]; then
-		echo "Error: GitHub user '$username' not found"
+		echo "Error: GitHub user '$username' not found" >&2
 		return 1
 	fi
 
