@@ -51,6 +51,30 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 green 'done.\n'
 
+printf 'Configuring screenshots...'
+# Save screenshots to ~/Screenshots instead of the Desktop.
+mkdir -p "$HOME/Screenshots"
+defaults write com.apple.screencapture location -string "$HOME/Screenshots"
+# Use PNG format for screenshots.
+defaults write com.apple.screencapture type -string "png"
+green 'done.\n'
+
+printf '┌─ Configuring display sleep...\n'
+# Turn the display off after 5 minutes of inactivity on battery.
+sudo pmset -b displaysleep 5
+# Turn the display off after 15 minutes of inactivity on power adapter.
+sudo pmset -c displaysleep 15
+green '└─ done.\n'
+
+printf 'Configuring screensaver...'
+# Start the screensaver after 10 minutes of inactivity.
+defaults -currentHost write com.apple.screensaver idleTime -int 600
+# Require the password after sleep or screensaver begins.
+defaults write com.apple.screensaver askForPassword -int 1
+# Set the delay to 5 seconds so that the password is not required immediately.
+defaults write com.apple.screensaver askForPasswordDelay -int 5
+green 'done.\n'
+
 printf 'Configuring trackpad...'
 # Enable for the built-in trackpad.
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
