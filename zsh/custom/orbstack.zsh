@@ -13,7 +13,7 @@ export COMPOSE_BAKE="true"
 
 # Update path to include CLI tools like `docker`, `kubectl`, `orb` etc.
 if [[ ":$PATH:" != *":$HOME/.orbstack/bin:"* ]]; then
-	if [ -e "$HOME/.orbstack/shell/init.zsh" ]; then
+	if [[ -e "$HOME/.orbstack/shell/init.zsh" ]]; then
 		source "$HOME/.orbstack/shell/init.zsh"
 	else
 		print -r -- "OrbStack init file not found."

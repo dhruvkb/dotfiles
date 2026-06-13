@@ -21,7 +21,7 @@ pathadd() {
 
 	local dir=$1
 
-	if [ -d "$dir" ] && [[ ":$PATH:" != *":$dir:"* ]]; then
+	if [[ -d "$dir" ]] && [[ ":$PATH:" != *":$dir:"* ]]; then
 		if [[ $prepend -eq 1 ]]; then
 			PATH="$dir${PATH:+":$PATH"}"
 		else

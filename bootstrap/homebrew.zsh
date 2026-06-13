@@ -7,7 +7,7 @@ source "${0:A:h}/_common.zsh"
 
 # Since we cannot rely on `brew` to be on the path, we directly check if the
 # binary exists at `/opt/homebrew/bin/brew`.
-if [ -x /opt/homebrew/bin/brew ]; then
+if [[ -x /opt/homebrew/bin/brew ]]; then
 	green "Homebrew is already installed.\n"
 
 	print -r -- '┌─ Updating Homebrew...'

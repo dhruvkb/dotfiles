@@ -6,7 +6,7 @@ source "${0:A:h}/_common.zsh"
 
 # Since we cannot rely on `qmk` to be on the path, we directly check if the
 # binary exists at `/opt/uv/bin/qmk`.
-if [ -x /opt/uv/bin/qmk ]; then
+if [[ -x /opt/uv/bin/qmk ]]; then
 	green "QMK is already installed.\n"
 else
 	yellow "QMK is not installed.\n"
@@ -21,7 +21,7 @@ fi
 
 # Set up QMK using personal fork, unless it is already set up. We consider it
 # set up when the home directory exists and `qmk_home` points to it in config.
-if [ -d "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" ] &&
+if [[ -d "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" ]] &&
 	/opt/uv/bin/qmk config user.qmk_home | grep -q "=/Users/dhruvkb/Developer/dhruvkb/qmk_firmware "; then
 	green "QMK is already set up.\n"
 else
