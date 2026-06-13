@@ -1,5 +1,10 @@
 #!/bin/sh
 # Edit the staged version of a file without touching the working tree.
+if [ -z "$1" ]; then
+	echo 'Usage: git edit <file>' >&2
+	exit 1
+fi
+
 file=$1
 tmp=$(mktemp)
 bak=$tmp.bak
