@@ -22,10 +22,12 @@ pathadd() {
 	local dir=$1
 
 	if [[ -d "$dir" ]] && [[ ":$PATH:" != *":$dir:"* ]]; then
+		# We do not want `PATH` to be local, changing the global `PATH` is the goal.
+		# Hence the `noka` comments.
 		if [[ $prepend -eq 1 ]]; then
-			PATH="$dir${PATH:+":$PATH"}"
+			PATH="$dir${PATH:+":$PATH"}" # noka: ZC1043
 		else
-			PATH="${PATH:+"$PATH:"}$dir"
+			PATH="${PATH:+"$PATH:"}$dir" # noka: ZC1043
 		fi
 	fi
 }
