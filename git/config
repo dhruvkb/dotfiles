@@ -1,6 +1,12 @@
 [alias]
   root = rev-parse --show-toplevel
 
+[branch]
+  sort = -committerdate
+
+[column]
+  ui = auto
+
 [commit]
   gpgsign = true
 
@@ -35,8 +41,14 @@
 [pull]
   rebase = false
 
+[push]
+  autoSetupRemote = true
+
 [rebase]
   autosquash = true
+
+[rerere]
+  enabled = true
 
 [tag]
   gpgsign = true
