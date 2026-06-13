@@ -1,0 +1,12 @@
+#!/bin/sh
+# Run rebase while stashing the changes and then applying them back.
+if [ -z "$1" ]; then
+	echo 'Usage: git srsp <commit>' >&2
+	exit 1
+fi
+
+commit=$1
+
+git stash -u
+git rebase -i "$commit"
+git stash pop
