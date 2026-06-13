@@ -25,6 +25,9 @@ if [ -d "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" ] &&
 	/opt/uv/bin/qmk config user.qmk_home | grep -q "=/Users/dhruvkb/Developer/dhruvkb/qmk_firmware "; then
 	green "QMK is already set up.\n"
 else
+	# Ensure the parent directory exists before running `qmk setup`.
+	mkdir -p "/Users/dhruvkb/Developer/dhruvkb"
+
 	printf '┌─ Setting up QMK...\n'
 	# This will also set the `qmk_home` config flag to the right directory.
 	indent /opt/uv/bin/qmk setup dhruvkb/qmk_firmware \
