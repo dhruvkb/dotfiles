@@ -4,8 +4,8 @@
 # fnm
 # ===
 
-# Configure the shell to use fnm.
-has fnm && eval "$(fnm env --use-on-cd --shell zsh)"
+# Configure the shell to use fnm, which use the canonical pattern with `eval`.
+has fnm && eval "$(fnm env --use-on-cd --shell zsh)" # noka: ZC1046
 
 # npm
 # ===
