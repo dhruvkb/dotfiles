@@ -72,7 +72,7 @@ goto() {
 	local name=$1
 	local dir=$(grep "^$name=" "$bookmarks_file" | cut -d'=' -f2-)
 	if [[ -n $dir ]]; then
-		cd "$dir"
+		cd "$dir" || return
 	else
 		echo "No bookmark found for $name." >&2
 		return 1
@@ -142,7 +142,7 @@ mkcd() {
 		return 1
 	fi
 
-	mkdir -p "$@" && cd "$_"
+	mkdir -p "$@" && cd "$_" || return
 }
 
 # Get the user's name and email from their latest Git commit, formatted
