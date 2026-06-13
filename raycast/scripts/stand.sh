@@ -17,8 +17,8 @@ XDG_STATE_HOME="$HOME/.local/state"
 # Source the machine-local desk UUID.
 UUID_FILE="$HOME/dotfiles/raycast/data/desk.sh"
 if [[ ! -f "$UUID_FILE" ]]; then
-  echo "Define desk UUID in desk.sh"
-  exit 1
+	echo "Define desk UUID in desk.sh"
+	exit 1
 fi
 source "$UUID_FILE"
 
@@ -26,15 +26,15 @@ source "$UUID_FILE"
 mkdir -p "$XDG_STATE_HOME/raycast"
 
 # Write timestamp to log file.
-echo "$(date) stand.sh" >> "$XDG_STATE_HOME/raycast/stand.log"
+echo "$(date) stand.sh" >>"$XDG_STATE_HOME/raycast/stand.log"
 
 # Run the linak-controller command in background with output redirected to log file.
 "$UV_TOOL_BIN_DIR/linak-controller" \
-  --mac-address "$DESK_UUID" \
-  --move-to 1020 \
-  >>"$XDG_STATE_HOME/raycast/stand.log" \
-  2>&1 \
-  &
+	--mac-address "$DESK_UUID" \
+	--move-to 1020 \
+	>>"$XDG_STATE_HOME/raycast/stand.log" \
+	2>&1 \
+	&
 
 # This line will be shown in a toast message.
 echo "Moving desk to 102cm"

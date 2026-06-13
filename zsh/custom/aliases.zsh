@@ -49,8 +49,8 @@ alias dc="docker compose"
 alias dcup="dc up"
 alias dcdn="dc down"
 alias dcex="dc exec"
-alias dcdu="dcdn && dcup -d"  # du as in "down up"
-alias dcnu="dcdn -v && dcup -d"  # nu as in "new"
+alias dcdu="dcdn && dcup -d"    # du as in "down up"
+alias dcnu="dcdn -v && dcup -d" # nu as in "new"
 
 # Claude Code
 alias claude="claude --plugin-dir $HOME/chhotu"

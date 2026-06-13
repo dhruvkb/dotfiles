@@ -12,7 +12,7 @@
 # Usage:
 #   reload
 reload() {
-  exec zsh
+	exec zsh
 }
 
 # Go to the directories from the XDG Base Directory specification.
@@ -30,11 +30,14 @@ xdg() {
 	local name=$1
 
 	case $name in
-		data) cd $XDG_DATA_HOME ;;
-		config) cd $XDG_CONFIG_HOME ;;
-		state) cd $XDG_STATE_HOME ;;
-		cache) cd $XDG_CACHE_HOME ;;
-		*) echo "Unknown XDG directory: $name" >&2; return 1 ;;
+	data) cd $XDG_DATA_HOME ;;
+	config) cd $XDG_CONFIG_HOME ;;
+	state) cd $XDG_STATE_HOME ;;
+	cache) cd $XDG_CACHE_HOME ;;
+	*)
+		echo "Unknown XDG directory: $name" >&2
+		return 1
+		;;
 	esac
 }
 
@@ -62,7 +65,7 @@ goto() {
 	fi
 
 	if [[ ! -f $bookmarks_file ]]; then
-		echo "root=/" > "$bookmarks_file"
+		echo "root=/" >"$bookmarks_file"
 		echo "Created new bookmarks file at $bookmarks_file."
 	fi
 
@@ -159,9 +162,9 @@ ghauth() {
 
 	env GH_PAGER="" \
 		op plugin run -- gh api \
-			"users/$username" \
-			--silent \
-			2>/dev/null
+		"users/$username" \
+		--silent \
+		2>/dev/null
 	local script_exit_code=$?
 	if [[ $script_exit_code -ne 0 ]]; then
 		echo "Error: GitHub user '$username' not found" >&2
@@ -170,11 +173,11 @@ ghauth() {
 
 	env GH_PAGER="" \
 		op plugin run -- gh search commits \
-			--author "$username" \
-			--sort author-date \
-			--limit 1 \
-			--json commit \
-			--jq '.[0].commit.author | "\(.name) <\(.email)>"'
+		--author "$username" \
+		--sort author-date \
+		--limit 1 \
+		--json commit \
+		--jq '.[0].commit.author | "\(.name) <\(.email)>"'
 }
 
 # Print a new UUID4 string. This should print both the hyphenated and

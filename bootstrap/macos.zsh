@@ -48,7 +48,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Capitalise words automatically
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 # Show inline predictive text
-defaults write NSGlobalDomain NSAutomaticInlinePredictionEnabled -bool 	false
+defaults write NSGlobalDomain NSAutomaticInlinePredictionEnabled -bool false
 # Add full stop with double-space ("period substitution")
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # Disable smart quotes.

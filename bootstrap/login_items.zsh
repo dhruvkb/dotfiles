@@ -6,16 +6,16 @@ source "${0:A:h}/_common.zsh"
 
 printf 'Configuring login items...'
 login_items=(
-  '/Applications/AutoProxxy.app'
-  '/Applications/Beeper Desktop.app'
-  '/Applications/BetterMouse.app'
-  '/Applications/Cloudflare WARP.app'
+	'/Applications/AutoProxxy.app'
+	'/Applications/Beeper Desktop.app'
+	'/Applications/BetterMouse.app'
+	'/Applications/Cloudflare WARP.app'
 	'/Applications/OrbStack.app'
-  '/Applications/Raycast Beta.app'
+	'/Applications/Raycast Beta.app'
 	'/System/Applications/Reminders.app'
 )
 for app in $login_items; do
-  name="${${app:t}:r}"
-  osascript -e "tell application \"System Events\" to if not (exists login item \"$name\") then make login item at end with properties {path:\"$app\", hidden:true}" >/dev/null
+	name="${${app:t}:r}"
+	osascript -e "tell application \"System Events\" to if not (exists login item \"$name\") then make login item at end with properties {path:\"$app\", hidden:true}" >/dev/null
 done
 green 'done.\n'

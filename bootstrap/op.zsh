@@ -17,12 +17,12 @@ for vault in ${(f)vaults}; do
 		# Name the file after a slug of "<vault> <title>".
 		vault_name=$(printf '%s' "$ssh_key_data" | jq -r '.vault.name')
 		title=$(printf '%s' "$ssh_key_data" | jq -r '.title')
-    indent printf 'Extracting %s/%s...' "$vault_name" "$title"
+		indent printf 'Extracting %s/%s...' "$vault_name" "$title"
 
 		slug=$(slugify "$(printf '%s' "$ssh_key_data" | jq -r '"\(.vault.name) \(.title)"')")
 		dest="$HOME/dotfiles/ssh/data/keys/$slug.pub"
 		pub=$(printf '%s' "$ssh_key_data" | jq -r '.fields[] | select(.id == "public_key") | .value')
-		echo "$pub" > "$dest"
+		echo "$pub" >"$dest"
 		# SSH keys need to have restricted permissions.
 		chmod 644 "$dest"
 
@@ -36,7 +36,7 @@ mkdir -p "$HOME/.config/1Password/ssh"
 # Enable each vault that has SSH keys, one `[[ssh-keys]]` block each.
 for vault in $vaults_with_keys; do
 	printf '[[ssh-keys]]\nvault = "%s"\n\n' "$(op vault get "$vault" --format json | jq -r '.name')"
-done > "$HOME/.config/1Password/ssh/agent.toml"
+done >"$HOME/.config/1Password/ssh/agent.toml"
 green 'done.\n'
 
 PLUGINS=(

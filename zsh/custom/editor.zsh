@@ -6,12 +6,12 @@
 #
 # We use `$+commands` because it checks for real executables only and does not
 # match the aliases defined below.
-if (( $+commands[hx] )); then
-  export EDITOR="hx"
-elif (( $+commands[vim] )); then
-  export EDITOR="vim"
+if (($+commands[hx])); then
+	export EDITOR="hx"
+elif (($+commands[vim])); then
+	export EDITOR="vim"
 else
-  export EDITOR="vi"
+	export EDITOR="vi"
 fi
 
 # Aliases

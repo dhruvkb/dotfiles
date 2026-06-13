@@ -10,7 +10,7 @@ tmp=$(mktemp)
 bak=$tmp.bak
 
 if git ls-files --error-unmatch "$file" >/dev/null 2>&1; then
-	git show ":$file" > "$tmp"
+	git show ":$file" >"$tmp"
 else
 	echo 'New file. Starting with blank staged version.' >&2
 	git update-index --add --cacheinfo 100644 "$(git hash-object -w "$tmp")" "$file"

@@ -53,5 +53,5 @@ pathadd "$XDG_BIN_HOME"
 # This lets us break down the config into multiple files, each concerned with a
 # specific topic.
 for config_file in ~/dotfiles/zsh/custom/*.zsh(N-.); do
-  source "$config_file"
+	source "$config_file"
 done
