@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Required parameters:
 # @raycast.schemaVersion 1
@@ -9,6 +9,8 @@
 # @raycast.icon ⬆️
 # @raycast.packageName Idåsen
 
+set -euo pipefail
+
 # Environment variables are not populated in Raycast scripts.
 XDG_DATA_HOME="$HOME/.local/share"
 UV_TOOL_BIN_DIR="$XDG_DATA_HOME/uv/tools_bin/"
@@ -17,7 +19,7 @@ XDG_STATE_HOME="$HOME/.local/state"
 # Source the machine-local desk UUID.
 UUID_FILE="$HOME/dotfiles/raycast/data/desk.sh"
 if [[ ! -f "$UUID_FILE" ]]; then
-	echo "Define desk UUID in desk.sh"
+	print -r -- "Define desk UUID in desk.sh"
 	exit 1
 fi
 source "$UUID_FILE"
@@ -26,7 +28,7 @@ source "$UUID_FILE"
 mkdir -p "$XDG_STATE_HOME/raycast"
 
 # Write timestamp to log file.
-echo "$(date) stand.sh" >>"$XDG_STATE_HOME/raycast/stand.log"
+print -r -- "$(date) stand.zsh" >>"$XDG_STATE_HOME/raycast/stand.log"
 
 # Run the linak-controller command in background with output redirected to log file.
 "$UV_TOOL_BIN_DIR/linak-controller" \
@@ -37,4 +39,4 @@ echo "$(date) stand.sh" >>"$XDG_STATE_HOME/raycast/stand.log"
 	&
 
 # This line will be shown in a toast message.
-echo "Moving desk to 102cm"
+print -r -- "Moving desk to 102cm"
