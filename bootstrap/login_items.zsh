@@ -13,6 +13,7 @@ login_items=(
 	'/Applications/OrbStack.app'
 	'/Applications/Raycast Beta.app'
 	'/System/Applications/Reminders.app'
+	'/Applications/Tunnelblick.app'
 )
 for app in $login_items; do
 	name="${${app:t}:r}"
