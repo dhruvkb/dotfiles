@@ -24,7 +24,7 @@ for vault in ${(f)vaults}; do
 		pub=$(print -rn -- "$ssh_key_data" | jq -r '.fields[] | select(.id == "public_key") | .value')
 		print -r -- "$pub" >"$dest"
 		# SSH keys need to have restricted permissions.
-		chmod 644 "$dest"
+		chmod u=rw,go= "$dest"
 
 		green "done.\n"
 	done
