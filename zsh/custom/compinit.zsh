@@ -18,8 +18,8 @@ if [[ -n "$_zcompdump"(#qN.mh+24) ]]; then
 	# The file is stale, so we need to do a full security check and rebuild the cache.
 	compinit -d "$_zcompdump"
 else
-	# The file is fresh, so we can trust it and skip the slow security check.
-	compinit -C -d "$_zcompdump"
+	# The file is fresh, so we can trust it and intentionally skip the slow security check.
+	compinit -C -d "$_zcompdump" # noka: ZC1686
 fi
 
 # Use Shift ⇧ + Tab ⇥ to go backwards in completion lists
