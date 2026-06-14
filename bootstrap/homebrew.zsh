@@ -17,7 +17,7 @@ if [[ -x /opt/homebrew/bin/brew ]]; then
 else
 	print -r -- '┌─ Installing Homebrew...'
 	# This does not follow `curl | bash` because it needs `sudo` access.
-	bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	green '└─ done.\n'
 
 	print -rn -- 'Updating Homebrew...'
