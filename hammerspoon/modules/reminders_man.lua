@@ -36,11 +36,7 @@ M.config = {
 
 -- Launch Reminders in the background using its bundle identifier.
 function M.launchInBackground()
-	hs.task.new(
-		"/usr/bin/open",
-		nil,
-		{"--background", "-b", M.config.bundleId}
-	):start()
+	hs.task.new("/usr/bin/open", nil, { "--background", "-b", M.config.bundleId }):start()
 	hs.timer.usleep(1 --[[ second]] * 1e6)
 end
 
@@ -58,9 +54,7 @@ function M.ensureApp()
 	end
 
 	-- Unhide, if hidden.
-	if app:isHidden() then
-		app:unhide()
-	end
+	if app:isHidden() then app:unhide() end
 end
 
 -- Ensure that the Reminders window is unminimized and positioned
@@ -74,20 +68,15 @@ function M.ensureWindow()
 	end
 
 	-- Restore, if minimized.
-	if win:isMinimized() then
-		win:unminimize()
-	end
+	if win:isMinimized() then win:unminimize() end
 
 	-- Position it to the target rectangle.
 	local screen = win:screen()
 	if screen then
 		local screenFrame = screen:frame()
-		local targetFrame = hs.geometry.unitrect(
-			M.config.targetRect.x,
-			M.config.targetRect.y,
-			M.config.targetRect.w,
-			M.config.targetRect.h
-		):fromUnitRect(screenFrame)
+		local targetFrame = hs.geometry
+			.unitrect(M.config.targetRect.x, M.config.targetRect.y, M.config.targetRect.w, M.config.targetRect.h)
+			:fromUnitRect(screenFrame)
 		win:setFrame(targetFrame, nil, true)
 	end
 end

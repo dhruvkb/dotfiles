@@ -70,23 +70,19 @@ end
 -- by disabling the event tap temporarily.
 function M.safelyType(opening, selection, closing)
 	-- Stop listening.
-	if M.config.eventTap then
-		M.config.eventTap:stop()
-	end
+	if M.config.eventTap then M.config.eventTap:stop() end
 
 	hs.eventtap.keyStrokes(opening)
 	if selection and selection ~= "" then
-		hs.eventtap.keyStroke({"cmd"}, "v", 0)
+		hs.eventtap.keyStroke({ "cmd" }, "v", 0)
 		-- Wait for the paste to complete.
 		hs.timer.usleep(M.config.timeout * 1e6) -- µs
 	end
 	hs.eventtap.keyStrokes(closing)
 
 	-- Resume listening.
-	hs.timer.doAfter(M.config.timeout, function ()
-		if M.config.eventTap then
-			M.config.eventTap:start()
-		end
+	hs.timer.doAfter(M.config.timeout, function()
+		if M.config.eventTap then M.config.eventTap:start() end
 	end)
 end
 
@@ -98,12 +94,12 @@ end
 -- It invokes `callbackFn` with the selected text, if there is any
 -- selection in the current window, or an empty string.
 function M.getSelection(callbackFn)
-  -- Store original clipboard content.
+	-- Store original clipboard content.
 	local originalContent = hs.pasteboard.getContents()
 	hs.pasteboard.clearContents()
 
-	hs.eventtap.keyStroke({"cmd"}, "c", 0)
-	hs.pasteboard.callbackWhenChanged(M.config.timeout, function (hasChanged)
+	hs.eventtap.keyStroke({ "cmd" }, "c", 0)
+	hs.pasteboard.callbackWhenChanged(M.config.timeout, function(hasChanged)
 		if hasChanged then
 			local currentContent = hs.pasteboard.getContents() or ""
 			callbackFn(currentContent)
@@ -130,7 +126,7 @@ function M.wrapSelection(opening, closing, callbackFn)
 			-- Extend the selection to include the open-close pair.
 			local length = #selection
 			for i = 1, length + 2 do -- +2 for the opening and closing characters
-				hs.eventtap.keyStroke({"shift"}, "left", 0)
+				hs.eventtap.keyStroke({ "shift" }, "left", 0)
 			end
 		else
 			M.safelyType(opening, selection, closing)
@@ -177,7 +173,7 @@ function M.handleKeyDown(event)
 		return false -- Let the event pass through.
 	end
 
-	local wrapFunction = M.wrapSelection(pair.opening, pair.closing, function () end)
+	local wrapFunction = M.wrapSelection(pair.opening, pair.closing, function() end)
 	M.getSelection(wrapFunction)
 
 	return true -- Consume the event.
@@ -196,7 +192,7 @@ function M.init()
 
 	M.config.eventTap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, M.handleKeyDown)
 
-	M.config.keyBinding = hs.hotkey.bind({"cmd", "ctrl", "shift"}, "9", M.toggle) -- Cmd ⌘ + Ctrl ⌃ + Shift ⇧ + 9
+	M.config.keyBinding = hs.hotkey.bind({ "cmd", "ctrl", "shift" }, "9", M.toggle) -- Cmd ⌘ + Ctrl ⌃ + Shift ⇧ + 9
 	M.config.menubarItem = hs.menubar.new()
 	M.config.menubarItem:setClickCallback(M.toggle)
 end

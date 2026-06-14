@@ -13,6 +13,7 @@ EXTENSIONS=(
 	EditorConfig.EditorConfig             # aka EditorConfig
 	streetsidesoftware.code-spell-checker # aka Code Spell Checker
 	# Languages
+	JohnnyMorganz.stylua    # aka StyLua
 	ms-python.python        # aka Python
 	redhat.vscode-yaml      # aka YAML
 	rust-lang.rust-analyzer # aka rust-analyzer

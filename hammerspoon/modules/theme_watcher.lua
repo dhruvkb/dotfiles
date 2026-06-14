@@ -11,7 +11,8 @@ take separate light and dark values. This module handles the holdouts.
 - Helix: Rewrite `theme` in config and sends `SIGUSR1` to reload.
 - VS Code (icon theme) — Rewrites `workbench.iconTheme` in config.
 
-]]--
+]]
+--
 
 local M = {} -- module table
 
@@ -59,9 +60,7 @@ M.config = {
 --  \___/ \__|_|_|___/
 
 -- True when macOS is currently in Dark Mode.
-function M.isDark()
-	return hs.host.interfaceStyle() == "Dark"
-end
+function M.isDark() return hs.host.interfaceStyle() == "Dark" end
 
 -- Rewrite a single line in `path` from `pattern` to `replacement`. No-op
 -- if the file is missing or the substitution leaves contents unchanged
@@ -88,9 +87,7 @@ function M.apply()
 	for _, app in ipairs(M.config.apps) do
 		local replacement = isDark and app.dark or app.light
 		local changed = M.substituteInFile(app.path, app.pattern, replacement)
-		if changed and app.postCmd then
-			hs.execute(app.postCmd)
-		end
+		if changed and app.postCmd then hs.execute(app.postCmd) end
 	end
 end
 
@@ -102,15 +99,11 @@ end
 --                       |___/|_|
 
 function M.init()
-	M.config.watcher = hs.distributednotifications.new(function()
-		M.apply()
-	end, M.config.notificationName)
+	M.config.watcher = hs.distributednotifications.new(function() M.apply() end, M.config.notificationName)
 end
 
 function M.start()
-	if M.config.watcher then
-		M.config.watcher:start()
-	end
+	if M.config.watcher then M.config.watcher:start() end
 	-- Sync once on load so configs match the current appearance even if it
 	-- changed while Hammerspoon was reloading.
 	M.apply()
@@ -119,9 +112,7 @@ function M.start()
 end
 
 function M.stop()
-	if M.config.watcher then
-		M.config.watcher:stop()
-	end
+	if M.config.watcher then M.config.watcher:stop() end
 
 	hs.alert.show("Theme watcher: stopped")
 end
