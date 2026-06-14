@@ -4,6 +4,7 @@
 
 source "${0:A:h}/_common.zsh"
 
+print -r -- '┌─ Installing extensions...'
 EXTENSIONS=(
 	# Themes
 	Catppuccin.catppuccin-vsc
@@ -25,8 +26,6 @@ EXTENSIONS=(
 	# Tools
 	ms-azuretools.vscode-containers
 )
-
-print -r -- '┌─ Installing extensions...'
 for extension in "${EXTENSIONS[@]}"; do
 	indent code --install-extension "$extension" --force
 done

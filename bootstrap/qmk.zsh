@@ -7,10 +7,9 @@ source "${0:A:h}/_common.zsh"
 # Since we cannot rely on `qmk` to be on the path, we directly check if the
 # binary exists at `$UV_TOOL_BIN_DIR/qmk`.
 if [[ -x $UV_TOOL_BIN_DIR/qmk ]]; then
-	green "QMK is already installed.\n"
+	print -rn -- 'Installing QMK...'
+	green 'skipped!\n'
 else
-	yellow "QMK is not installed.\n"
-
 	print -r -- '┌─ Installing QMK...'
 	# This follows `curl ... | sh`.
 	# `SKIP_UV=1` reuses the Homebrew-installed `uv` instead of letting
@@ -23,7 +22,8 @@ fi
 # set up when the home directory exists and `qmk_home` points to it in config.
 qmk_home_config=$($UV_TOOL_BIN_DIR/qmk config user.qmk_home 2>/dev/null)
 if [[ -d "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" ]] && [[ $qmk_home_config == *"=/Users/dhruvkb/Developer/dhruvkb/qmk_firmware "* ]]; then
-	green "QMK is already set up.\n"
+	print -rn -- 'Setting up QMK...'
+	green 'skipped!\n'
 else
 	# Ensure the parent directory exists before running `qmk setup`.
 	mkdir -p "/Users/dhruvkb/Developer/dhruvkb"

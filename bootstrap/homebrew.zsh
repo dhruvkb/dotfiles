@@ -8,7 +8,8 @@ source "${0:A:h}/_common.zsh"
 # Since we cannot rely on `brew` to be on the path, we directly check if the
 # binary exists at `/opt/homebrew/bin/brew`.
 if [[ -x /opt/homebrew/bin/brew ]]; then
-	green "Homebrew is already installed.\n"
+	print -rn -- 'Installing Homebrew...'
+	green "skipped!\n"
 
 	print -r -- '┌─ Updating Homebrew...'
 	indent /opt/homebrew/bin/brew update
@@ -18,10 +19,12 @@ else
 	# This does not follow `curl | bash` because it needs `sudo` access.
 	bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	green '└─ done.\n'
+
+	print -rn -- 'Updating Homebrew...'
+	green 'skipped!\n'
 fi
 
 print -r -- '┌─ Installing Homebrew formulae...'
-# Install Brew formulae
 FORMULAE=(
 	anomalyco/tap/opencode
 	atuin
@@ -51,7 +54,6 @@ indent /opt/homebrew/bin/brew install "${FORMULAE[@]}"
 green '└─ done.\n'
 
 print -r -- '┌─ Installing Homebrew casks...'
-# Install Brew casks
 CASKS=(
 	1password
 	1password-cli

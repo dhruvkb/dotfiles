@@ -39,11 +39,10 @@ for vault in $vaults_with_keys; do
 done >"$HOME/.config/1Password/ssh/agent.toml"
 green 'done.\n'
 
+print -r -- '┌─ Configuring 1Password CLI plugins...'
 PLUGINS=(
 	gh
 )
-
-print -r -- '┌─ Configuring 1Password CLI plugins...'
 for plugin in "${PLUGINS[@]}"; do
 	# `op plugin init` is interactive so we cannot indent it.
 	op plugin init "$plugin"
