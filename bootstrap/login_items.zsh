@@ -14,6 +14,7 @@ login_items=(
 	'/Applications/Raycast Beta.app'
 	'/System/Applications/Reminders.app'
 	'/Applications/Tunnelblick.app'
+	'/Applications/TypeWhisper.app'
 )
 for app in $login_items; do
 	name="${${app:t}:r}"

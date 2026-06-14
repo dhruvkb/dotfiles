@@ -77,6 +77,7 @@ CASKS=(
 	slack
 	transmission
 	tunnelblick
+	typewhisper/tap/typewhisper
 	visual-studio-code
 	vlc
 	whatsapp
