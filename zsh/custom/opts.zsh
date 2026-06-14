@@ -12,3 +12,6 @@ setopt PUSHD_IGNORE_DUPS
 
 # Swap +/- in `cd -n` dir stack references.
 setopt PUSHDMINUS
+
+# This file is sourced from `.zshrc`, so interactive-shell `setopt`s are intentional.
+# noka: ZC1787

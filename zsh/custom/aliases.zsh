@@ -58,3 +58,6 @@ alias cc="claude"
 
 # OpenCode
 alias oc="opencode"
+
+# This file is sourced from `~/.zshrc`, so the use of `alias -g` is intentional.
+# noka: ZC1771
