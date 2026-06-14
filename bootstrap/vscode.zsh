@@ -7,25 +7,31 @@ source "${0:A:h}/_common.zsh"
 print -r -- '┌─ Installing extensions...'
 EXTENSIONS=(
 	# Themes
-	Catppuccin.catppuccin-vsc
-	Catppuccin.catppuccin-vsc-icons
+	Catppuccin.catppuccin-vsc       # aka Catppuccin for VSCode
+	Catppuccin.catppuccin-vsc-icons # aka Catppuccin Icons for VSCode
 	# Editor
-	EditorConfig.EditorConfig
+	EditorConfig.EditorConfig             # aka EditorConfig
+	streetsidesoftware.code-spell-checker # aka Code Spell Checker
 	# Languages
-	tamasfe.even-better-toml
-	ms-python.python
-	rust-lang.rust-analyzer
-	unifiedjs.vscode-mdx
+	ms-python.python         # aka Python
+	rust-lang.rust-analyzer  # aka rust-analyzer
+	tamasfe.even-better-toml # aka Even Better TOML
+	unifiedjs.vscode-mdx     # aka MDX
 	# Frameworks
-	Vue.volar
-	astro-build.astro-vscode
+	astro-build.astro-vscode # aka Astro
+	Vue.volar                # aka Vue (Official)
 	# Linters & formatters
-	dbaeumer.vscode-eslint
-	esbenp.prettier-vscode
-	oxc.oxc-vscode
+	charliermarsh.ruff     # aka Ruff
+	dbaeumer.vscode-eslint # aka ESLint
+	esbenp.prettier-vscode # aka Prettier - Code formatter
+	oxc.oxc-vscode         # aka Oxc
 	# Tools
-	ms-azuretools.vscode-containers
+	ms-azuretools.vscode-containers # aka Container Tools
 )
+# Note:
+# - Python also bundles Pylance, Python Debugger and Python Environments.
+# - Ruff depends on Python and will be disabled if Python is disabled.
+# - Claude Code will install Claude Code for VS Code automatically.
 for extension in "${EXTENSIONS[@]}"; do
 	indent code --install-extension "$extension" --force
 done
