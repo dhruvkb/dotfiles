@@ -1,0 +1,11 @@
+disabled_katas:
+  # Prefer functions over aliases
+	#
+	# Aliases are awesome and have their place as they are clearer and more
+	# succinct compared to functions.
+  - ZC1049
+  # Use ${var:?} for rm arguments
+  #
+  # `bootstrap/_common.zsh` sets `NO_UNSET` for all bootstrap scripts, and the
+  # other scripts use `set -u` so unset-variable disasters are avoided.
+  - ZC1059

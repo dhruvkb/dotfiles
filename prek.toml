@@ -1,0 +1,28 @@
+[[repos]]
+repo = "builtin"
+hooks = [
+	{ id = "trailing-whitespace", args = [
+		"--markdown-linebreak-ext=md",
+	] },
+	{ id = "end-of-file-fixer" },
+	{ id = "check-json", exclude = "Code/User/settings.json|Zed/settings.json" },
+	{ id = "check-toml" },
+	{ id = "check-yaml" },
+	{ id = "check-executables-have-shebangs" },
+	{ id = "check-case-conflict" },
+	{ id = "check-merge-conflict" },
+	{ id = "check-symlinks" },
+	{ id = "mixed-line-ending" },
+	{ id = "check-shebang-scripts-are-executable" },
+	{ id = "check-executables-have-shebangs" },
+]
+
+[[repos]]
+repo = "https://github.com/afadesigns/zshellcheck"
+rev = "v1.2.2"
+hooks = [{ id = "zshellcheck" }]
+
+[[repos]]
+repo = "https://github.com/scop/pre-commit-shfmt"
+rev = "v3.13.1-1"
+hooks = [{ id = "shfmt" }]
