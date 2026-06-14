@@ -12,7 +12,7 @@ python_version=$(uv python list --output-format json |
         .[] | select(
           .implementation == "cpython"
           and .variant == "default"
-          and (.version | test("^[0-9]+\\.[0-9]+\\.[0-9]+$"))
+          and (.version | test("^\\d+\\.\\d+\\.\\d+$"))
         )
       )
       | "\(.version_parts.major).\(.version_parts.minor)"
