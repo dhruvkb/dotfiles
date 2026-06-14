@@ -21,8 +21,8 @@ fi
 
 # Set up QMK using personal fork, unless it is already set up. We consider it
 # set up when the home directory exists and `qmk_home` points to it in config.
-if [[ -d "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" ]] &&
-	$UV_TOOL_BIN_DIR/qmk config user.qmk_home | grep -q "=/Users/dhruvkb/Developer/dhruvkb/qmk_firmware "; then
+qmk_home_config=$($UV_TOOL_BIN_DIR/qmk config user.qmk_home 2>/dev/null)
+if [[ -d "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" ]] && [[ $qmk_home_config == *"=/Users/dhruvkb/Developer/dhruvkb/qmk_firmware "* ]]; then
 	green "QMK is already set up.\n"
 else
 	# Ensure the parent directory exists before running `qmk setup`.
