@@ -65,13 +65,6 @@ defaults write com.apple.screencapture location -string "$HOME/Screenshots"
 defaults write com.apple.screencapture type -string "png"
 green 'done.\n'
 
-print -r -- '┌─ Configuring display sleep...'
-# Turn the display off after 5 minutes of inactivity on battery.
-sudo pmset -b displaysleep 5
-# Turn the display off after 15 minutes of inactivity on power adapter.
-sudo pmset -c displaysleep 15
-green '└─ done.\n'
-
 print -rn -- 'Configuring screensaver...'
 # Start the screensaver after 10 minutes of inactivity.
 defaults -currentHost write com.apple.screensaver idleTime -int 600
@@ -91,6 +84,16 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Enable for the user.
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 green 'done.\n'
+
+# `pmset` requires superuser, but the rest of the file must be run as the
+# current user, so `sudo` is intentional.
+
+print -r -- '┌─ Configuring display sleep...'
+# Turn the display off after 5 minutes of inactivity on battery.
+sudo pmset -b displaysleep 5 # noka: ZC1047
+# Turn the display off after 15 minutes of inactivity on power adapter.
+sudo pmset -c displaysleep 15 # noka: ZC1047
+green '└─ done.\n'
 
 yellow 'LOG OUT AND LOG BACK IN!\n'
 yellow 'ADD OR REMOVE DOCK ITEMS MANUALLY.\n'
