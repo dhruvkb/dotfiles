@@ -161,7 +161,8 @@ ghauth() {
 	local username=$1
 
 	env GH_PAGER="" \
-		op plugin run -- gh api \
+		op plugin run -- \
+		gh api \
 		"users/$username" \
 		--silent \
 		2>/dev/null
@@ -172,7 +173,8 @@ ghauth() {
 	fi
 
 	env GH_PAGER="" \
-		op plugin run -- gh search commits \
+		op plugin run -- \
+		gh search commits \
 		--author "$username" \
 		--sort author-date \
 		--limit 1 \
