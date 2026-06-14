@@ -6,7 +6,7 @@ source "${0:A:h}/_common.zsh"
 
 # Silence the last login message.
 print -rn -- 'Silencing the last login message...'
-touch "$HOME/.hushlogin"
+>"$HOME/.hushlogin"
 green 'done.\n'
 
 print -rn -- 'Setting up Zsh configuration...'
