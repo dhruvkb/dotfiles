@@ -24,57 +24,57 @@ $line_break\
 $character"""
 
 [username]
-format = '[ $user]($style) @ ' # nf-fa-circle_user
+format = "[ $user]($style) @ "  # nf-fa-circle_user
 
 [hostname]
-ssh_symbol = " " # nf-fa-laptop
+ssh_symbol = " "  # nf-fa-laptop
 style = "bold green"
-format = '[$ssh_symbol$hostname]($style) · '
+format = "[$ssh_symbol$hostname]($style) · "
 
 [directory]
-read_only = " " # nf-fa-lock
+read_only = " "  # nf-fa-lock
 
 [git_branch]
-symbol = " " # nf-oct-git_branch
+symbol = " "  # nf-oct-git_branch
 format = '\[[$symbol$branch]($style)\] '
 
 [git_commit]
-tag_symbol = " " # nf-fa-tag
+tag_symbol = " "  # nf-fa-tag
 only_detached = false
 format = '\[[ $hash]($style)\] '
 
 [docker_context]
-symbol = "  " # nf-oct-container
+symbol = "  "  # nf-oct-container
 format = '\[[$symbol$context]($style)\] '
 
 [package]
-symbol = " " # nf-oct-package
+symbol = " "  # nf-oct-package
 format = '\[[$symbol$version]($style)\] '
 
 [nodejs]
-symbol = "󰎙 " # nf-md-nodejs
+symbol = "󰎙 "  # nf-md-nodejs
 format = '\[[$symbol($version)]($style)\] '
 
 [python]
-symbol = " " # nf-seti-python
+symbol = " "  # nf-seti-python
 format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\] '
 
 [rust]
-symbol = " " # nf-seti-rust
+symbol = " "  # nf-seti-rust
 format = '\[[$symbol($version)]($style)\] '
 
 [cmd_duration]
-format = '\[[󰔛 $duration]($style)\] ' # nf-md-timer_outline
+format = '\[[󰔛 $duration]($style)\] '  # nf-md-timer_outline
 
 [battery]
 format = '\[[$symbol$percentage]($style)\] '
 
 # Remapping symbols to updated Material Design Icons from Nerd Fonts.
-full_symbol = "󰁹 " # nf-md-battery
-charging_symbol = "󰢟 " # nf-md-battery_charging_outline
-discharging_symbol = "󱃍 " # nf-md-battery_alert_variant_outline
-unknown_symbol = "󱉞 " # nf-md-battery_off_outline
-empty_symbol = "󰂎 " # nf-md-battery_outline
+full_symbol = "󰁹 "  # nf-md-battery
+charging_symbol = "󰢟 "  # nf-md-battery_charging_outline
+discharging_symbol = "󱃍 "  # nf-md-battery_alert_variant_outline
+unknown_symbol = "󱉞 "  # nf-md-battery_off_outline
+empty_symbol = "󰂎 "  # nf-md-battery_outline
 
 [[battery.display]]
 threshold = 10

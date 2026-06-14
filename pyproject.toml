@@ -8,3 +8,9 @@ dependencies = []
 
 [dependency-groups]
 dev = ["prek>=0.4.4"]
+
+[tool.tombi]
+[tool.tombi.format]
+[tool.tombi.format.rules]
+indent-style = "space"
+indent-width = 4
