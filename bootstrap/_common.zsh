@@ -1,6 +1,10 @@
 # Shared helpers for the bootstrap scripts. Source this with:
 #   source "${0:A:h}/_common.zsh"
 
+# Abort if a script references an unset variable — protects `rm`-style paths
+# from expanding to filesystem-root deletions when an env var goes missing.
+setopt NO_UNSET
+
 # Print the message in green foreground color.
 green() {
 	printf '\033[32m%b\033[0m' "$1"
