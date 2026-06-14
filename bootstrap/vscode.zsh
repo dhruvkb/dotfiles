@@ -13,11 +13,11 @@ EXTENSIONS=(
 	EditorConfig.EditorConfig             # aka EditorConfig
 	streetsidesoftware.code-spell-checker # aka Code Spell Checker
 	# Languages
-	ms-python.python         # aka Python
-	redhat.vscode-yaml       # aka YAML
-	rust-lang.rust-analyzer  # aka rust-analyzer
-	tamasfe.even-better-toml # aka Even Better TOML
-	unifiedjs.vscode-mdx     # aka MDX
+	ms-python.python        # aka Python
+	redhat.vscode-yaml      # aka YAML
+	rust-lang.rust-analyzer # aka rust-analyzer
+	tombi-toml.tombi        # aka Tombi
+	unifiedjs.vscode-mdx    # aka MDX
 	# Frameworks
 	astro-build.astro-vscode # aka Astro
 	Vue.volar                # aka Vue (Official)
