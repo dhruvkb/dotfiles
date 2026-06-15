@@ -1,0 +1,81 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed documentation:
+// https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings, run `zed: open default settings` from
+// the command palette (Cmd ⌘ + Shift ⇧ + P).
+{
+	// Workbench
+	// =========
+	// UI font
+	"ui_font_family": ".SystemUIFont",
+	"ui_font_size": 14,
+	// Panels
+	"project_panel": {
+		"dock": "left"
+	},
+	"outline_panel": {
+		"dock": "left"
+	},
+	"collaboration_panel": {
+		"dock": "left"
+	},
+	"git_panel": {
+		"dock": "left"
+	},
+	// Theme
+	"theme": {
+		"light": "Catppuccin Frappé",
+		"dark": "Catppuccin Mocha"
+	},
+	"icon_theme": {
+		"light": "Catppuccin Frappé",
+		"dark": "Catppuccin Mocha"
+	},
+	// Extensions
+	"auto_install_extensions": {
+		"catppuccin": true,
+		"catppuccin-icons": true
+	},
+	// Session
+	"session": {
+		"trust_all_worktrees": true
+	},
+
+	// Editor
+	// ======
+	// Font
+	"buffer_font_family": "Monaspace Neon",
+	"buffer_font_fallbacks": ["Symbols Nerd Font", ".SystemUIFont"],
+	"buffer_font_size": 14,
+	"buffer_line_height": { "custom": 1.4 },
+	"buffer_font_features": {
+		"calt": true,
+		"liga": true,
+		"ss01": true,
+		"ss02": true,
+		"ss03": true,
+		"ss04": true,
+		"ss05": true,
+		"ss06": true,
+		"ss07": true,
+		"ss08": true,
+		"ss09": true,
+		"ss10": true
+	},
+	// Decoration
+	"wrap_guides": [72, 80, 88, 120],
+	"scroll_beyond_last_line": "off",
+	// Whitespace
+	"hard_tabs": true,
+	"tab_size": 2,
+	"show_whitespaces": "boundary",
+	// Auto-closing (see Hammerspoon)
+	"use_autoclose": false,
+	"use_auto_surround": false,
+
+	// Files
+	// =====
+	"autosave": "on_focus_change"
+}
