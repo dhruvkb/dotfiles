@@ -10,6 +10,7 @@ login_items=(
 	'/Applications/Beeper Desktop.app'
 	'/Applications/BetterMouse.app'
 	'/Applications/Cloudflare WARP.app'
+	'/Applications/Ghostty.app'
 	'/Applications/OrbStack.app'
 	'/Applications/Raycast Beta.app'
 	'/System/Applications/Reminders.app'
