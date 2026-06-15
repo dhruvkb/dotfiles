@@ -8,9 +8,16 @@ hooks = [
         ]
     },
     { id = "end-of-file-fixer" },
+    { id = "check-json", exclude = "^(.vscode|Code|zed)/.*\\.json$" },
     {
-        id = "check-json",
-        exclude = "Code/User/settings.json|Zed/settings.json"
+        id = "pretty-format-json",
+        args = [
+            "--autofix",
+            "--no-sort-keys",
+            "--no-ensure-ascii",
+            "--indent=\t",
+        ],
+        exclude = "^(.vscode|Code|zed)/.*\\.json$"
     },
     { id = "check-toml" },
     { id = "check-yaml" },
