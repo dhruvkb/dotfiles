@@ -12,13 +12,21 @@ EXTENSIONS=(
 	# Editor
 	EditorConfig.EditorConfig             # aka EditorConfig
 	streetsidesoftware.code-spell-checker # aka Code Spell Checker
+	# Tools
+	ms-azuretools.vscode-containers # aka Container Tools
+	# Data languages
+	redhat.vscode-yaml # aka YAML
+	tombi-toml.tombi   # aka Tombi
+
+	# The following extensions must be disabled by default, and enabled on a
+	# per-workspace basis depending on the languages used in the workspace.
+
 	# Languages
-	JohnnyMorganz.stylua    # aka StyLua
-	ms-python.python        # aka Python
-	redhat.vscode-yaml      # aka YAML
-	rust-lang.rust-analyzer # aka rust-analyzer
-	tombi-toml.tombi        # aka Tombi
-	unifiedjs.vscode-mdx    # aka MDX
+	lumirelle.shell-format-rev # aka VSCode Shell-like Formatter
+	JohnnyMorganz.stylua       # aka StyLua
+	ms-python.python           # aka Python
+	rust-lang.rust-analyzer    # aka rust-analyzer
+	unifiedjs.vscode-mdx       # aka MDX
 	# Frameworks
 	astro-build.astro-vscode # aka Astro
 	Vue.volar                # aka Vue (Official)
@@ -27,8 +35,6 @@ EXTENSIONS=(
 	dbaeumer.vscode-eslint # aka ESLint
 	esbenp.prettier-vscode # aka Prettier - Code formatter
 	oxc.oxc-vscode         # aka Oxc
-	# Tools
-	ms-azuretools.vscode-containers # aka Container Tools
 )
 # Note:
 # - Python also bundles Pylance, Python Debugger and Python Environments.
