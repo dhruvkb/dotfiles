@@ -1,3 +1,10 @@
+// Visual Studio Code user settings
+//
+// For information on how to configure VS Code, see the VS Code documentation:
+// https://code.visualstudio.com/docs/configure/settings
+//
+// To see all of VS Code's default settings, run "Preferences: Open Default
+// Settings (JSON)" from the command palette (Cmd ⌘ + Shift ⇧ + P).
 {
 	// This JSON editor is the primary interface for settings.
 	// Can switch to GUI using icon in the top-right corner.
@@ -5,83 +12,74 @@
 
 	// Window
 	// ======
-
 	"window.openFoldersInNewWindow": "on",
+	"window.autoDetectColorScheme": true,
 
 	// Workbench
 	// =========
-
-	"workbench.startupEditor": "newUntitledFile",
-	"workbench.tree.indent": 16,
+	"workbench.startupEditor": "none",
 	"workbench.editor.empty.hint": "hidden",
+	"workbench.editor.labelFormat": "short",
 	"workbench.tree.renderIndentGuides": "always",
-
 	// Theme
-	// =====
-
-	"window.autoDetectColorScheme": true,
 	"workbench.preferredLightColorTheme": "Catppuccin Latte",
 	"workbench.preferredDarkColorTheme": "Catppuccin Mocha",
 	"workbench.iconTheme": "catppuccin-mocha",
-	"workbench.productIconTheme": "fluent-icons",
 
 	// Editor
 	// ======
-
 	// Font
-	"editor.fontFamily": "'Monaspace Neon', 'JetBrainsMono Nerd Font', monospace",
+	"editor.fontFamily": "'Monaspace Neon', 'Symbols Nerd Font', monospace",
 	"editor.fontSize": 14,
-	"editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga'",
-
+	"editor.lineHeight": 1.4,
+	"editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'ss10', 'liga'",
+	// Inline suggestions and inlay hints
+	"editor.inlineSuggest.fontFamily": "'Monaspace Krypton', monospace",
+	"editor.inlayHints.fontFamily": "'Monaspace Krypton', monospace",
+	"editor.inlayHints.fontSize": 12,
+	"editor.inlayHints.padding": true,
 	// Decoration
 	"editor.rulers": [72, 80, 88, 120],
-
+	"editor.minimap.enabled": false,
+	"editor.guides.bracketPairs": true,
 	// Whitespace
 	"editor.tabSize": 2,
 	"editor.insertSpaces": false,
 	"editor.renderWhitespace": "boundary",
-
-	// Other
-	"editor.minimap.renderCharacters": false,
-	"editor.inlineSuggest.enabled": true,
 	"editor.scrollBeyondLastLine": false,
+	// Behaviour
 	"editor.accessibilitySupport": "off",
-	"editor.guides.bracketPairs": true,
-	"editor.bracketPairColorization.enabled": true,
 	"editor.wordBasedSuggestions": "off",
-	"editor.largeFileOptimizations": false,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-
+	// Auto-closing (see Hammerspoon)
+	"editor.autoClosingBrackets": "never",
+	"editor.autoClosingQuotes": "never",
+	"editor.autoSurround": "never",
+	// Clipboard
+	"editor.emptySelectionClipboard": false,
 	// TextMate
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
 			{
 				"scope": "comment",
 				"settings": {
-					"fontStyle": "italic"
+					"fontStyle": ""
 				}
 			},
-			{
-				"scope": "string.quoted.docstring.multi.python",
-				"settings": {
-					"fontStyle": "italic"
-				}
-			}
 		]
 	},
 
-	// Emmet
-	"emmet.includeLanguages": {
-		"django-html": "html"
-	},
+	// Diff Editor
+	// ===========
+	"diffEditor.ignoreTrimWhitespace": false,
 
-	// Save
-	"editor.formatOnSave": true,
-	"editor.codeActionsOnSave": {},
+	// Debug Console
+	// =============
+	"debug.console.fontFamily": "'Monaspace Neon', 'Symbols Nerd Font', monospace",
+	"debug.console.fontSize": 14,
+	"debug.console.lineHeight": 1.4,
 
 	// Files
 	// =====
-
 	"files.trimTrailingWhitespace": true,
 	"files.insertFinalNewline": true,
 	"files.trimFinalNewlines": true,
@@ -89,97 +87,46 @@
 
 	// Terminal
 	// ========
-
 	// Font
+	"terminal.integrated.fontFamily": "'Monaspace Neon', 'Symbols Nerd Font', monospace",
 	"terminal.integrated.fontSize": 14,
-	"terminal.integrated.lineHeight": 1.5,
-
+	"terminal.integrated.lineHeight": 1.4,
+	"terminal.integrated.fontLigatures.enabled": true,
+	"terminal.integrated.fontLigatures.featureSettings": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'ss10', 'liga'",
 	// Whitespace
 	"terminal.integrated.tabStopWidth": 2,
-
 	// Text
 	"terminal.integrated.drawBoldTextInBrightColors": false,
-
-	// Other
+	// Behaviour
+	"terminal.integrated.tabs.location": "left",
 	"terminal.integrated.showExitAlert": false,
-	"terminal.external.osxExec": "iTerm.app",
 	"terminal.integrated.enablePersistentSessions": false,
 	"terminal.integrated.inheritEnv": false,
+	"terminal.integrated.stickyScroll.enabled": false,
+	"terminal.external.osxExec": "Ghostty.app",
 
-	// Associations
-	// ============
-
-	"files.associations": {
-		"*.plist": "xml"
-	},
+	// Source control
+	// ==============
+	"git.confirmSync": false,
+	"git.openRepositoryInParentFolders": "always",
 
 	// Languages
 	// =========
-
-	// Python
-	"[python]": {
-		// Editor overrides
-		"editor.tabSize": 4,
-		"editor.insertSpaces": true,
-		// Formatting
-		"editor.defaultFormatter": "charliermarsh.ruff",
-		"editor.formatOnSave": true
-	},
-	"python.languageServer": "Pylance",
-	"python.analysis.autoImportCompletions": true,
-	"python.analysis.autoFormatStrings": true,
-	"python.terminal.activateEnvironment": false,
-
-	// JavaScript
-	"[javascript]": {
-		// Formatting
-		"editor.defaultFormatter": "vscode.typescript-language-features"
-	},
-	"javascript.updateImportsOnFileMove.enabled": "never",
-
 	// HTML
 	"[html]": {
-		"editor.suggest.insertMode": "replace"
+		"editor.linkedEditing": true
+	},
+	// Vue
+	"[vue]": {
+		"editor.linkedEditing": true
+	},
+	// Astro
+	"[astro]": {
+		"editor.linkedEditing": true
 	},
 
-	"[django-html]": {
-		"editor.formatOnSave": false
-	},
-
-	// Markdown
-	"[markdown]": {
-		"editor.wordWrap": "off",
-		"editor.formatOnSave": true
-	},
-
-	// MDX
-	"[mdx]": {
-		"editor.wordWrap": "wordWrapColumn"
-	},
-
-	// Miscellaneous
-	// =============
-
-	// GitHub Copilot
-	"github.copilot.enable": {
-		"*": true
-	},
-
+	// Extensions
+	// ==========
 	// Code Spell Checker
-	"cSpell.language": "en-GB",
-	"cSpell.userWords": ["color", "Colored", "dotfiles", "Openverse"],
-
-	// Git
-	"git.confirmSync": false,
-	"git.openRepositoryInParentFolders": "always",
-	"scm.showHistoryGraph": false,
-
-	// ESlint
-	"eslint.format.enable": true,
-	"eslint.lintTask.enable": true,
-	"terminal.integrated.tabs.location": "left",
-	"diffEditor.ignoreTrimWhitespace": false,
-	"github.copilot.editor.enableAutoCompletions": true,
-	"githubPullRequests.fileListLayout": "tree",
-	"githubPullRequests.pullBranch": "never"
+	"cSpell.language": "en-GB,en-US"
 }
