@@ -30,6 +30,7 @@ green '└─ done.\n'
 CARGO_PACKAGES=(
 	cargo-release
 	cargo-update
+	cargo-bloat
 )
 CARGO_LOCKED_PACKAGES=(
 	cargo-nextest
