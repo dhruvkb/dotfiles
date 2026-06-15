@@ -66,5 +66,8 @@ ln -s "$HOME/dotfiles/zed/keymap.json" "$XDG_CONFIG_HOME/zed/keymap.json"
 green 'done.\n'
 
 print -rn -- 'Linking Hammerspoon config...'
+# Point Hammerspoon to the `init.lua` file in this repo.
 defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/dotfiles/hammerspoon/init.lua"
+# Remove the home directory junk.
+rm -rf ~/.hammerspoon
 green 'done.\n'
