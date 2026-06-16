@@ -9,7 +9,7 @@ source "${0:A:h}/_common.zsh"
 # binary exists at `/opt/homebrew/bin/brew`.
 if [[ -x /opt/homebrew/bin/brew ]]; then
 	print -rn -- 'Installing Homebrew...'
-	green "skipped!\n"
+	green 'skipped!\n'
 
 	print -r -- '┌─ Updating Homebrew...'
 	indent /opt/homebrew/bin/brew update

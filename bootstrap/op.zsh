@@ -26,7 +26,7 @@ for vault in ${(f)vaults}; do
 		# SSH keys need to have restricted permissions.
 		chmod u=rw,go= "$dest"
 
-		green "done.\n"
+		green 'done.\n'
 	done
 done
 green '└─ done.\n'

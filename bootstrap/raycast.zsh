@@ -9,4 +9,4 @@ print -rn -- "Populating desk UUID..."
 mkdir -p ~/dotfiles/raycast/data/
 desk_uuid=$($UV_TOOL_BIN_DIR/linak-controller --scan | awk -F':' '/Desk / {print $1}')
 print -r -- "DESK_UUID='$desk_uuid'" >~/dotfiles/raycast/data/desk.sh
-green "done.\n"
+green 'done.\n'
