@@ -85,7 +85,13 @@ PLUGINS=(
 	gh
 )
 for plugin in "${PLUGINS[@]}"; do
+	indent print -rn -- "Configuring $plugin plugin..."
+	if [[ -f "$XDG_CONFIG_HOME/op/plugins/$plugin.json" ]]; then
+		green 'skipped!\n'
+		continue
+	fi
 	# `op plugin init` is interactive so we cannot indent it.
 	op plugin init "$plugin"
+	indent green 'done!\n'
 done
 green '└─ done.\n'

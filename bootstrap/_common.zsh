@@ -6,13 +6,27 @@
 setopt NO_UNSET
 
 # Print the message in green foreground color.
+#
+# If there is a trailing newline, the reset is placed before it to prevent it
+# from leaking into the next line.
 green() {
-	printf '\033[32m%b\033[0m' "$1"
+	if [[ "$1" == *'\n' ]]; then
+		printf '\033[32m%b\033[0m\n' "${1%'\n'}"
+	else
+		printf '\033[32m%b\033[0m' "$1"
+	fi
 }
 
 # Print the message in yellow foreground color.
+#
+# If there is a trailing newline, the reset is placed before it to prevent it
+# from leaking into the next line.
 yellow() {
-	printf '\033[33m%b\033[0m' "$1"
+	if [[ "$1" == *'\n' ]]; then
+		printf '\033[33m%b\033[0m\n' "${1%'\n'}"
+	else
+		printf '\033[33m%b\033[0m' "$1"
+	fi
 }
 
 # Run a command, indenting its output with a vertical bar.
