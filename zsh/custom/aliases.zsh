@@ -37,21 +37,6 @@ alias bwhy="brew uses --installed"
 alias bdep="brew deps --installed --tree"
 alias blvs="brew leaves --installed-on-request"
 
-# Docker aliases
-alias dock="docker"
-alias dimg="docker image"
-alias dcon="docker container"
-alias dvol="docker volume"
-alias dxit="docker exec -ti"
-
-# Docker-Compose aliases
-alias dc="docker compose"
-alias dcup="dc up"
-alias dcdn="dc down"
-alias dcex="dc exec"
-alias dcdu="dcdn && dcup -d"    # du as in "down up"
-alias dcnu="dcdn -v && dcup -d" # nu as in "new"
-
 # Claude Code
 alias claude="claude --plugin-dir $HOME/chhotu"
 alias cc="claude"
