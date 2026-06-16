@@ -4,6 +4,7 @@
 # - SSH: `~/.ssh/config`
 # - uv, Helix, Ghostty: subdirectories under `XDG_CONFIG_HOME`
 # - VS Code: subdirectories under `MACOS_CONFIG_HOME`
+# - Claude Code: subdirectories under `HOME`
 # - Hammerspoon: `defaults`
 
 source "${0:A:h}/_common.zsh"
@@ -70,4 +71,14 @@ print -rn -- 'Linking Hammerspoon config...'
 defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/dotfiles/hammerspoon/init.lua"
 # Remove the home directory junk.
 rm -rf ~/.hammerspoon
+green 'done.\n'
+
+print -rn -- 'Linking Claude Code settings...'
+# Ensure the directory exists.
+mkdir -p "$HOME/.claude"
+# Remove existing settings file, if it exists.
+rm -f "$HOME/.claude/settings.json" "$HOME/.claude/CLAUDE.md"
+# Create a symlink to the Claude Code settings file in this repo.
+ln -s "$HOME/dotfiles/claude/settings.json" "$HOME/.claude/settings.json"
+ln -s "$HOME/dotfiles/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 green 'done.\n'
