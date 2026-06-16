@@ -1,0 +1,12 @@
+{
+	"theme": "auto",
+	"statusLine": {
+		"type": "command",
+		"command": "env FORCE_COLOR=3 zx /Users/dhruvkb/dotfiles/claude/statusline-command.mjs"
+	},
+	"enabledPlugins": {
+		"superpowers@claude-plugins-official": true
+	},
+	"verbose": true,
+	"preferredNotifChannel": "ghostty"
+}
