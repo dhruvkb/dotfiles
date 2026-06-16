@@ -2,7 +2,7 @@
 
 # This script links configuration files to the right place.
 # - SSH: `~/.ssh/config`
-# - uv, Helix, Ghostty: subdirectories under `XDG_CONFIG_HOME`
+# - uv, Helix, Ghostty, Zed: subdirectories under `XDG_CONFIG_HOME`
 # - VS Code: subdirectories under `MACOS_CONFIG_HOME`
 # - Claude Code: subdirectories under `HOME`
 # - Hammerspoon: `defaults`
