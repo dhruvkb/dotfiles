@@ -52,3 +52,13 @@ hooks = [
 repo = "https://github.com/JohnnyMorganz/StyLua"
 rev = "v2.5.2"
 hooks = [{ id = "stylua-github" }]
+
+[[repos]]
+repo = "https://github.com/oxc-project/mirrors-oxlint"
+rev = "v1.69.0"
+hooks = [{ id = "oxlint" }]
+
+[[repos]]
+repo = "https://github.com/oxc-project/mirrors-oxfmt"
+rev = "v0.54.0"
+hooks = [{ id = "oxfmt" }]
