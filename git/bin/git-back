@@ -1,5 +1,5 @@
 #!/bin/sh
-branch=$(git rev-parse --abbrev-ref HEAD)
+branch=$(git curr)
 echo "back: resets $branch to origin/$branch, discarding uncommitted changes and unpushed commits."
 printf 'Press Enter to continue, Ctrl+C to abort: '
 read _ </dev/tty || exit 1

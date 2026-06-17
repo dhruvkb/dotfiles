@@ -7,21 +7,6 @@ export GIT_CONFIG_GLOBAL="$HOME/dotfiles/git/config"
 # Expose custom `git-<name>` subcommands.
 pathadd "$HOME/dotfiles/git/bin"
 
-# Get the name of the current Git branch.
-#
-# Usage
-#   git_current_branch
-git_current_branch() {
-	local ref
-	ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2>/dev/null)
-	local ret=$?
-	if [[ $ret != 0 ]]; then
-		[[ $ret == 128 ]] && return # no git repo.
-		ref=$(__git_prompt_git rev-parse --short HEAD 2>/dev/null) || return
-	fi
-	echo ${ref#refs/heads/}
-}
-
 # Aliases
 alias g="git"
 alias ga="git add"
@@ -35,7 +20,7 @@ alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gp="git push"
 alias gpf="git push --force-with-lease"
-alias gps='git push --set-upstream origin $(git_current_branch)'
+alias gps='git push --set-upstream origin $(git curr)'
 alias gpl="git pull"
 alias gplr="git pull --rebase"
 

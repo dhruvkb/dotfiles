@@ -1,0 +1,11 @@
+#!/bin/sh
+# Print the current branch name, or the short SHA if HEAD is detached.
+git symbolic-ref \
+	--short \
+	--quiet \
+	HEAD \
+	2>/dev/null ||
+	git rev-parse \
+		--short \
+		HEAD \
+		2>/dev/null
