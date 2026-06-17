@@ -28,6 +28,8 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock show-recents -bool false
 # Scroll on an app icon to exposé it.
 defaults write com.apple.dock "scroll-to-open" -bool "true"
+# Make Dock icons of hidden applications translucent
+defaults write com.apple.dock showhidden -bool true
 green 'done.\n'
 
 print -rn -- 'Configuring TextEdit...'
@@ -40,6 +42,8 @@ print -rn -- 'Configuring window management...'
 defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
 # Do not hide windows when clicking the desktop.
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
 green 'done.\n'
 
 print -rn -- 'Configuring keyboard...'
