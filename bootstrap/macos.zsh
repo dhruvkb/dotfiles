@@ -6,19 +6,19 @@ source "${0:A:h}/_common.zsh"
 
 print -rn -- 'Configuring Finder...'
 # Set default location for new Finder windows
-defaults write com.apple.finder NewWindowTarget -string "PfHm"
+defaults write com.apple.finder NewWindowTarget -string PfHm
 # Show all filename extensions.
-defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Set default search scope to current folder.
-defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+defaults write com.apple.finder FXDefaultSearchScope -string SCcf
 # Show the path bar.
-defaults write com.apple.finder "ShowPathbar" -bool "true"
+defaults write com.apple.finder ShowPathbar -bool true
 # Sort folders before files.
-defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
 # Don't litter network volumes with .DS_Store files.
-defaults write com.apple.desktopservices "DSDontWriteNetworkStores" -bool "true"
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Don't litter USB volumes with .DS_Store files.
-defaults write com.apple.desktopservices "DSDontWriteUSBStores" -bool "true"
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 green 'done.\n'
 
 print -rn -- 'Configuring Dock...'
@@ -27,7 +27,7 @@ defaults write com.apple.dock autohide -bool true
 # Do not show recent applications in the Dock.
 defaults write com.apple.dock show-recents -bool false
 # Scroll on an app icon to exposé it.
-defaults write com.apple.dock "scroll-to-open" -bool "true"
+defaults write com.apple.dock scroll-to-open -bool true
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 green 'done.\n'
@@ -66,7 +66,7 @@ print -rn -- 'Configuring screenshots...'
 mkdir -p "$HOME/Screenshots"
 defaults write com.apple.screencapture location -string "$HOME/Screenshots"
 # Use PNG format for screenshots.
-defaults write com.apple.screencapture type -string "png"
+defaults write com.apple.screencapture type -string png
 green 'done.\n'
 
 print -rn -- 'Configuring screensaver...'
