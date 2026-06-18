@@ -43,5 +43,10 @@ hooks = [
         "markdown",
         "toml",
         "yaml",
+    ], args = [
+        # Since there are some files which match `types_or` but are ignored by
+        # `.oxfmtrc.json`, we need to silence the error raised when the staged
+        # change only has the ignored files.
+        "--no-error-on-unmatched-pattern",
     ] },
 ]
