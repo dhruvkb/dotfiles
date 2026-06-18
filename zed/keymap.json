@@ -1,7 +1,7 @@
 [
-  {
-    "bindings": {
-      "ctrl-alt-cmd-k": "zed::OpenKeymap"
-    }
-  }
+	{
+		"bindings": {
+			"ctrl-alt-cmd-k": "zed::OpenKeymap"
+		}
+	}
 ]
