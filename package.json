@@ -1,0 +1,22 @@
+{
+	"name": "dotfiles",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"author": "",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"format": "oxfmt",
+		"format:check": "oxfmt --check",
+		"lint": "oxlint",
+		"lint:fix": "oxlint --fix"
+	},
+	"devDependencies": {
+		"@j178/prek": "^0.4.5",
+		"oxfmt": "^0.55.0",
+		"oxlint": "^1.70.0"
+	},
+	"packageManager": "pnpm@11.5.2"
+}

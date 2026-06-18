@@ -1,14 +1,8 @@
 # pre-commit
 pre-commit.pyz
 
-# Python cache
-__pycache__/
-
-# Virtual environment
-.venv/
-
-# Ignore Catppuccin themes
-iTerm2/colors/catppuccin_*.itermcolors
+# Node modules
+node_modules/
 
 # Machine-local Raycast script data
 raycast/data/
@@ -21,3 +15,6 @@ aws/data/
 
 # Machine-local SSH public keys data
 ssh/data/
+
+# VS Code settings
+!.vscode

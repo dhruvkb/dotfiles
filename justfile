@@ -2,13 +2,13 @@
 @_default:
 	just --list --unsorted
 
-# Install packages with uv.
+# Install dependencies.
 install:
-	uv sync
+	pnpm i
 
-# Run `prek` commands through uv.
+# Run `prek` commands through package manager.
 prek *args:
-	uv run prek {{ args }}
+	pnpm exec prek {{ args }}
 
 # Run `prek` to lint and format files.
 lint hook="" *files="":

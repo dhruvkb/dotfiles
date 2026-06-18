@@ -1,24 +1,11 @@
 [[repos]]
 repo = "builtin"
 hooks = [
-    {
-        id = "trailing-whitespace",
-        args = [
-            "--markdown-linebreak-ext=md",
-        ]
-    },
+    { id = "trailing-whitespace", args = [
+        "--markdown-linebreak-ext=md",
+    ] },
     { id = "end-of-file-fixer" },
     { id = "check-json", exclude = "^(.vscode|Code|zed)/.*\\.json$" },
-    {
-        id = "pretty-format-json",
-        args = [
-            "--autofix",
-            "--no-sort-keys",
-            "--no-ensure-ascii",
-            "--indent=\t",
-        ],
-        exclude = "^(.vscode|Code|zed)/.*\\.json$"
-    },
     { id = "check-toml" },
     { id = "check-yaml" },
     { id = "check-case-conflict" },
@@ -40,24 +27,21 @@ rev = "v3.13.1-1"
 hooks = [{ id = "shfmt" }]
 
 [[repos]]
-repo = "https://github.com/tombi-toml/tombi-pre-commit"
-rev = "v1.1.2"
-hooks = [
-    { id = "tombi-lint" },
-    { id = "tombi-format", exclude = "uv.lock" },
-]
-
-[[repos]]
 repo = "https://github.com/JohnnyMorganz/StyLua"
 rev = "v2.5.2"
 hooks = [{ id = "stylua-github" }]
 
 [[repos]]
-repo = "https://github.com/oxc-project/mirrors-oxlint"
-rev = "v1.69.0"
-hooks = [{ id = "oxlint" }]
-
-[[repos]]
-repo = "https://github.com/oxc-project/mirrors-oxfmt"
-rev = "v0.54.0"
-hooks = [{ id = "oxfmt" }]
+repo = "local"
+hooks = [
+    { id = "oxlint", name = "Oxlint", entry = "pnpm lint:fix", language = "system", types_or = [
+        "javascript",
+    ] },
+    { id = "oxfmt", name = "Oxfmt", entry = "pnpm format", language = "system", types_or = [
+        "javascript",
+        "json",
+        "markdown",
+        "toml",
+        "yaml",
+    ] },
+]
