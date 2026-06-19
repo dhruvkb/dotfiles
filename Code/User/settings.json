@@ -102,6 +102,7 @@
 	"terminal.integrated.showExitAlert": false,
 	"terminal.integrated.enablePersistentSessions": false,
 	"terminal.integrated.inheritEnv": false,
+	"terminal.integrated.initialHint": false,
 	"terminal.integrated.stickyScroll.enabled": false,
 	"terminal.external.osxExec": "Ghostty.app",
 
