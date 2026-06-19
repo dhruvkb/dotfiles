@@ -17,4 +17,4 @@ aws/data/
 ssh/data/
 
 # VS Code settings
-!.vscode
+!.vscode/
