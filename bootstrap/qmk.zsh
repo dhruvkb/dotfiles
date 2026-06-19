@@ -21,17 +21,17 @@ fi
 # Set up QMK using personal fork, unless it is already set up. We consider it
 # set up when the home directory exists and `qmk_home` points to it in config.
 qmk_home_config=$($UV_TOOL_BIN_DIR/qmk config user.qmk_home 2>/dev/null)
-if [[ -d "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" ]] && [[ $qmk_home_config == *"=/Users/dhruvkb/Developer/dhruvkb/qmk_firmware "* ]]; then
+if [[ -d "$HOME/Developer/dhruvkb/qmk_firmware" ]] && [[ $qmk_home_config == *"=$HOME/Developer/dhruvkb/qmk_firmware "* ]]; then
 	print -rn -- 'Setting up QMK...'
 	green 'skipped!\n'
 else
 	# Ensure the parent directory exists before running `qmk setup`.
-	mkdir -p "/Users/dhruvkb/Developer/dhruvkb"
+	mkdir -p "$HOME/Developer/dhruvkb"
 
 	print -r -- '┌─ Setting up QMK...'
 	# This will also set the `qmk_home` config flag to the right directory.
 	indent $UV_TOOL_BIN_DIR/qmk setup dhruvkb/qmk_firmware \
-		--home "/Users/dhruvkb/Developer/dhruvkb/qmk_firmware" \
+		--home "$HOME/Developer/dhruvkb/qmk_firmware" \
 		--branch supreme_keymap \
 		--yes
 	green '└─ done.\n'
