@@ -196,11 +196,13 @@ uuid4() {
 # This includes:
 # - Homebrew formulae and casks
 # - uv tools
+# - Rust toolchain
 # - Cargo packages
 #
 # This does not update Python, Node.js or Rust.
 updates() {
 	brew update && brew upgrade && brew cleanup && brew autoremove
 	uv tool upgrade --all
+	rustup update
 	cargo install-update -a
 }
