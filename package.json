@@ -1,12 +1,23 @@
 {
 	"name": "dotfiles",
 	"version": "1.0.0",
-	"description": "",
-	"keywords": [],
-	"license": "ISC",
-	"author": "",
-	"type": "module",
-	"main": "index.js",
+	"description": "a collection of my dotfiles",
+	"keywords": [
+		"brew",
+		"dotfiles",
+		"git",
+		"ssh",
+		"xdg",
+		"zsh"
+	],
+	"bugs": "https://github.com/dhruvkb/dotfiles/issues",
+	"license": "GPL-3.0-or-later",
+	"author": {
+		"name": "Dhruv Bhanushali",
+		"url": "https://dhruvkb.dev/"
+	},
+	"repository": "github:dhruvkb/dotfiles",
+	"funding": "https://github.com/sponsors/dhruvkb",
 	"scripts": {
 		"format": "oxfmt",
 		"format:check": "oxfmt --check",
