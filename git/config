@@ -68,7 +68,11 @@
 [include]
   path = ~/dotfiles/git/data/themes.gitconfig
 
-# All repos are placed in ~/Developer under folders whose names
-# correspond to the GitHub username of their owners.
-[includeIf "gitdir:~/Developer/Finrep-ai/"]
-   path = ~/dotfiles/git/finrep.gitconfig
+# All repos are placed in ~/Developer under directories named after the GitHub
+# username of their owners. So if you want a separate Git config for an
+# organisation, add a block like the following to this file...
+#
+# [includeIf "gitdir:~/Developer/<org>/"]
+#   path = ~/dotfiles/git/<org>.gitconfig
+#
+# ...and a corresponding `<org>.gitconfig` file as a sibling of this file.
