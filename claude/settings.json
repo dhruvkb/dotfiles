@@ -9,5 +9,8 @@
 		"superpowers@claude-plugins-official": true
 	},
 	"verbose": true,
-	"preferredNotifChannel": "ghostty"
+	"preferredNotifChannel": "ghostty",
+	"permissions": {
+		"allow": ["Read", "Grep", "Glob", "Bash(git grep *)", "Bash(just lint *)"]
+	}
 }
