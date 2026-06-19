@@ -14,6 +14,7 @@ EXTENSIONS=(
 	streetsidesoftware.code-spell-checker # aka Code Spell Checker
 	# Tools
 	ms-azuretools.vscode-containers # aka Container Tools
+	nefrob.vscode-just-syntax       # aka vscode-just
 	# Data languages
 	redhat.vscode-yaml # aka YAML
 	tombi-toml.tombi   # aka Tombi

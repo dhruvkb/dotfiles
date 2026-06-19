@@ -75,6 +75,7 @@ CASKS=(
 	orbstack
 	orion
 	slack
+	terror/tap/just-lsp
 	transmission
 	tunnelblick
 	typewhisper/tap/typewhisper
