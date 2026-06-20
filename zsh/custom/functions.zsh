@@ -116,6 +116,41 @@ o() {
 	fi
 }
 
+# Open the directory in Visual Studio Code.
+#
+# When given a directory containing one or more `.code-workspace` files,
+# those workspaces are opened instead of the bare folder.
+#
+# Usage:
+#   vsc <directory>
+# where
+#   <directory> is the path to open
+vsc() {
+	if [[ $# -eq 0 ]]; then
+		echo "Usage: vsc <directory>" >&2
+		return 1
+	fi
+
+	local target=$1
+
+	if [[ -d $target ]]; then
+		# Open every `.code-workspace` file in the directory, if any. Each is
+		# opened with a separate invocation so it lands in its own window.
+		local workspaces=("$target"/*.code-workspace(N))
+		if (($#workspaces)); then
+			local workspace
+			for workspace in $workspaces; do
+				code "$workspace"
+			done
+		else
+			code "$target"
+		fi
+	else
+		echo "Error: '$target' is not a directory." >&2
+		return 1
+	fi
+}
+
 # Serve the given directory, or the current directory, using Python HTTP
 # server.
 #
