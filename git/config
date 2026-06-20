@@ -12,9 +12,13 @@
 
 [core]
   excludesfile = ~/dotfiles/git/ignore
-  pager = delta
+  # delta reads its config via libgit2, which does not read `GIT_CONFIG_GLOBAL`,
+  # so we point delta to this config file explicitly.
+	# TODO: Remove `--config` when dandavison/delta#1113 is closed.
+  pager = delta --config ~/dotfiles/git/config
 
 [delta]
+	features = catppuccin-mocha
   navigate = true
 
 [diff]
@@ -30,7 +34,10 @@
   defaultbranch = main
 
 [interactive]
-  diffFilter = delta --color-only
+  # delta reads its config via libgit2, which does not read `GIT_CONFIG_GLOBAL`,
+  # so we point delta to this config file explicitly.
+	# TODO: Remove `--config` when dandavison/delta#1113 is closed.
+  diffFilter = delta --color-only --config ~/dotfiles/git/config
 
 [merge]
   conflictstyle = diff3
@@ -57,6 +64,9 @@
   name = Dhruv Bhanushali
   email = dhruv_b@live.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII57SP4Vf5B6n6SThAEWVWHedM9T/Cj3P3nEPawE4Vlv
+
+[include]
+  path = ~/dotfiles/git/data/themes.gitconfig
 
 # All repos are placed in ~/Developer under folders whose names
 # correspond to the GitHub username of their owners.
