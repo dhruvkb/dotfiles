@@ -1,12 +1,9 @@
 # CAUTION: Symlinked file!
 # ORIGINAL: `dotfiles/helix/languages.toml`
 
-[[language]]
-name = "markdown"
-file-types = ["md", "mdx"]
-rulers = [80, 120]
+# Reference: https://github.com/helix-editor/helix/blob/master/languages.toml
 
-[[python]]
-name = "python"
-file-types = ["py"]
-rulers = [80, 120]
+[[language]]
+name = "json"
+file-types = ["code-workspace"] # TODO: Remove when commit 0cdeee7/PR #14908 lands.
+indent = { unit = "\t", tab-width = 2 }

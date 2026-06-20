@@ -4,7 +4,7 @@
 theme = "catppuccin_mocha"
 
 [editor]
-rulers = [80, 120]
+rulers = [72, 80, 88, 120]
 cursorline = true
 color-modes = true
 
