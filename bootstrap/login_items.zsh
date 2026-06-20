@@ -11,6 +11,7 @@ login_items=(
 	'/Applications/BetterMouse.app'
 	'/Applications/Cloudflare WARP.app'
 	'/Applications/Ghostty.app'
+	'/Applications/Hammerspoon.app'
 	'/Applications/OrbStack.app'
 	'/Applications/Raycast Beta.app'
 	'/System/Applications/Reminders.app'
