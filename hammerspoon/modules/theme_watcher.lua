@@ -10,6 +10,7 @@ take separate light and dark values. This module handles the holdouts.
 
 - Helix: Rewrite `theme` in config and sends `SIGUSR1` to reload.
 - VS Code (icon theme) — Rewrites `workbench.iconTheme` in config.
+- Delta — Rewrites `features` in config.
 
 ]]
 --
@@ -46,6 +47,13 @@ M.config = {
 			pattern = '"workbench%.iconTheme": "[^"]*"',
 			dark = '"workbench.iconTheme": "catppuccin-mocha"',
 			light = '"workbench.iconTheme": "catppuccin-latte"',
+		},
+		{
+			name = "Delta",
+			path = home .. "/dotfiles/git/config",
+			pattern = "features = [a-z-]*",
+			dark = "features = catppuccin-mocha",
+			light = "features = catppuccin-latte",
 		},
 	},
 
