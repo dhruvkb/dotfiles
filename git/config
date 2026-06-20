@@ -40,7 +40,7 @@
   diffFilter = delta --color-only --config ~/dotfiles/git/config
 
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 
 [pager]
   branch = cat
