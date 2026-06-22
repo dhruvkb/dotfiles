@@ -1,5 +1,6 @@
 [alias]
   root = rev-parse --show-toplevel
+  diff-main = !git diff $(git merge-base HEAD main)..HEAD
 
 [branch]
   sort = -committerdate
