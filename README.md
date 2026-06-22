@@ -4,6 +4,8 @@
 
 # <img src="https://github.com/dhruvkb/dotfiles/raw/main/readme_assets/logo.png" alt="" align="left" width="40" height="40"> .files
 
+<a href="https://github.com/dhruvkb/dotfiles/actions/workflows/lint.yml"><img src="https://github.com/dhruvkb/dotfiles/actions/workflows/lint.yml/badge.svg" alt="Lint"></a>
+
 [.files](https://dhruvkb.dev/uses/) is a collection of my dotfiles, exported
 settings and other configuration files, along with documentation on how to use
 them to set up a new device, published to GitHub for version control, backup and
