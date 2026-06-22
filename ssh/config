@@ -8,5 +8,5 @@ Include ~/.orbstack/ssh/config
 Include ~/.ssh/1Password/config
 
 Host *
-  # Use 1Password SSH Agent
-  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+	# Use 1Password SSH Agent
+	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

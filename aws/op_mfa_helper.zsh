@@ -50,12 +50,12 @@ output=$(aws --profile "$profile" sts get-session-token \
 	--token-code "$otp" \
 	--duration-seconds 43200 |
 	jq -c '{
-    Version: 1,
-    AccessKeyId: .Credentials.AccessKeyId,
-    SecretAccessKey: .Credentials.SecretAccessKey,
-    SessionToken: .Credentials.SessionToken,
-    Expiration: .Credentials.Expiration
-  }')
+		Version: 1,
+		AccessKeyId: .Credentials.AccessKeyId,
+		SecretAccessKey: .Credentials.SecretAccessKey,
+		SessionToken: .Credentials.SessionToken,
+		Expiration: .Credentials.Expiration
+	}')
 print -r -- "$output"
 
 # Cache the credentials for the future.

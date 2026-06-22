@@ -25,8 +25,8 @@ print -r -- "Secret ID: $secret_id" >&2
 
 cat <<EOF | op inject
 {
-  "Version": 1,
-  "AccessKeyId": "{{ op://${vault}/${secret_id}/access key id }}",
-  "SecretAccessKey": "{{ op://${vault}/${secret_id}/secret access key }}"
+	"Version": 1,
+	"AccessKeyId": "{{ op://${vault}/${secret_id}/access key id }}",
+	"SecretAccessKey": "{{ op://${vault}/${secret_id}/secret access key }}"
 }
 EOF

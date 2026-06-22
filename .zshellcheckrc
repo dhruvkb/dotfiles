@@ -1,8 +1,8 @@
 disabled_katas:
   # Prefer functions over aliases
-	#
-	# Aliases are awesome and have their place as they are clearer and more
-	# succinct compared to functions.
+  #
+  # Aliases are awesome and have their place as they are clearer and more
+  # succinct compared to functions.
   - ZC1049
   # Use ${var:?} for rm arguments
   #

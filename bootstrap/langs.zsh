@@ -8,15 +8,15 @@ print -r -- '┌─ Installing Python stable...'
 # Resolve the latest stable Python major.minor from uv's download list.
 python_version=$(uv python list --output-format json |
 	jq -r '
-      first(
-        .[] | select(
-          .implementation == "cpython"
-          and .variant == "default"
-          and (.version | test("^\\d+\\.\\d+\\.\\d+$"))
-        )
-      )
-      | "\(.version_parts.major).\(.version_parts.minor)"
-    ')
+			first(
+				.[] | select(
+					.implementation == "cpython"
+					and .variant == "default"
+					and (.version | test("^\\d+\\.\\d+\\.\\d+$"))
+				)
+			)
+			| "\(.version_parts.major).\(.version_parts.minor)"
+		')
 indent uv python install "$python_version"
 # Now `python${python_version}` is in your `PATH`.
 green '└─ done.\n'
