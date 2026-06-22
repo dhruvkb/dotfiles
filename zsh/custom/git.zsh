@@ -23,6 +23,9 @@ alias gpf="git push --force-with-lease"
 alias gps='git push --set-upstream origin $(git curr)'
 alias gpl="git pull"
 alias gplr="git pull --rebase"
+alias gs="git stash"
+alias gsp="git stash pop"
+alias gst="git status"
 
 # GitHub CLI
 # ==========
