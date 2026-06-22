@@ -50,3 +50,8 @@ hooks = [
         "--no-error-on-unmatched-pattern",
     ] },
 ]
+
+[[repos]]
+repo = "https://github.com/editorconfig-checker/editorconfig-checker"
+rev = "v3.7.0"
+hooks = [{ id = "editorconfig-checker" }]
