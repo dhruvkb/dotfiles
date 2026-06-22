@@ -21,6 +21,7 @@
 	"workbench.editor.empty.hint": "hidden",
 	"workbench.editor.labelFormat": "short",
 	"workbench.tree.renderIndentGuides": "always",
+	"workbench.browser.openLocalhostLinks": false,
 	// Theme
 	"workbench.preferredLightColorTheme": "Catppuccin Latte",
 	"workbench.preferredDarkColorTheme": "Catppuccin Mocha",
