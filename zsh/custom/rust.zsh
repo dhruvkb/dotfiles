@@ -17,6 +17,5 @@ pathadd "$(brew --prefix rustup)/bin"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
 # Note: even if its not on the path, Cargo will look inside `$CARGO_HOME/bin`
-# for subcommands i.e. bins starting with "cargo-". If there are binaries except
-# these subcommands, uncomment the line below.
-# pathadd "$CARGO_HOME/bin"
+# for subcommands i.e. bins starting with "cargo-".
+pathadd "$CARGO_HOME/bin"

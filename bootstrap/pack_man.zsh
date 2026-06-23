@@ -28,22 +28,15 @@ indent uv tool upgrade --all
 green '└─ done.\n'
 
 CARGO_PACKAGES=(
-	cargo-release
+	cargo-binstall
+	cargo-run-bin
 	cargo-update
-	cargo-bloat
-)
-CARGO_LOCKED_PACKAGES=(
-	cargo-nextest
 )
 
 print -r -- '┌─ Installing cargo packages...'
 for package in "${CARGO_PACKAGES[@]}"; do
 	# Install Cargo packages individually.
 	indent cargo install "$package"
-done
-for package in "${CARGO_LOCKED_PACKAGES[@]}"; do
-	# Install Cargo packages that require the `--locked` flag individually.
-	indent cargo install --locked "$package"
 done
 green '└─ done.\n'
 
