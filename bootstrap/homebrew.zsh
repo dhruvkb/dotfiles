@@ -45,6 +45,7 @@ FORMULAE=(
 	pls-rs/pls/pls
 	rustup
 	starship
+	terror/tap/just-lsp
 	uv
 	xh
 	yt-dlp
@@ -75,7 +76,6 @@ CASKS=(
 	orbstack
 	orion
 	slack
-	terror/tap/just-lsp
 	transmission
 	tunnelblick
 	typewhisper/tap/typewhisper
