@@ -17,12 +17,12 @@ UV_TOOL_BIN_DIR="$XDG_DATA_HOME/uv/tools_bin/"
 XDG_STATE_HOME="$HOME/.local/state"
 
 # Source the machine-local desk UUID.
-UUID_FILE="$HOME/dotfiles/raycast/data/desk.sh"
-if [[ ! -f "$UUID_FILE" ]]; then
+uuid_file="$XDG_DATA_HOME/dotfiles/raycast/desk.sh"
+if [[ ! -f "$uuid_file" ]]; then
 	print -r -- "Define desk UUID in desk.sh"
 	exit 1
 fi
-source "$UUID_FILE"
+source "$uuid_file"
 
 # Ensure that the log directory exists.
 mkdir -p "$XDG_STATE_HOME/raycast"
@@ -32,7 +32,7 @@ print -r -- "$(date) stand.zsh" >>"$XDG_STATE_HOME/raycast/stand.log"
 
 # Run the linak-controller command in background with output redirected to log file.
 "$UV_TOOL_BIN_DIR/linak-controller" \
-	--mac-address "$DESK_UUID" \
+	--mac-address "$desk_uuid" \
 	--move-to 1020 \
 	>>"$XDG_STATE_HOME/raycast/stand.log" \
 	2>&1 \

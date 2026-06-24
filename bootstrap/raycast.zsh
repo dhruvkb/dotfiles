@@ -6,9 +6,10 @@ source "${0:A:h}/_common.zsh"
 
 print -rn -- "Populating desk UUID..."
 # Populate the desk UUID
-mkdir -p ~/dotfiles/raycast/data/
+uuid_file="$XDG_DATA_HOME/dotfiles/raycast/desk.sh"
+mkdir -p "${uuid_file:h}"
 desk_uuid=$($UV_TOOL_BIN_DIR/linak-controller --scan | awk -F':' '/Desk / {print $1}')
-print -r -- "DESK_UUID='$desk_uuid'" >~/dotfiles/raycast/data/desk.sh
+print -r -- "desk_uuid='$desk_uuid'" >$uuid_file
 green 'done.\n'
 
 # Clone `beam`, my monorepo of personal Raycast extensions, unless it is already

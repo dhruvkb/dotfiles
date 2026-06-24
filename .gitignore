@@ -4,9 +4,6 @@ pre-commit.pyz
 # Node modules
 node_modules/
 
-# Machine-local Raycast script data
-raycast/data/
-
 # Machine-local Zsh functions data
 zsh/data/
 
