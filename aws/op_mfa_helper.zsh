@@ -19,7 +19,7 @@ if [[ -z $vault || -z $secret_name ]]; then
 fi
 
 digest=$(print -rn -- "${vault}${secret_name}" | shasum -a 256)
-cache_file="${0:A:h}/data/${digest:0:8}.json"
+cache_file="${XDG_CACHE_HOME:-$HOME/.cache}/dotfiles/aws/mfa/${digest:0:8}.json"
 
 # Compare the expiration timestamp inside `jq` with normalization.
 # - macOS `date` cannot parse ISO 8601 with a `Z` suffix without a brittle format string.

@@ -7,8 +7,5 @@ node_modules/
 # Machine-local Zsh functions data
 zsh/data/
 
-# Machine-local AWS cache data
-aws/data/
-
 # VS Code settings
 !.vscode/
