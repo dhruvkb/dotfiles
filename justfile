@@ -1,4 +1,4 @@
-# Show all available recipes
+# Show all available recipes.
 @_default:
 	just --list --unsorted
 
