@@ -10,8 +10,5 @@ zsh/data/
 # Machine-local AWS cache data
 aws/data/
 
-# Machine-local SSH public keys data
-ssh/data/
-
 # VS Code settings
 !.vscode/

@@ -7,7 +7,8 @@ source "${0:A:h}/_common.zsh"
 vaults=$(op vault list --format json | jq -r '.[].id')
 
 print -r -- '┌─ Extracting SSH keys...'
-mkdir -p "$HOME/dotfiles/ssh/data/keys"
+key_dir="$XDG_DATA_HOME/dotfiles/ssh/keys"
+mkdir -p "$key_dir"
 vaults_with_keys=()
 for vault in ${(f)vaults}; do
 	ssh_keys=$(op item list --categories 'SSH Key' --vault "$vault" --format json | jq -r '.[].id')
@@ -21,7 +22,7 @@ for vault in ${(f)vaults}; do
 		indent print -rn -- "Extracting $vault_name/$title..."
 
 		slug=$(slugify "$(print -rn -- "$ssh_key_data" | jq -r '"\(.vault.name) \(.title)"')")
-		dest="$HOME/dotfiles/ssh/data/keys/$slug.pub"
+		dest="$key_dir/$slug.pub"
 		pub=$(print -rn -- "$ssh_key_data" | jq -r '.fields[] | select(.id == "public_key") | .value')
 		print -r -- "$pub" >"$dest"
 		# SSH keys need to have restricted permissions.
