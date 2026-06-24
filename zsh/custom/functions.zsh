@@ -51,7 +51,7 @@ xdg() {
 # where
 #   <name> is the name of a bookmark from the bookmarks file
 goto() {
-	local bookmarks_file="$HOME/dotfiles/zsh/data/bookmarks"
+	local bookmarks_file="$XDG_DATA_HOME/dotfiles/zsh/bookmarks"
 
 	if [[ $# -eq 0 ]]; then
 		echo "Usage: goto <name>" >&2

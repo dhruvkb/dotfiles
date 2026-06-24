@@ -4,8 +4,5 @@ pre-commit.pyz
 # Node modules
 node_modules/
 
-# Machine-local Zsh functions data
-zsh/data/
-
 # VS Code settings
 !.vscode/
