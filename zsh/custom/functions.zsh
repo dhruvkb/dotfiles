@@ -240,4 +240,13 @@ updates() {
 	uv tool upgrade --all
 	rustup update
 	cargo install-update -a
+
+	# Homebrew re-quarantines casks on upgrade, so on the first restart after an
+	# update operation, all login items would simultaneously trigger Gatekeeper
+	# prompts. Stripping the quarantine attribute avoids the wall of popups.
+	source "$HOME/dotfiles/zsh/data/login_items.sh"
+	local app
+	for app in $login_items; do
+		[[ -e $app ]] && xattr -dr com.apple.quarantine "$app" 2>/dev/null
+	done
 }
