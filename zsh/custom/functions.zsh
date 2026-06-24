@@ -247,6 +247,7 @@ updates() {
 	source "$HOME/dotfiles/zsh/data/login_items.sh"
 	local app
 	for app in $login_items; do
-		[[ -e $app ]] && xattr -dr com.apple.quarantine "$app" 2>/dev/null
+		# Stripping fails for root-owned apps; ignore and keep looping.
+		[[ -e $app ]] && xattr -dr com.apple.quarantine "$app" 2>/dev/null || true
 	done
 }
