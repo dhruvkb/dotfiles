@@ -13,8 +13,5 @@ aws/data/
 # Machine-local SSH public keys data
 ssh/data/
 
-# Machine-local delta themes
-git/data/
-
 # VS Code settings
 !.vscode/

@@ -67,7 +67,7 @@
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII57SP4Vf5B6n6SThAEWVWHedM9T/Cj3P3nEPawE4Vlv
 
 [include]
-	path = ~/dotfiles/git/data/themes.gitconfig
+	path = ~/.local/share/dotfiles/git/themes.gitconfig
 
 # All repos are placed in ~/Developer under directories named after the GitHub
 # username of their owners. So if you want a separate Git config for an
