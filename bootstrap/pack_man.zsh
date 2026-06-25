@@ -11,8 +11,9 @@ source "${0:A:h}/_common.zsh"
 
 # `qmk` is installed by a different bootstrap script.
 UV_PACKAGES=(
-	linak-controller
+	identify
 	ipython
+	linak-controller
 )
 
 print -r -- '┌─ Installing uv packages...'
