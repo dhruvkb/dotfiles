@@ -63,7 +63,8 @@
 			{
 				"scope": "comment",
 				"settings": {
-					"fontStyle": ""
+					"fontFamily": "'Monaspace Radon', 'Symbols Nerd Font', monospace",
+					"fontStyle": "" // disable italics
 				}
 			}
 		]
