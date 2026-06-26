@@ -29,9 +29,13 @@ local moduleNames = {
 for _, moduleName in ipairs(moduleNames) do
 	local module = require("modules." .. moduleName)
 
-	if module.init then module.init() end
+	if module.init then
+		module.init()
+	end
 
-	if module.start then module.start() end
+	if module.start then
+		module.start()
+	end
 
 	modules[moduleName] = module
 end
@@ -45,9 +49,13 @@ end
 -- Stop all modules and then reload configuration.
 function reloadConfig()
 	for _, module in pairs(modules) do
-		if module.stop then module.stop() end
+		if module.stop then
+			module.stop()
+		end
 
-		if module.del then module.del() end
+		if module.del then
+			module.del()
+		end
 	end
 
 	hs.reload()

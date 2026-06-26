@@ -75,7 +75,9 @@ M.config = {
 	-- as fine-grained as needed - it is not limited to a bundle-ID check.
 	overrides = {
 		{
-			match = function(app) return app ~= nil and app:bundleID() == "com.microsoft.VSCode" end,
+			match = function(app)
+				return app ~= nil and app:bundleID() == "com.microsoft.VSCode"
+			end,
 			strategy = "clipboard",
 		},
 	},
@@ -124,7 +126,9 @@ end
 
 -- Log a formatted message when `M.config.debug` is enabled.
 function M.debugLog(format, ...)
-	if M.config.debug then print("[key_pairing] " .. string.format(format, ...)) end
+	if M.config.debug then
+		print("[key_pairing] " .. string.format(format, ...))
+	end
 end
 
 -- Resolve the selection-detection strategy for the focused context.
@@ -135,7 +139,9 @@ end
 -- specific pane / widget, not just an app.
 function M.resolveStrategy(app, element)
 	for _, rule in ipairs(M.config.overrides) do
-		if rule.match(app, element) then return rule.strategy end
+		if rule.match(app, element) then
+			return rule.strategy
+		end
 	end
 	return M.config.defaultStrategy
 end
@@ -144,7 +150,9 @@ end
 function M.getSelection(strategy, element, callbackFn)
 	if strategy == "ax" then
 		if element then
-			local ok, selected = pcall(function() return element:selectedText() end)
+			local ok, selected = pcall(function()
+				return element:selectedText()
+			end)
 			if ok and selected ~= nil then
 				M.debugLog("ax: selected=%q", selected)
 				callbackFn(selected)
@@ -183,7 +191,9 @@ function M.probeClipboard(trustAnyChange, callbackFn)
 					-- multi-line selection; a single-line line-copy never
 					-- contains one.
 					local firstNewline = content:find("\n", 1, true)
-					if firstNewline and firstNewline ~= #content then selected = content end
+					if firstNewline and firstNewline ~= #content then
+						selected = content
+					end
 				end
 			end
 		end
@@ -265,7 +275,9 @@ function M.handleKeyDown(event)
 		return false -- Pairing is disabled for this context; pass through.
 	end
 
-	M.getSelection(strategy, element, function(selection) M.wrap(pair.opening, selection, pair.closing) end)
+	M.getSelection(strategy, element, function(selection)
+		M.wrap(pair.opening, selection, pair.closing)
+	end)
 
 	return true -- Consume the event.
 end

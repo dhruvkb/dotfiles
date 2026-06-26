@@ -34,7 +34,9 @@ function M.subscribeDebounced(wf, events, callback, delay)
 	delay = delay or M.defaultDebounce
 	wf:subscribe(events, function(...)
 		local args = table.pack(...)
-		hs.timer.doAfter(delay, function() callback(table.unpack(args, 1, args.n)) end)
+		hs.timer.doAfter(delay, function()
+			callback(table.unpack(args, 1, args.n))
+		end)
 	end)
 end
 

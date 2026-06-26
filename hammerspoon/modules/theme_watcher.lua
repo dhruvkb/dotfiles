@@ -68,22 +68,30 @@ M.config = {
 --  \___/ \__|_|_|___/
 
 -- True when macOS is currently in Dark Mode.
-function M.isDark() return hs.host.interfaceStyle() == "Dark" end
+function M.isDark()
+	return hs.host.interfaceStyle() == "Dark"
+end
 
 -- Rewrite a single line in `path` from `pattern` to `replacement`. No-op
 -- if the file is missing or the substitution leaves contents unchanged
 -- (keeps mtimes stable so editors don't see spurious reloads).
 function M.substituteInFile(path, pattern, replacement)
 	local f = io.open(path, "r")
-	if not f then return false end
+	if not f then
+		return false
+	end
 	local contents = f:read("*a")
 	f:close()
 
 	local updated, count = contents:gsub(pattern, replacement, 1)
-	if count == 0 or updated == contents then return false end
+	if count == 0 or updated == contents then
+		return false
+	end
 
 	f = io.open(path, "w")
-	if not f then return false end
+	if not f then
+		return false
+	end
 	f:write(updated)
 	f:close()
 	return true
@@ -95,7 +103,9 @@ function M.apply()
 	for _, app in ipairs(M.config.apps) do
 		local replacement = isDark and app.dark or app.light
 		local changed = M.substituteInFile(app.path, app.pattern, replacement)
-		if changed and app.postCmd then hs.execute(app.postCmd) end
+		if changed and app.postCmd then
+			hs.execute(app.postCmd)
+		end
 	end
 end
 
@@ -107,11 +117,15 @@ end
 --                       |___/|_|
 
 function M.init()
-	M.config.watcher = hs.distributednotifications.new(function() M.apply() end, M.config.notificationName)
+	M.config.watcher = hs.distributednotifications.new(function()
+		M.apply()
+	end, M.config.notificationName)
 end
 
 function M.start()
-	if M.config.watcher then M.config.watcher:start() end
+	if M.config.watcher then
+		M.config.watcher:start()
+	end
 	-- Sync once on load so configs match the current appearance even if it
 	-- changed while Hammerspoon was reloading.
 	M.apply()
@@ -120,7 +134,9 @@ function M.start()
 end
 
 function M.stop()
-	if M.config.watcher then M.config.watcher:stop() end
+	if M.config.watcher then
+		M.config.watcher:stop()
+	end
 
 	hs.alert.show("Theme watcher: stopped")
 end

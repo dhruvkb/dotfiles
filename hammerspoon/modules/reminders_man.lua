@@ -54,7 +54,9 @@ function M.ensureApp()
 	end
 
 	-- Unhide, if hidden.
-	if app:isHidden() then app:unhide() end
+	if app:isHidden() then
+		app:unhide()
+	end
 end
 
 -- Ensure that the Reminders window is unminimized and positioned
@@ -68,7 +70,9 @@ function M.ensureWindow()
 	end
 
 	-- Restore, if minimized.
-	if win:isMinimized() then win:unminimize() end
+	if win:isMinimized() then
+		win:unminimize()
+	end
 
 	-- Position it to the target rectangle.
 	local screen = win:screen()
