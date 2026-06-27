@@ -1,13 +1,7 @@
-# macOS junk
-.DS_Store
+# Keep this list as small as possible, because if you want something excluded
+# from Git, chances are other collaborators want to do the same.
 
-# IDE junk
-.idea/
-.vscode/
-
-# `pls` config
+# `pls`
+# -----
+# `pls` is so niche that projects' `.gitignore`s don't exclude its config.
 .pls.yml
-
-# AI
-.claude/
-**/.claude/settings.local.json
