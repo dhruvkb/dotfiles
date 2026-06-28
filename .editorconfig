@@ -1,3 +1,6 @@
+# § global
+# § ======
+
 root = true
 
 [*]
@@ -6,23 +9,35 @@ insert_final_newline = true
 indent_style = tab
 indent_size = 2
 
-[*.{py,toml}]
-indent_style = space
+[*.rs]
+# The Rust Style Guide mandates using 4 spaces for indentation.
 indent_size = 4
 
-[*.{yml,zshellcheckrc}]
-indent_style = space
-indent_size = 2
+[*.py]
+# PEP 8 mandates using 4 spaces for indentation.
+indent_size = 4
 
-# Ignore paths
-[*.md]
+[*.{yml,yaml}]
+# The YAML spec only allows using spaces for indentation.
+indent_style = space
+
+[*.{md,mdx}]
+# Prettier and Oxfmt will use a variable number of spaces for indentation and
+# alignment, regardless of `.editorconfig`. So just give in and use spaces.
 indent_style = space
 indent_size = unset
 
-[*.plist]
-charset = unset
-end_of_line = unset
-insert_final_newline = unset
-trim_trailing_whitespace = unset
-indent_style = unset
-indent_size = unset
+#	/§ global
+
+# § project
+# § =======
+
+[*.lua]
+# StyLua mandates using tabs (equal to 4 spaces) for indentation.
+indent_size = 4
+
+[.zshellcheckrc]
+# `.zshellcheckrc` files are actually YAML.
+indent_style = space
+
+#	/§ project
