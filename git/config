@@ -9,10 +9,10 @@
 	ui = auto
 
 [commit]
-	gpgsign = true
+	gpgSign = true
 
 [core]
-	excludesfile = ~/dotfiles/git/ignore
+	excludesFile = ~/dotfiles/git/ignore
 	# delta reads its config via libgit2, which does not read `GIT_CONFIG_GLOBAL`,
 	# so we point delta to this config file explicitly.
 	# TODO: Remove `--config` when dandavison/delta#1113 is closed.
@@ -32,7 +32,7 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 
 [init]
-	defaultbranch = main
+	defaultBranch = main
 
 [interactive]
 	# delta reads its config via libgit2, which does not read `GIT_CONFIG_GLOBAL`,
@@ -41,7 +41,7 @@
 	diffFilter = delta --color-only --config ~/dotfiles/git/config
 
 [merge]
-	conflictstyle = zdiff3
+	conflictStyle = zdiff3
 
 [pager]
 	branch = cat
@@ -53,18 +53,18 @@
 	autoSetupRemote = true
 
 [rebase]
-	autosquash = true
+	autoSquash = true
 
 [rerere]
 	enabled = true
 
 [tag]
-	gpgsign = true
+	gpgSign = true
 
 [user]
 	name = Dhruv Bhanushali
 	email = dhruv_b@live.com
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII57SP4Vf5B6n6SThAEWVWHedM9T/Cj3P3nEPawE4Vlv
+	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII57SP4Vf5B6n6SThAEWVWHedM9T/Cj3P3nEPawE4Vlv
 
 [include]
 	path = ~/.local/share/dotfiles/git/themes.gitconfig
