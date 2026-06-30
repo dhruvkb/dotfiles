@@ -19,6 +19,11 @@ hooks = [
 ]
 
 [[repos]]
+repo = "https://github.com/editorconfig-checker/editorconfig-checker"
+rev = "v3.7.0"
+hooks = [{ id = "editorconfig-checker", exclude = "^.*\\.plist$" }]
+
+[[repos]]
 repo = "https://github.com/afadesigns/zshellcheck"
 rev = "v1.2.2"
 hooks = [{ id = "zshellcheck" }]
@@ -52,8 +57,3 @@ hooks = [
         "--no-error-on-unmatched-pattern",
     ] },
 ]
-
-[[repos]]
-repo = "https://github.com/editorconfig-checker/editorconfig-checker"
-rev = "v3.7.0"
-hooks = [{ id = "editorconfig-checker" }]
