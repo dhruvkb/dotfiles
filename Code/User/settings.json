@@ -137,5 +137,9 @@
 	// Code Spell Checker
 	"cSpell.language": "en-GB,en-US",
 	// Todo Tree
-	"todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg"
+	"todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg",
+	// Python
+	"python.terminal.activateEnvironment": false,
+	// Claude Code for VS Code
+	"claudeCode.usePythonEnvironment": false
 }
