@@ -135,5 +135,7 @@
 	// Extensions
 	// ==========
 	// Code Spell Checker
-	"cSpell.language": "en-GB,en-US"
+	"cSpell.language": "en-GB,en-US",
+	// Todo Tree
+	"todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg"
 }

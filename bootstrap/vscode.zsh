@@ -12,6 +12,7 @@ EXTENSIONS=(
 	# Editor
 	EditorConfig.EditorConfig             # aka EditorConfig
 	streetsidesoftware.code-spell-checker # aka Code Spell Checker
+	Gruntfuggly.todo-tree                 # aka Todo Tree
 	# Tools
 	ms-azuretools.vscode-containers # aka Container Tools
 	nefrob.vscode-just-syntax       # aka vscode-just

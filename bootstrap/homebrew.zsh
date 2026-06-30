@@ -43,6 +43,7 @@ FORMULAE=(
 	jq
 	just
 	pls-rs/pls/pls
+	ripgrep
 	rustup
 	starship
 	terror/tap/just-lsp
